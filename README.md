@@ -656,7 +656,7 @@ az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --r
     * Verify that this default route has been propagated to the Spokes VNETs
       * Go to the Spoke11 Linux VM -> Networking -> Click on nic and then click on **Effective Routes**
 
-      ![vwanhubrouting4](images/vwanhubrouting4.jpg)
+      <!--![vwanhubrouting4](images/vwanhubrouting4.jpg)-->
       ![vwanhubrouting5](images/vwanhubrouting5.jpg)
 
 * At the end of this step you should have the following architecture
@@ -674,7 +674,7 @@ az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --r
 
 * Does it work ?
 
-    ![vwan-flow1.jpg](images/vwan-flow1.jpg)  
+    ![vwan traffic flow](images/vwan-traffic1.jpg)  
 
 * Troubleshoot and make all the required changes to make it work
 
