@@ -1,22 +1,24 @@
-# About Blue Prints
+# About TEChnical Recipes
 
-Blue Prints provide the learner with the opportunity to put into practice newly developed skills in an easy to launch environment that can be used for customer engagements.  At a minimum a Blue Print will include the following:
+<a href="."><img src=./images/rocket.jpg> Launch Now</a>
+
+TEChnical Recipes provide the learner with the opportunity to put into practice newly developed skills in an easy to launch environment that can be used for customer engagements.  At a minimum a TEChnical Recipe will include the following:
 
 * A use case description
 * An integrated lab and demo environment
 
   * Informational call-outs for key points to discuss or highlight to a customer
-  * Questions that could be asked while given the Blue Print as a demo
+  * Questions that could be asked while given the TEChnical Recipe as a demo
   * Points of value that relate the business value to the technical feature
 * A reference architecture(s)
 
 Optional components may be included for certain use cases
 
-The Blue Print will not be a completely, self-contained learning experience for a single product.  A Blue Print will cover features and often multiple products where they relate to the use case of interest.  
+The TEChnical Recipe will not be a completely, self-contained learning experience for a single product.  A TEChnical Recipe will cover features and often multiple products where they relate to the use case of interest.  
 
-Deployments will be automated for those tasks that are not salient to the learning or demonstration activity in the use case.  For example, for a Blue Print focused on Indicators of Compromise, the system may deploy a FortiGate and FortiAnalyzer with configurations for these systems.  However, the leaner will have to configure the Event Handlers for IOC setup.  
+Deployments will be automated for those tasks that are not salient to the learning or demonstration activity in the use case.  For example, for a TEChnical Recipe focused on Indicators of Compromise, the system may deploy a FortiGate and FortiAnalyzer with configurations for these systems.  However, the leaner will have to configure the Event Handlers for IOC setup.  
 
-## Azure SDWAN Blue Print
+## Azure SDWAN TEChnical Recipe
 
 Introduction:
 As enterprises adopt the cloud as the new core for application hosting, remote sites require secure, reliable connectivity with an optimal user experience to access those cloud and SaaS applications.  In fact, cloud access is SD-WAN's primary use case for IaaS and SaaS-hosted services.  Fortinet's Cloud On-Ramp capabilities using SD-WAN are differentiated in the following ways: 
@@ -26,9 +28,9 @@ As enterprises adopt the cloud as the new core for application hosting, remote s
 * Decentralized orchestration for better survivability and easier deployment of SD-WAN overlays
 * Single OS for consistent policy and overlay deployment on all software-defined networks (SDNs)
 
-The purpose of this Blue Print is to familiarize the learner with routing, data-plane, and architectural concepts specific to the Azure cloud environment.  Other Blue Prints are available to cover SD-WAN feature deployment.
+The purpose of this TEChnical Recipe is to familiarize the learner with routing, data-plane, and architectural concepts specific to the Azure cloud environment.  Other TEChnical Recipes are available to cover SD-WAN feature deployment.
 
-## Blue Print Main Objectives
+## TEChnical Recipe Main Objectives
 
 * Deploy the SDWAN architecture using Terraform
 * Configure Azure components
@@ -144,11 +146,12 @@ terraform apply -var="username=${USER}"
 </details>
 
 ***
-##  ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo***
+
+## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo***
 
 Fortinet provides a large library of infrastructure as code (IaC) templates to deploy baseline and iterate POC and production environments in public cloud.  IaC support includes Terraform, Ansible, and cloud-specific services such as Azure ARM, AWS Cloudformation, and Google Deployment (jinja) templates. Terraform Providers are available for FortiGate and FortiManager to insert and iterate running configuration.
 
-* For more information, see the following links: 
+* For more information, see the following links:
 FortiOS 7.2 Admin Guide: https://docs.fortinet.com/document/fortigate/7.2.2/administration-guide/763117/terraform-fortios-as-a-provider  
 
 * FNDN Terraform Provider: https://fndn.fortinet.net/index.php?/cloud/terraform/ 
@@ -269,11 +272,12 @@ When connecting IPSec traffic from remote inter-regional sites, the customer's a
 
 When giving this TEChnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
 
-* How sensitive are your applications to session timeout?  Do they require large TTL values for long-lived sessions? 
+* How sensitive are your applications to session timeout?  Do they require large TTL values for long-lived sessions?
 * What type of VPN scaling (tunnel count and bandwidth) are required for your deployment?  
 * How much east/west traffic versus north/south traffic will be supported?  
 * What types of inspection will be required between various VNets? 
 * Is advanced BGP configuration required?  (FortiGate-to-FortiGate can support advanced BGP metrics unlike Azure's services)
+
 ***
 ***
 
@@ -423,8 +427,9 @@ When connecting IPSec traffic from remote inter-regional sites, the customer's a
 
 ## Key questions during your demo
 
-When giving this TECnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
-* How sensitive are your applicaitons to session timeout?  Do they require large TTL values for long-lived sessions? 
+When giving this TEChnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
+
+* How sensitive are your applications to session timeout?  Do they require large TTL values for long-lived sessions? 
 * What type of VPN scaling (tunnel count and bandwidth) are required for your deployment?  
 * How much east/west traffic versus north/south traffic will be supported?  
 * What types of inspection will be required between various VNets? 
