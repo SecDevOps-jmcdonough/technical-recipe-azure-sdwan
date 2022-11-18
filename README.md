@@ -1,6 +1,34 @@
-# Azure SDWAN Workshop
+# About Blue Prints
 
-## Workshop Main Objectives
+Blue Prints provide the learner with the opportunity to put into practice newly developed skills in an easy to launch environment that can be used for customer engagements.  At a minimum a Blue Print will include the following:
+
+* A use case description
+* An integrated lab and demo environment
+
+  * Informational call-outs for key points to discuss or highlight to a customer
+  * Questions that could be asked while given the Blue Print as a demo
+  * Points of value that relate the business value to the technical feature
+* A reference architecture(s)
+
+Optional components may be included for certain use cases
+
+The Blue Print will not be a completely, self-contained learning experience for a single product.  A Blue Print will cover features and often multiple products where they relate to the use case of interest.  
+
+Deployments will be automated for those tasks that are not salient to the learning or demonstration activity in the use case.  For example, for a Blue Print focused on Indicators of Compromise, the system may deploy a FortiGate and FortiAnalyzer with configurations for these systems.  However, the leaner will have to configure the Event Handlers for IOC setup.  
+
+## Azure SDWAN Blue Print
+
+Introduction:
+As enterprises adopt the cloud as the new core for application hosting, remote sites require secure, reliable connectivity with an optimal user experience to access those cloud and SaaS applications.  In fact, cloud access is SD-WAN's primary use case for IaaS and SaaS-hosted services.  Fortinet's Cloud On-Ramp capabilities using SD-WAN are differentiated in the following ways: 
+
+* Integrated Security and SD-WAN policy configuration and workflows
+* Unique ability to provide scale up performance for higher bandwidth into cloud environments
+* Decentralized orchestration for better survivability and easier deployment of SD-WAN overlays
+* Single OS for consistent policy and overlay deployment on all software-defined networks (SDNs)
+
+The purpose of this Blue Print is to familiarize the learner with routing, data-plane, and architectural concepts specific to the Azure cloud environment.  Other Blue Prints are available to cover SD-WAN feature deployment.
+
+## Blue Print Main Objectives
 
 * Deploy the SDWAN architecture using Terraform
 * Configure Azure components
@@ -116,6 +144,24 @@ terraform apply -var="username=${USER}"
 </details>
 
 ***
+##  ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo***
+
+Fortinet provides a large library of infrastructure as code (IaC) templates to deploy baseline and iterate POC and production environments in public cloud.  IaC support includes Terraform, Ansible, and cloud-specific services such as Azure ARM, AWS Cloudformation, and Google Deployment (jinja) templates. Terraform Providers are available for FortiGate and FortiManager to insert and iterate running configuration.
+
+* For more information, see the following links: 
+FortiOS 7.2 Admin Guide: https://docs.fortinet.com/document/fortigate/7.2.2/administration-guide/763117/terraform-fortios-as-a-provider  
+
+* FNDN Terraform Provider: https://fndn.fortinet.net/index.php?/cloud/terraform/ 
+
+## Key questions during your demo
+
+When giving this TEChnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
+
+* Has your organization standardized on an IaC tool-set for infrastructure provisioning and iteration?
+* How are the responsibilities for infrastructure assigned?  Does cloud network fall under a DevOps, Cloud Networking, or Application Delivery team, as examples?
+* What is view on how IaC can improve workflows?
+* Is workflow automation in cloud and cross-organizational collaboration important within your cloud business?
+
 ***
 
 ## Chapter 2 - Hub and Branch VPN Connectivity (20min)
@@ -191,10 +237,43 @@ Verify that the FortiGates are responding to Azure Load Balancer Health Checks
 
 </details>
 
+##  ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo***
+
+The Azure Route Server (ASR) is used to connect NVAs to the Azure network to simplify VNet routing with external networks.  SD-WAN is a primary use case for the ASR where BGP routes are exchanged between a premise-based and the ASR to advertise premise-originated routes to the VNets and VNet routes to the premise.  For many customers, this may be a great fit.  For some customers, there may be more complex routing requirements such as multiple egress points,load balanced routes, large number of BGP peers, large volume of routes (>1000); where these needs require advanced BGP.  More complex use cases will require FortiGate to FortiGate peering in those cases.  Let your customer know about Fortinet's ability to support advanced dynamic routing services.  
+
+https://docs.fortinet.com/document/fortiswitch/7.2.2/administration-guide/939731/bgp-routing 
+
+## Key questions during your demo
+
+When giving this TEChnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
+* Describe your organizations routing requirements.  
+* Does your environment require more than 8 BGP peers or more than 1000 routes
+* Do you need to extend other routing protocols, such OSPF or ISIS into the Azure environment?
+
 ## Chapter3 - Azure Route Server Presentation (30min)
 
 ***[Presentation about Azure Route Server- estimated duration 30min]***
 
+##  ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo***
+
+When discussing load balanced traffic with the customer, point out key details about the Azure Load Balancers such as the following:
+
+* Azure LB uses 5-tuple hash for traffic distribution
+* IPSec in an Active/Active configuration is not supported as session stability cannot be guaranteed to IkE rekeys, and deterministic IP termination.  
+* TCP/UDP headers are rewritten to the backend pool.  HTTP/s headers are not changed.  
+* Legacy applications or those requiring long-lived sessions could see performance issues due to TTL limitations on the LB.  
+
+When connecting IPSec traffic from remote inter-regional sites, the customer's architecture could benefit from dedicated FortiGates to support IPSec.  This is a benefit where large traffic loads are supported for deep packet inspection and where there is a lot of E/W traffic.  Dedicated FortiGates for IPSec allow the opportunity to scale VPN traffic using IPSec Aggregate without impacting performance of traffic inspection.  Details on IPSec Aggregate can be found here:  (https://docs.fortinet.com/document/fortigate/7.2.3/administration-guide/779201/aggregate-and-redundant-vpn)
+
+## Key questions during your demo
+
+When giving this TEChnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
+
+* How sensitive are your applications to session timeout?  Do they require large TTL values for long-lived sessions? 
+* What type of VPN scaling (tunnel count and bandwidth) are required for your deployment?  
+* How much east/west traffic versus north/south traffic will be supported?  
+* What types of inspection will be required between various VNets? 
+* Is advanced BGP configuration required?  (FortiGate-to-FortiGate can support advanced BGP metrics unlike Azure's services)
 ***
 ***
 
@@ -330,6 +409,26 @@ az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --r
 * At the end of this step  you should have the following architecture
 
     ![global-step3](images/sdwan_architecture_03.jpg)
+
+##  ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo***
+
+When discussing load balanced traffic with the customer, point out key details about the Azure Load Balancers such as the following:
+
+* Azure LB uses 5-tuple hash for traffic distribution
+* IPSec in an Active/Active configuration is not supported as session stability cannot be guaranteed to IkE rekeys, and deterministic IP termination.  
+* TCP/UDP headers are rewritten to the backend pool.  HTTP/s headers are not changed.  
+* Legacy applications or those requiring long-lived sessions could see performance issues due to TTL limitations on the LB.  
+
+When connecting IPSec traffic from remote inter-regional sites, the customer's architecture could benefit from dedicated FortiGates to support IPSec.  This is a benefit where large traffic loads are supported for deep packet inspection and where there is a lot of E/W traffic.  Dedicated FortiGates for IPSec allow the opportunity to scale VPN traffic using IPSec Aggregate without impacting performance of traffic inspection.  Details on IPSec Aggregate can be found here:  (https://docs.fortinet.com/document/fortigate/7.2.3/administration-guide/779201/aggregate-and-redundant-vpn) 
+
+## Key questions during your demo
+
+When giving this TECnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
+* How sensitive are your applicaitons to session timeout?  Do they require large TTL values for long-lived sessions? 
+* What type of VPN scaling (tunnel count and bandwidth) are required for your deployment?  
+* How much east/west traffic versus north/south traffic will be supported?  
+* What types of inspection will be required between various VNets? 
+* Is advanced BGP configuration required?  (FortiGate-to-FortiGate can support advanced BGP metrics unlike Azure's services)
 
 ### Chapter 4 - QUIZ
 
@@ -656,7 +755,6 @@ az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --r
     * Verify that this default route has been propagated to the Spokes VNETs
       * Go to the Spoke11 Linux VM -> Networking -> Click on nic and then click on **Effective Routes**
 
-      <!--![vwanhubrouting4](images/vwanhubrouting4.jpg)-->
       ![vwanhubrouting5](images/vwanhubrouting5.jpg)
 
 * At the end of this step you should have the following architecture
