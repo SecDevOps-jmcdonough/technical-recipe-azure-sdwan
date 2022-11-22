@@ -6,6 +6,8 @@
 
 >The workflow starts the TEChnical Recipe environment provisioning process. An email is sent to the provided email address when the environment provisioning process is complete. The email contains environment details, including all required access credentials and links, as well as environment duration period. When the environment duration period has passed the environment and all resources will be removed.
 
+***
+
 TEChnical Recipes provide the learner with the opportunity to put into practice newly developed skills in an easy to launch environment that can be used for customer engagements.  At a minimum a TEChnical Recipe will include the following:
 
 * A use case description
@@ -134,7 +136,6 @@ terraform apply -var="username=${USER}"
 1. Why are the VPN connections down?
 
   <details>
-
   <summary>Quiz 1 Answers</summary>
 
 1. **FortiGates in the Hub do not have public IPs, how are they accessible via the Web UI?**
@@ -146,21 +147,21 @@ terraform apply -var="username=${USER}"
     * The external load balancer for the Hub FortiGates needs load balancing rules for UDP 500 and UDP 4500.
 
   </details>
-  
 </details>
 
 ***
 
-## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo***
+## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 1***
 
 Fortinet provides a large library of infrastructure as code (IaC) templates to deploy baseline and iterate POC and production environments in public cloud.  IaC support includes Terraform, Ansible, and cloud-specific services such as Azure ARM, AWS Cloudformation, and Google Deployment (jinja) templates. Terraform Providers are available for FortiGate and FortiManager to insert and iterate running configuration.
 
-* For more information, see the following links:
-FortiOS 7.2 Admin Guide: https://docs.fortinet.com/document/fortigate/7.2.2/administration-guide/763117/terraform-fortios-as-a-provider  
+For more information, review the following:
 
-* FNDN Terraform Provider: https://fndn.fortinet.net/index.php?/cloud/terraform/ 
+* [FortiOS 7.2 Admin Guide](https://docs.fortinet.com/document/fortigate/7.2.2/administration-guide/763117/terraform-fortios-as-a-provider)
 
-## Key questions during your demo
+* [Terraform Providers](https://fndn.fortinet.net/index.php?/cloud/terraform/)
+
+## Key questions during your demo - Chapter 1
 
 When giving this TEChnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
 
@@ -225,7 +226,6 @@ Verify that the FortiGates are responding to Azure Load Balancer Health Checks
 1. Do FortiGates in the Branches learn Spoke11 and Spoke12 CIDRs?
 
   <details>
-
   <summary>Quiz 2 Answers</summary>
 
 1. **Why is one FortiGate depicted as unhealthy by the Azure Hub External Load Balancer?**
@@ -241,27 +241,9 @@ Verify that the FortiGates are responding to Azure Load Balancer Health Checks
     * Spoke11 and Spoke12 CIDRs are not yet known to the Hub FortiGate so the Branches will not learn them yet.
 
   </details>
-
 </details>
 
-##  ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo***
-
-The Azure Route Server (ASR) is used to connect NVAs to the Azure network to simplify VNet routing with external networks.  SD-WAN is a primary use case for the ASR where BGP routes are exchanged between a premise-based and the ASR to advertise premise-originated routes to the VNets and VNet routes to the premise.  For many customers, this may be a great fit.  For some customers, there may be more complex routing requirements such as multiple egress points,load balanced routes, large number of BGP peers, large volume of routes (>1000); where these needs require advanced BGP.  More complex use cases will require FortiGate to FortiGate peering in those cases.  Let your customer know about Fortinet's ability to support advanced dynamic routing services.  
-
-https://docs.fortinet.com/document/fortiswitch/7.2.2/administration-guide/939731/bgp-routing 
-
-## Key questions during your demo
-
-When giving this TEChnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
-* Describe your organizations routing requirements.  
-* Does your environment require more than 8 BGP peers or more than 1000 routes
-* Do you need to extend other routing protocols, such OSPF or ISIS into the Azure environment?
-
-## Chapter3 - Azure Route Server Presentation (30min)
-
-***[Presentation about Azure Route Server- estimated duration 30min]***
-
-##  ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo***
+## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Dem - Chapter 2***
 
 When discussing load balanced traffic with the customer, point out key details about the Azure Load Balancers such as the following:
 
@@ -270,19 +252,36 @@ When discussing load balanced traffic with the customer, point out key details a
 * TCP/UDP headers are rewritten to the backend pool.  HTTP/s headers are not changed.  
 * Legacy applications or those requiring long-lived sessions could see performance issues due to TTL limitations on the LB.  
 
-When connecting IPSec traffic from remote inter-regional sites, the customer's architecture could benefit from dedicated FortiGates to support IPSec.  This is a benefit where large traffic loads are supported for deep packet inspection and where there is a lot of E/W traffic.  Dedicated FortiGates for IPSec allow the opportunity to scale VPN traffic using IPSec Aggregate without impacting performance of traffic inspection.  Details on IPSec Aggregate can be found here:  (https://docs.fortinet.com/document/fortigate/7.2.3/administration-guide/779201/aggregate-and-redundant-vpn)
+When connecting IPSec traffic from remote inter-regional sites, the customer's architecture could benefit from dedicated FortiGates to support IPSec.  This is a benefit where large traffic loads are supported for deep packet inspection and where there is a lot of E/W traffic.  Dedicated FortiGates for IPSec allow the opportunity to scale VPN traffic using IPSec Aggregate without impacting performance of traffic inspection.  Details on IPSec Aggregate can be found [here](https://docs.fortinet.com/document/fortigate/7.2.3/administration-guide/779201/aggregate-and-redundant-vpn).
 
-## Key questions during your demo
+## Key questions during your demo - Chapter 2
 
 When giving this TEChnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
 
 * How sensitive are your applications to session timeout?  Do they require large TTL values for long-lived sessions?
 * What type of VPN scaling (tunnel count and bandwidth) are required for your deployment?  
 * How much east/west traffic versus north/south traffic will be supported?  
-* What types of inspection will be required between various VNets? 
-* Is advanced BGP configuration required?  (FortiGate-to-FortiGate can support advanced BGP metrics unlike Azure's services)
+* What types of inspection will be required between various VNets?
+* Is advanced BGP configuration required? (FortiGate-to-FortiGate can support advanced BGP metrics unlike Azure's services)
 
 ***
+
+## Chapter 3 - Azure Route Server Presentation (30min)
+
+***[Presentation about Azure Route Server- estimated duration 30min]***
+
+## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 3***
+
+The Azure Route Server (ASR) is used to connect NVAs to the Azure network to simplify VNet routing with external networks.  SD-WAN is a primary use case for the ASR where BGP routes are exchanged between a premise-based and the ASR to advertise premise-originated routes to the VNets and VNet routes to the premise.  For many customers, this may be a great fit.  For some customers, there may be more complex routing requirements such as multiple egress points,load balanced routes, large number of BGP peers, large volume of routes (>1000); where these needs require advanced BGP.  More complex use cases will require FortiGate to FortiGate peering in those cases.  Let your customer know about Fortinet's ability to support [advanced dynamic routing services](https://docs.fortinet.com/document/fortiswitch/7.2.2/administration-guide/939731/bgp-routing).  
+
+## Key questions during your demo - Chapter 3
+
+When giving this TEChnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
+
+* Describe your organizations routing requirements.  
+* Does your environment require more than 8 BGP peers or more than 1000 routes
+* Do you need to extend other routing protocols, such OSPF or ISIS into the Azure environment?
+
 ***
 
 ## Chapter 4 - Hub VNET and Spoke VNET Connectivity (40min)
@@ -418,27 +417,6 @@ az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --r
 
     ![global-step3](images/sdwan_architecture_03.jpg)
 
-##  ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo***
-
-When discussing load balanced traffic with the customer, point out key details about the Azure Load Balancers such as the following:
-
-* Azure LB uses 5-tuple hash for traffic distribution
-* IPSec in an Active/Active configuration is not supported as session stability cannot be guaranteed to IkE rekeys, and deterministic IP termination.  
-* TCP/UDP headers are rewritten to the backend pool.  HTTP/s headers are not changed.  
-* Legacy applications or those requiring long-lived sessions could see performance issues due to TTL limitations on the LB.  
-
-When connecting IPSec traffic from remote inter-regional sites, the customer's architecture could benefit from dedicated FortiGates to support IPSec.  This is a benefit where large traffic loads are supported for deep packet inspection and where there is a lot of E/W traffic.  Dedicated FortiGates for IPSec allow the opportunity to scale VPN traffic using IPSec Aggregate without impacting performance of traffic inspection.  Details on IPSec Aggregate can be found here:  (https://docs.fortinet.com/document/fortigate/7.2.3/administration-guide/779201/aggregate-and-redundant-vpn) 
-
-## Key questions during your demo
-
-When giving this TEChnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
-
-* How sensitive are your applications to session timeout?  Do they require large TTL values for long-lived sessions? 
-* What type of VPN scaling (tunnel count and bandwidth) are required for your deployment?  
-* How much east/west traffic versus north/south traffic will be supported?  
-* What types of inspection will be required between various VNets? 
-* Is advanced BGP configuration required?  (FortiGate-to-FortiGate can support advanced BGP metrics unlike Azure's services)
-
 ### Chapter 4 - QUIZ
 
 1. What was missing to allow the FortiGates to retrieve SDN connector filters?
@@ -450,7 +428,6 @@ When giving this TEChnical Recipe as as demo, the following questions will provi
 1. FortiGates at Branch1 and Branch2 site are both behind Azure Load Balancers (behind NAT). Will Branch1 to Branch2 traffic successfully establish an ADVPN shortcut?
 
   <details>
-
   <summary>Quiz 4 Answers</summary>
 
 1. **What was missing to allow the FortiGates to retrieve SDN connector filters?**
@@ -470,13 +447,32 @@ When giving this TEChnical Recipe as as demo, the following questions will provi
     * Yes
 
   </details>
-
 </details>
 
-***
+## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 4***
+
+Azure Virtual Network (VNET) Peering provides the ability to connect multiple VNETs together and direct traffic flow based on existence of a gateway in a connected peer or with a user defined route (UDR) in a route table.
+
+Utilizing an Azure Route Server (ARS) and setting the FortiGates as a BGP peers enables the FortiGates to be updated with newly available routes or the removal of routes as VNETs are peered or when a peering relationship is removed.
+
+From a FortiGate Policy perspective the ability to be dynamically aware of a changing environment is provided by the Azure SDN Connector. The SDN Connector is continually polling the environment and logging the changes, FortiGate dynamic address objects and Automation Stitches can take full advantage of the SDN connector to update policy and effect internal and external changes.
+
+An Azure Route Table provides a way to specifically direct traffic, when used in conjunction with an ARS or FortiGate static routes protected workload traffic can be fully managed.
+
+Several settings in Azure determine traffic flow review the following for Azure Routing
+
+* [Azure Route Server](https://learn.microsoft.com/en-us/azure/route-server/)
+* [Azure Route Tables](https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table-portal)
+
+## Key questions during your demo - Chapter 4
+
+* Do you currently use, planning to use or just learning about VNET peering?
+* Are you aware of the capabilities that the Azure SDN Connector provides?
+* Are you using dynamic address objects or Automation Stitches?
+
 ***
 
-## Chapter5 - Branch to Cloud and Branch to Branch Connectivity (20min)
+## Chapter 5 - Branch to Cloud and Branch to Branch Connectivity (20min)
 
 ***[Configuration exercise - estimated duration 20min]***
 
@@ -575,13 +571,23 @@ When giving this TEChnical Recipe as as demo, the following questions will provi
     * By using outbound rules associated to backend pools connected to those ports on each FortiGate.
 
   </details>
-
 </details>
 
-***
+## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 5***
+
+Through the use of IPSEC an ADVPN is established between branches, the complexity of branch to branch connectivity is seamlessly added to the environment. Determining workload traffic routing can be done by reviewing the network interface's effective routes. When troubleshooting a perceived networking issue, checking an interfaces effective routes is a first step in determining if the interface has awareness of the routes or what the next-hop is for the route.
+
+Ping can be an effective way to determine reachability in the Cloud, however a ping may not full exercise the services provided by the workloads. FortiGate policy should be set to allow/disallow service ports and protocols.
+
+## Key questions during your demo - Chapter 5
+
+* Is ADVPN establishment important to your deployments?
+* How certain are you that your workloads are not aware of other routes?
+* Have you experienced traffic to your workloads that has been inspected by the FortiGates on arrival but is not seen returning through the FortiGate?
+
 ***
 
-## Chapter6 - Redundancy (20min)
+## Chapter 6 - Redundancy (20min)
 
 **[failover exercise - estimated duration 20min]***
 
