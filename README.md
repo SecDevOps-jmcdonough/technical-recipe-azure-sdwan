@@ -1,6 +1,8 @@
 # About TEChnical Recipes
 
-<a href="."><img src=./images/rocket.jpg> Launch Now</a>
+[![Launch Button](./images/rocket.jpg)</br>Launch Now](.)
+
+Clicking the Launch Now button will prompt for your email address.  
 
 TEChnical Recipes provide the learner with the opportunity to put into practice newly developed skills in an easy to launch environment that can be used for customer engagements.  At a minimum a TEChnical Recipe will include the following:
 
@@ -8,7 +10,7 @@ TEChnical Recipes provide the learner with the opportunity to put into practice 
 * An integrated lab and demo environment
 
   * Informational call-outs for key points to discuss or highlight to a customer
-  * Questions that could be asked while given the TEChnical Recipe as a demo
+  * Questions that could be asked while giving the TEChnical Recipe as a demo
   * Points of value that relate the business value to the technical feature
 * A reference architecture(s)
 
@@ -28,7 +30,7 @@ As enterprises adopt the cloud as the new core for application hosting, remote s
 * Decentralized orchestration for better survivability and easier deployment of SD-WAN overlays
 * Single OS for consistent policy and overlay deployment on all software-defined networks (SDNs)
 
-The purpose of this TEChnical Recipe is to familiarize the learner with routing, data-plane, and architectural concepts specific to the Azure cloud environment.  Other TEChnical Recipes are available to cover SD-WAN feature deployment.
+The purpose of this TEChnical Recipe is to familiarize the learner with routing, data-plane, and architectural concepts specific to the Azure Cloud environment.  Other TEChnical Recipes are available to cover SD-WAN feature deployment.
 
 ## TEChnical Recipe Main Objectives
 
