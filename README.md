@@ -1,8 +1,10 @@
 # About TEChnical Recipes
 
-[![Launch Button](./images/rocket.jpg)</br>Launch Now](.)
+[![Launch Button](./images/rocket.jpg)</br>Launch Now](https://github.com/FortinetSecDevOps/technical-recipe-azure-sdwan/actions/workflows/lab-provision.yml)
 
-Clicking the Launch Now button will prompt for your email address.  
+> Clicking the Launch Now button opens the Github Actions tab, click the "Run Workflow" button on the *right-hand* side, enter your email address and click the lower "Run Workflow" button.
+
+>The workflow starts the TEChnical Recipe environment provisioning process. An email is sent to the provided email address when the environment provisioning process is complete. The email contains environment details, including all required access credentials and links, as well as environment duration period. When the environment duration period has passed the environment and all resources will be removed.
 
 TEChnical Recipes provide the learner with the opportunity to put into practice newly developed skills in an easy to launch environment that can be used for customer engagements.  At a minimum a TEChnical Recipe will include the following:
 
