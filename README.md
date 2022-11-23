@@ -2,7 +2,7 @@
 
 [![Launch Button](./images/rocket.jpg)</br>Launch Now](https://github.com/FortinetSecDevOps/technical-recipe-azure-sdwan/actions/workflows/lab-provision.yml)
 
-> Clicking the Launch Now button opens the Github Actions tab, click the "Run Workflow" button on the *right-hand* side, enter your email address and click the lower "Run Workflow" button.
+> Clicking the ***Launch Now*** button opens the Github Actions tab, ***click*** the "Run Workflow" button on the *right-hand* side, enter your email address and ***click*** the lower "Run Workflow" button.
 
 >The workflow starts the TEChnical Recipe environment provisioning process. An email is sent to the provided email address when the environment provisioning process is complete. The email contains environment details, including all required access credentials and links, as well as environment duration period. When the environment duration period has passed the environment and all resources will be removed.
 
@@ -253,6 +253,8 @@ When discussing load balanced traffic with the customer, point out key details a
 * Legacy applications or those requiring long-lived sessions could see performance issues due to TTL limitations on the LB.  
 
 When connecting IPSec traffic from remote inter-regional sites, the customer's architecture could benefit from dedicated FortiGates to support IPSec.  This is a benefit where large traffic loads are supported for deep packet inspection and where there is a lot of E/W traffic.  Dedicated FortiGates for IPSec allow the opportunity to scale VPN traffic using IPSec Aggregate without impacting performance of traffic inspection.  Details on IPSec Aggregate can be found [here](https://docs.fortinet.com/document/fortigate/7.2.3/administration-guide/779201/aggregate-and-redundant-vpn).
+
+Don't forget that the CLI is still a great place to get targeted information with a single command. For example, viewing the FortiGate known routes with the CLI command `get router info routing-table all`
 
 ## Key questions during your demo - Chapter 2
 
@@ -577,7 +579,7 @@ Several settings in Azure determine traffic flow review the following for Azure 
 
 Through the use of IPSEC an ADVPN is established between branches, the complexity of branch to branch connectivity is seamlessly added to the environment. Determining workload traffic routing can be done by reviewing the network interface's effective routes. When troubleshooting a perceived networking issue, checking an interfaces effective routes is a first step in determining if the interface has awareness of the routes or what the next-hop is for the route.
 
-Ping can be an effective way to determine reachability in the Cloud, however a ping may not full exercise the services provided by the workloads. FortiGate policy should be set to allow/disallow service ports and protocols.
+`ping` can be an effective way to determine reachability in the Cloud, however a `ping` may not fully exercise the services provided by the workloads. FortiGate policy should be set to allow/disallow service ports and protocols.
 
 ## Key questions during your demo - Chapter 5
 
@@ -655,7 +657,20 @@ Ping can be an effective way to determine reachability in the Cloud, however a p
 
 </details>
 
-***
+## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 6***
+
+In Active/Passive FortiGate deployments the failover methodology has an impact on the continuation of traffic flow. Utilizing Azure Load Balancers as traffic direction devices in a FortiGate Active/Passive deployment, the load balancer will only send traffic to the FortiGate that is responding to the load balancer's health probe. A FortiGate in passive mode will not respond to the load balancer health probe, causing the load balancer to mark the passive FortiGate as unhealthy and not send traffic to the passive FortiGate. In a failover event the previously passive FortiGate will start responding to the load balancer health probe, resulting in traffic being directed to the newly active FortiGate.
+
+Azure load balancers do not maintain TCP sessions which will need to be restarted, however UDP sessions, specifically IPSEC connections are readily available in a failover scenario.
+
+Reiterating, `ping` can be an effective way to determine reachability in the Cloud, however a `ping` may not fully exercise the services provided by the workloads. FortiGate policy should be set to allow/disallow service ports and protocols. In this section a loop utilizing curl to make http calls to a website was a better method to determine reachability in conjunction with functionality.
+
+## Key questions during your demo - Chapter 6
+
+* Is a highly available FortiGate deployment required for your workloads?
+* Current Azure failover times for an Active/Passive deployment with load balancers is 5-10 seconds, can you applications support that?
+* There are multiple tools to test system reachability adn service availability, what are your methods?
+
 ***
 
 ## Chapter7 - Scaling (20min)
