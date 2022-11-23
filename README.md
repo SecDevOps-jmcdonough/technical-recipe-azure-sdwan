@@ -673,7 +673,7 @@ Reiterating, `ping` can be an effective way to determine reachability in the Clo
 
 ***
 
-## Chapter7 - Scaling (20min)
+## Chapter 7 - Scaling (20min)
 
 ***[Presentation about FGT A/A and SDWAN use case - estimated duration 20min]***
 
@@ -690,7 +690,7 @@ Active/Passive FortiGate deployments only support vertical scalability, but only
 
 ***
 
-## Chapter8 - Azure virtualWAN [estimated duration 60min]
+## Chapter 8 - Azure virtualWAN [estimated duration 60min]
 
 ***[Configuration exercise - estimated duration 20min]***
 
@@ -890,11 +890,14 @@ Active/Passive FortiGate deployments only support vertical scalability, but only
 
 ## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 8***
 
-Active/Active FortiGate deployments can scale both horizontally and vertically, additionally there is a lower interface requirement resulting in an ability to deploy smaller Azure instance types. However, SDWAN Active/Active FortiGate deployments come with some limitations, mainly traffic asymmetry and a larger IPSEC deployment. For example, a two FortiGate Active/Active deployment would require each branch FortiGate to maintain four IPSEC connections to each Active/Active FortiGate.
+Azure Virtual WAN and Azure Route Server cannot both supply routing information in the same VNET, because both supply BGP. FortiGate NVAs can be deployed in an Azure vWAN a few different ways, in this scenario the FortiGates were deployed in their own VNET and traffic was directed to the FortiGate VNET using route tables.
 
-Active/Passive FortiGate deployments only support vertical scalability, but only need two IPSEC connections per FortiGate Active Passive pairs.
+FortiGates integrated in to the Azure vWAN hub to support SDWAN is currently available. FortiGates supporting Firewall services integrated in to the vWAN hub is coming in 2023. The current limitation is related to [Azure routing intent](https://azure.microsoft.com/en-us/blog/simplify-connectivity-routing-and-security-with-azure-virtual-wan/)
+
+Azure Virtual WAN can greatly simplify connectivity but there are routing considerations, when routes should be propagated and when they should not. Additionally attention should be given to VNET layout with respect to east-west and north-south traffic flows.
 
 ## Key questions during your demo - Chapter 8
 
-* Can your applications support asymmetric traffic?
-* Do you have the need to scale horizontally?
+* How large is your Cloud presence?
+* Would your Cloud deployments benefit from Azure vWAN or would Azure Route Server suffice?
+* Could you Cloud deployment be managed through route tables, user defined routes and FortiGate static routes?
