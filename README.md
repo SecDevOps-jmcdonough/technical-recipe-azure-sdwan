@@ -675,9 +675,19 @@ Reiterating, `ping` can be an effective way to determine reachability in the Clo
 
 ## Chapter7 - Scaling (20min)
 
-***[Presentation about FGT A/A and SDWAN use case- estimated duration 20min]***
+***[Presentation about FGT A/A and SDWAN use case - estimated duration 20min]***
 
-***
+## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 7***
+
+Active/Active FortiGate deployments can scale both horizontally and vertically, additionally there is a lower interface requirement resulting in an ability to deploy smaller Azure instance types. However, SDWAN Active/Active FortiGate deployments come with some limitations, mainly traffic asymmetry and a larger IPSEC deployment. For example, a two FortiGate Active/Active deployment would require each branch FortiGate to maintain four IPSEC connections to each Active/Active FortiGate.
+
+Active/Passive FortiGate deployments only support vertical scalability, but only need two IPSEC connections per FortiGate Active Passive pairs.
+
+## Key questions during your demo - Chapter 7
+
+* Can your applications support asymmetric traffic?
+* Do you have the need to scale horizontally?
+
 ***
 
 ## Chapter8 - Azure virtualWAN [estimated duration 60min]
@@ -876,5 +886,15 @@ Reiterating, `ping` can be an effective way to determine reachability in the Clo
     * An internal load balancer could be added and use that IP as the next hop or an automation stich could be run at failover to update the Spoke-VNETS vWAN Route Table to point to the newly active FortiGate private interface.
 
   </details>
-
 </details>
+
+## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 8***
+
+Active/Active FortiGate deployments can scale both horizontally and vertically, additionally there is a lower interface requirement resulting in an ability to deploy smaller Azure instance types. However, SDWAN Active/Active FortiGate deployments come with some limitations, mainly traffic asymmetry and a larger IPSEC deployment. For example, a two FortiGate Active/Active deployment would require each branch FortiGate to maintain four IPSEC connections to each Active/Active FortiGate.
+
+Active/Passive FortiGate deployments only support vertical scalability, but only need two IPSEC connections per FortiGate Active Passive pairs.
+
+## Key questions during your demo - Chapter 8
+
+* Can your applications support asymmetric traffic?
+* Do you have the need to scale horizontally?
