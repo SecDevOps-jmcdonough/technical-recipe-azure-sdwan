@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ch 2 - Hub and Branch VPN Connectivity on Fortinet FortiGate Technical Recipie- Azure SDWAN</title>
+    <link>/02demo1.html</link>
+    <description>Recent content in Ch 2 - Hub and Branch VPN Connectivity on Fortinet FortiGate Technical Recipie- Azure SDWAN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="/02demo1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Task 1 - FortiGate on Hub LB</title>
+      <link>/02demo1/2_task1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/02demo1/2_task1.html</guid>
+      <description>Task 1 - Add the FortiGates to the Hub Load Balancer Backend Pool Select the Hub External Load Balancer sdwan-USERXX-workshop-hub1-elb1 Click on Backend pools Add FortiGate1 and FortiGate2 port1 interfaces and then click on Save 10.10.0.4
+10.10.0.5</description>
+    </item>
+    
+    <item>
+      <title>Task 2 - LB Rules for VPN Traffic</title>
+      <link>/02demo1/3_task2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/02demo1/3_task2.html</guid>
+      <description>Task 2 - Create load balancing rules for IPSEC VPN Traffic Select the Hub External Load Balancer sdwan-USERXX-workshop-hub1-elb1
+Click on Load balancing rules
+Create Load balancing rules for UDP 500 and UDP 4500 - one rule for each</description>
+    </item>
+    
+    <item>
+      <title>Task 3 - Hub and Spoke VPN Verification</title>
+      <link>/02demo1/4_task3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/02demo1/4_task3.html</guid>
+      <description>Task 3 - Hub and Branch VPN Connectivity Verifications Verify that the FortiGates are responding to Azure Load Balancer Health Checks
+Select the Hub External Load Balancer sdwan-USERXX-workshop-hub1-elb1
+Click on Insights - Click the &amp;ldquo;Refresh&amp;rdquo; button a few times, eventually (~30 seconds) the FortiGate reachability will be indicated.
+Verify that the VPN connections from the Branch to the Hub are UP
+Verify that the BGP peering with the Hub is UP and that the Branch FortiGate learned the Hub and other Branches&amp;rsquo; CIDRs.</description>
+    </item>
+    
+    <item>
+      <title>Chapter 2 Quiz</title>
+      <link>/02demo1/5_chapter2quiz.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/02demo1/5_chapter2quiz.html</guid>
+      <description>Chapter 2 - QUIZ Why is one FortiGate depicted as unhealthy by the Azure Hub External Load Balancer?
+Why is NAT used to access the FortiGates, but for IPSEC VPN traffic Load balancing rules are used?
+Do FortiGates in the Branches learn Spoke11 and Spoke12 CIDRs?
+Why is one FortiGate depicted as unhealthy by the Azure Hub External Load Balancer?
+The passive FortiGate does not respond to the load balancer health probes.</description>
+    </item>
+    
+    <item>
+      <title>Chapter 2 Discussion</title>
+      <link>/02demo1/6_ch2discussion.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/02demo1/6_ch2discussion.html</guid>
+      <description>Discussion Points During a Dem - Chapter 2 When discussing load balanced traffic with the customer, point out key details about the Azure Load Balancers such as the following:
+Azure LB uses 5-tuple hash for traffic distribution IPSec in an Active/Active configuration is not supported as session stability cannot be guaranteed to IkE rekeys, and deterministic IP termination. TCP/UDP headers are rewritten to the backend pool. HTTP/s headers are not changed.</description>
+    </item>
+    
+  </channel>
+</rss>
