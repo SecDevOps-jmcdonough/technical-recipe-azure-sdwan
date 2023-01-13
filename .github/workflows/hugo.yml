@@ -56,10 +56,11 @@ jobs:
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+        working-directory: ./hugowebfront
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./public
+          path: ./hugowebfront/public
 
   # Deployment job
   deploy:
