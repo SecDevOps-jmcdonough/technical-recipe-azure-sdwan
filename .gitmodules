@@ -1,0 +1,4 @@
+
+[submodule "hugowebfront/themes/themes/hugo-notice"]
+	path = hugowebfront/themes/themes/hugo-notice
+	url = https://github.com/martignoni/hugo-notice.git
