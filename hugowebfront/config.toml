@@ -1,4 +1,4 @@
-baseURL = "/technical-recipe-azure-sdwan/"
+baseURL = "https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 
@@ -14,7 +14,7 @@ enableEmoji = true
   # See the config.toml file from this documentation site to have an example.
   #editURL = ""
   # Author of the site, will be used in meta information
-  author = "John McDgh, Jeff Kopko"
+  author = "John McDonough, Jeff Kopko"
   # Description of the site, will be used in meta information
   description = "Fortigate Demo Architecture for SDWAN on Azure"
   # Shows a checkmark for visited pages on the menu
@@ -27,7 +27,10 @@ enableEmoji = true
   # Set this to true to disable copy-to-clipboard button for inline code.
   disableInlineCopyToClipBoard = false
   # A title for shortcuts in menu is set by default. Set this to true to disable it. 
-  disableShortcutsTitle = false
+   disableShortcutsTitle = false
+  # If set to false, a Home button will appear below the search bar on the menu.
+  # It is redirecting to the landing page of the current language if specified. (Default is "/")
+  disableLandingPageButton = true
   # When using mulitlingual website, disable the switch language button.
   disableLanguageSwitchingButton = true
   # Hide breadcrumbs in the header and only show the current page title
