@@ -68,27 +68,15 @@ The purpose of this TEChnical Recipe is to familiarize the learner with routing,
 
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Post method example</title>
-    <style>
-      form {
-        width: 420px;
-      }
-
-      div {
-        margin-bottom: 20px;
-      }
-
-      label {
-        display: inline-block;
-        width: 240px;
-        text-align: right;
-        padding-right: 10px;
-      }
-
-      button, input {
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Post method example</title>
+<style>
+form { width: 420px; }
+div { margin-bottom: 20px; }
+label { display: inline-block; width: 240px; text-align: right; padding-right: 10px; }
+     button, input {
         float: right;
       }
     </style>
