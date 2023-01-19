@@ -83,7 +83,7 @@ The purpose of this TEC Recipe is to familiarize the learner with routing, data-
 
     ![cloudshell9](images/cloudshell-09.jpg)
 
-### Task 2 - Run the Terraform Code
+### Task 2 - Run the Terraform Deployment
 
 Perform the following step in your Cloudshell console to create your environment.
 
@@ -104,7 +104,9 @@ terraform plan -var="username=${USER}"
 terraform apply -var="username=${USER}" -auto-approve
 ```
 
-  ![gitclone](images/git-clone.jpg)
+  ![terraform1](images/terraform-01.jpg)
+  ![terraform2](images/terraform-02.jpg)
+  ![terraform3](images/terraform-03.jpg)
 
 * At the end of this step you should have the following architecture
 
@@ -114,7 +116,7 @@ terraform apply -var="username=${USER}" -auto-approve
 
   1. Using the Terraform output, verify that you have Web and SSH access to the FortiGates.
 
-      ![output](images/output.jpg)
+      ![terraform4](images/terraform-04.jpg)
 
       * Terraform output can be redisplayed at any point as long as you are in the `./technical-recipe-azure-sdwan/terraform/` directory, by using the command `terraform output`
 
