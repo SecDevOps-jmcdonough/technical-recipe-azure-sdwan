@@ -1,44 +1,36 @@
-# About TEChnical Recipes
+# About TEC Recipes
 
-[![Launch Button](./images/rocket.jpg)</br>Launch Now](https://github.com/FortinetSecDevOps/technical-recipe-azure-sdwan/actions/workflows/lab-provision.yml)
-
-> Clicking the ***Launch Now*** button opens the Github Actions tab, ***click*** the "Run Workflow" button on the *right-hand* side, enter your email address and ***click*** the lower "Run Workflow" button.
-
->The workflow starts the TEChnical Recipe environment provisioning process. An email is sent to the provided email address when the environment provisioning process is complete. The email contains environment details, including all required access credentials and links, as well as environment duration period. When the environment duration period has passed the environment and all resources will be removed.
-
-***
-
-TEChnical Recipes provide the learner with the opportunity to put into practice newly developed skills in an easy to launch environment that can be used for customer engagements.  At a minimum a TEChnical Recipe will include the following:
+TEC Recipes provide the learner with the opportunity to put into practice newly developed skills in an easy to launch environment that can be used for customer engagements. At a minimum a TEC Recipe will include the following:
 
 * A use case description
 * An integrated lab and demo environment
 
   * Informational call-outs for key points to discuss or highlight to a customer
-  * Questions that could be asked while giving the TEChnical Recipe as a demo
+  * Questions that could be asked while giving the TEC Recipe as a demo
   * Points of value that relate the business value to the technical feature
 * A reference architecture(s)
 
 Optional components may be included for certain use cases
 
-The TEChnical Recipe will not be a completely, self-contained learning experience for a single product.  A TEChnical Recipe will cover features and often multiple products where they relate to the use case of interest.  
+The TEC Recipe will not be a completely, self-contained learning experience for a single product. A TEC Recipe will cover features and often multiple products where they relate to the use case of interest.  
 
-Deployments will be automated for those tasks that are not salient to the learning or demonstration activity in the use case.  For example, for a TEChnical Recipe focused on Indicators of Compromise, the system may deploy a FortiGate and FortiAnalyzer with configurations for these systems.  However, the leaner will have to configure the Event Handlers for IOC setup.  
+Deployments will be automated for those tasks that are not salient to the learning or demonstration activity in the use case. For example, for a TEC Recipe focused on Indicators of Compromise, the system may deploy a FortiGate and FortiAnalyzer with configurations for these systems. However, the leaner will have to configure the Event Handlers for IOC setup.  
 
-## Azure SDWAN TEChnical Recipe
+## Azure SD-WAN TEC Recipe
 
 Introduction:
-As enterprises adopt the cloud as the new core for application hosting, remote sites require secure, reliable connectivity with an optimal user experience to access those cloud and SaaS applications.  In fact, cloud access is SD-WAN's primary use case for IaaS and SaaS-hosted services.  Fortinet's Cloud On-Ramp capabilities using SD-WAN are differentiated in the following ways: 
+As enterprises adopt the cloud as the new core for application hosting, remote sites require secure, reliable connectivity with an optimal user experience to access those cloud and SaaS applications.  In fact, cloud access is SD-WAN's primary use case for IaaS and SaaS-hosted services.  Fortinet's Cloud On-Ramp capabilities using SD-WAN are differentiated in the following ways:
 
 * Integrated Security and SD-WAN policy configuration and workflows
 * Unique ability to provide scale up performance for higher bandwidth into cloud environments
 * Decentralized orchestration for better survivability and easier deployment of SD-WAN overlays
 * Single OS for consistent policy and overlay deployment on all software-defined networks (SDNs)
 
-The purpose of this TEChnical Recipe is to familiarize the learner with routing, data-plane, and architectural concepts specific to the Azure Cloud environment.  Other TEChnical Recipes are available to cover SD-WAN feature deployment.
+The purpose of this TEC Recipe is to familiarize the learner with routing, data-plane, and architectural concepts specific to the Azure Cloud environment.  Other TEC Recipes are available to cover SD-WAN feature deployment.
 
-## TEChnical Recipe Main Objectives
+## TEC Recipe Objectives
 
-* Deploy the SDWAN architecture using Terraform
+* Deploy the SD-WAN architecture using Terraform
 * Configure Azure components
   * Load Balancer
   * VNET Peering
@@ -51,8 +43,6 @@ The purpose of this TEChnical Recipe is to familiarize the learner with routing,
 
 ## Chapter 1 - Setting up the environment (40min)
 
-***[Deployment exercise - estimated duration 40min]***
-
 <details>
 
 ### Task 1 - Setup your AzureCloud Shell
@@ -62,51 +52,61 @@ The purpose of this TEChnical Recipe is to familiarize the learner with routing,
     ![cloudshell1](images/cloudshell-01.jpg)
     ![cloudshell2](images/cloudshell-02.jpg)
 
-* Click on Cloud Shell icon on the Top Right side of the portal
+* Click the link "Skip for now (14 days until this is required)" do not click the "Next" button
+
+    ![cloudshell3](images/cloudshell-03.jpg)
+
+* Click the "Next" button
 
     ![cloudshell4](images/cloudshell-04.jpg)
 
-* Select **Bash**
+* Click on Cloud Shell icon on the Top Right side of the portal
 
     ![cloudshell5](images/cloudshell-05.jpg)
 
-* Click on **Show advanced settings**
+* Select **Bash**
 
     ![cloudshell6](images/cloudshell-06.jpg)
-* Select
-  * Use existing Resource Group  - it ***should*** auto populate with USERXX-workshop-sdwan (USERXX is your Username)
-  * Use existing Storage account - it ***should*** auto populate with USERXX##########workshopsdwa (########## is a random string)
-  * Use existing File Share  - type **cloudshell**
-* Click "Attach Storage"
+
+* Click on **Show advanced settings**
 
     ![cloudshell7](images/cloudshell-07.jpg)
-
-* You should now have access to Azure Cloud Shell console
+* Select
+  * Use existing Resource Group  - it ***should*** auto populate with USERXX-workshop-sdwan (USERXX is your Username)
+  * Use existing Storage account - it ***should*** auto populate with USERXX########## (########## is a random string)
+  * Use existing File Share  - type **cloudshellshare**
+* Click "Attach Storage"
 
     ![cloudshell8](images/cloudshell-08.jpg)
 
-### Task 2 - Run the Terraform Code
+* You should now have access to Azure Cloud Shell console
+
+    ![cloudshell9](images/cloudshell-09.jpg)
+
+### Task 2 - Run the Terraform Deployment
 
 Perform the following step in your Cloudshell console to create your environment.
 
 1. Clone the Github repo
-1. Change directory to the se-conf-sdwan-workshop/se-summit folder
-1. Initialize Terraform
-1. Create Terraform Plan
-1. Apply Terraform Plan
+1. Change directory to the `technical-recipe-azure-sdwan/terraform` folder
+1. Run `terraform init`
+1. Run `terraform plan` for your `username`
+1. Run `terraform apply` for your `username`
 
-> **Copy and paste these commands into your Cloudshell console.**
+> **Copy and paste these commands into your Cloud Shell console.**
 > The terraform variable `username` will be populated with the value of the environment variable `USER`
 
 ```sh
-git clone https://github.com/FortinetSecDevOps/se-conf-sdwan-workshop.git
-cd ./se-conf-sdwan-workshop/se-summit/
+git clone https://github.com/FortinetSecDevOps/technical-recipe-azure-sdwan
+cd ./technical-recipe-azure-sdwan/terraform/
 terraform init
 terraform plan -var="username=${USER}"
-terraform apply -var="username=${USER}"
+terraform apply -var="username=${USER}" -auto-approve
 ```
 
-  ![gitclone](images/git-clone.jpg)
+  ![terraform1](images/terraform-01.jpg)
+  ![terraform2](images/terraform-02.jpg)
+  ![terraform3](images/terraform-03.jpg)
 
 * At the end of this step you should have the following architecture
 
@@ -116,17 +116,17 @@ terraform apply -var="username=${USER}"
 
   1. Using the Terraform output, verify that you have Web and SSH access to the FortiGates.
 
-      ![output](images/output.jpg)
+      ![terraform4](images/terraform-04.jpg)
 
-      * Terraform output can be redisplayed at any point as long as you are in the `./se-conf-sdwan-workshop/se-summit/` directory, by using the command `terraform output`
+      * Terraform output can be redisplayed at any point as long as you are in the `./technical-recipe-azure-sdwan/terraform/` directory, by using the command `terraform output`
 
         ```sh
         cd
-        cd se-conf-sdwan-workshop/se-summit/
+        cd ./technical-recipe-azure-sdwan/terraform/
         terraform output
         ````
 
-  1. Connect to the Branch sites FortiGates and check the VPN status.
+  1. Connect to the Branch sites FortiGates and check the VPN IPSec status.
   1. Connect to the Hub FortiGates and check the WAN IP
 
 ### Chapter 1 - QUIZ
@@ -144,7 +144,7 @@ terraform apply -var="username=${USER}"
 
 1. **Why are the VPN connections down?**
 
-    * The external load balancer for the Hub FortiGates needs load balancing rules for UDP 500 and UDP 4500.
+    * The external load balancer for the Hub FortiGates requires load balancing rules for UDP 500 and UDP 4500.
 
   </details>
 </details>
@@ -675,11 +675,11 @@ Reiterating, `ping` can be an effective way to determine reachability in the Clo
 
 ## Chapter 7 - Scaling (20min)
 
-***[Presentation about FGT A/A and SDWAN use case - estimated duration 20min]***
+***[Presentation about FGT A/A and SD-WAN use case - estimated duration 20min]***
 
 ## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 7***
 
-Active/Active FortiGate deployments can scale both horizontally and vertically, additionally there is a lower interface requirement resulting in an ability to deploy smaller Azure instance types. However, SDWAN Active/Active FortiGate deployments come with some limitations, mainly traffic asymmetry and a larger IPSEC deployment. For example, a two FortiGate Active/Active deployment would require each branch FortiGate to maintain four IPSEC connections to each Active/Active FortiGate.
+Active/Active FortiGate deployments can scale both horizontally and vertically, additionally there is a lower interface requirement resulting in an ability to deploy smaller Azure instance types. However, SD-WAN Active/Active FortiGate deployments come with some limitations, mainly traffic asymmetry and a larger IPSEC deployment. For example, a two FortiGate Active/Active deployment would require each branch FortiGate to maintain four IPSEC connections to each Active/Active FortiGate.
 
 Active/Passive FortiGate deployments only support vertical scalability, but only need two IPSEC connections per FortiGate Active Passive pairs.
 
@@ -892,7 +892,7 @@ Active/Passive FortiGate deployments only support vertical scalability, but only
 
 Azure Virtual WAN and Azure Route Server cannot both supply routing information in the same VNET, because both supply BGP. FortiGate NVAs can be deployed in an Azure vWAN a few different ways, in this scenario the FortiGates were deployed in their own VNET and traffic was directed to the FortiGate VNET using route tables.
 
-FortiGates integrated in to the Azure vWAN hub to support SDWAN is currently available. FortiGates supporting Firewall services integrated in to the vWAN hub is coming in 2023. The current limitation is related to [Azure routing intent](https://azure.microsoft.com/en-us/blog/simplify-connectivity-routing-and-security-with-azure-virtual-wan/)
+FortiGates integrated in to the Azure vWAN hub to support SD-WAN is currently available. FortiGates supporting Firewall services integrated in to the vWAN hub is coming in 2023. The current limitation is related to [Azure routing intent](https://azure.microsoft.com/en-us/blog/simplify-connectivity-routing-and-security-with-azure-virtual-wan/)
 
 Azure Virtual WAN can greatly simplify connectivity but there are routing considerations, when routes should be propagated and when they should not. Additionally attention should be given to VNET layout with respect to east-west and north-south traffic flows.
 
