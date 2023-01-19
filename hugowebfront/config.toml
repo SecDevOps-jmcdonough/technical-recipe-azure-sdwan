@@ -45,27 +45,20 @@ enableEmoji = true
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
-[[menu.shortcuts]] 
-name = "<i class='fas fa-graduation-cap'></i> Sample AWS Moderinization Workshop "
-url = "https://aws-samples.github.io/aws-modernization-workshop-sample/"
+[[menu.shortcuts]]
+name = "<i class='fas fa-graduation-cap'></i> Forti OS 7.2 Admin Guide "
+url = "https://docs.fortinet.com/document/fortigate/7.2.2/administration-guide/763117/terraform-fortios-as-a-provider"
 weight = 10
 
-
 [[menu.shortcuts]]
-name = "<i class='fas fa-tools'></i> Hugo learn theme repo"
-url = "https://github.com/martignoni/hugo-notice"
+name = "<i class='fas fa-tools'></i> Terraform Providers "
+url = "https://fndn.fortinet.net/index.php?/cloud/terraform/"
 weight = 11
 
 [[menu.shortcuts]]
-name = "<i class='fas fa-tools'></i> Hugo Learn theme - Guide"
-url = "https://github.com/martignoni/hugo-notice"
+name = "<i class='fas fa-tools'></i> FortiGate on Azure "
+url = "https://www.fortinet.com/products/public-cloud-security/azure"
 weight = 21
-
-
-[[menu.shortcuts]]
-name = "<i class='fas fa-tools'></i> Hugo Notice Submodule "
-url = "https://github.com/martignoni/hugo-notice"
-weight = 31
 
 
 [markup]

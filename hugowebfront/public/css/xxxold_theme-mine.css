@@ -1,31 +1,28 @@
 
 :root{
 
-    --MAIN-TEXT-color:#323232; /* Color of text by default */
-    --MAIN-TITLES-TEXT-color: #5e5e5e; /* Color of titles h2-h3-h4-h5 */
-    --MAIN-LINK-color:#f31c1c; /* Color of links */
-    --MAIN-LINK-HOVER-color:#d01616; /* Color of hovered links */
-    --MAIN-ANCHOR-color: #f31c1c; /* color of anchors on titles */
+    --MAIN-TEXT-color:#323235; /* Color of text by default */
+    --MAIN-TITLES-TEXT-color: #778ba5; /* Color of titles h2-h3-h4-h5 */
+    --MAIN-LINK-color:#4881cd; /* Color of links */
+    --MAIN-LINK-HOVER-color:#599af1; /* Color of hovered links */
+    --MAIN-ANCHOR-color: #4881cd; /* color of anchors on titles */
 
-    --MENU-HOME-LINK-color: #ccc; /* Color of the home button text */
-    --MENU-HOME-LINK-HOVER-color: #e6e6e6; /* Color of the hovered home button text */
+    --MENU-HEADER-BG-color:#283e5b; /* Background color of menu header */
+    --MENU-HEADER-BORDER-color:#435c7c; /*Color of menu header border */
 
-    --MENU-HEADER-BG-color:#080808; /* Background color of menu header */
-    --MENU-HEADER-BORDER-color:#e23131; /*Color of menu header border */
+    --MENU-SEARCH-BG-color:#202c3c; /* Search field background color (by default borders + icons) */
+    --MENU-SEARCH-BOX-color: #4d6584; /* Override search field border color */
+    --MENU-SEARCH-BOX-ICONS-color: #4d6584; /* Override search field icons color */
 
-    --MENU-SEARCH-BG-color:#b90000; /* Search field background color (by default borders + icons) */
-    --MENU-SEARCH-BOX-color: #ef2020; /* Override search field border color */
-    --MENU-SEARCH-BOX-ICONS-color: #fda1a1; /* Override search field icons color */
-
-    --MENU-SECTIONS-ACTIVE-BG-color:#2b2020; /* Background color of the active section and its childs */
-    --MENU-SECTIONS-BG-color:#312525; /* Background color of other sections */
+    --MENU-SECTIONS-ACTIVE-BG-color:#0a0c0e; /* Background color of the active section and its childs */
+    --MENU-SECTIONS-BG-color:#1c222a; /* Background color of other sections */
     --MENU-SECTIONS-LINK-color: #ccc; /* Color of links in menu */
     --MENU-SECTIONS-LINK-HOVER-color: #e6e6e6;  /* Color of links in menu, when hovered */
     --MENU-SECTION-ACTIVE-CATEGORY-color: #777; /* Color of active category text */
     --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #fff; /* Color of background for the active category (only) */
 
-    --MENU-VISITED-color: #ff3333; /* Color of 'page visited' icons in menu */
-    --MENU-SECTION-HR-color: #2b2020; /* Color of <hr> separator in menu */
+    --MENU-VISITED-color: #33a1ff; /* Color of 'page visited' icons in menu */
+    --MENU-SECTION-HR-color: #20272b; /* Color of <hr> separator in menu */
 
 }
 
@@ -56,6 +53,35 @@ a:hover {
 
 #sidebar ul li.visited > a .read-icon {
 	color: var(--MENU-VISITED-color);
+}
+
+#sidebar #footer {
+  padding-top: 20px !important;
+}
+
+#sidebar #footer h2.github-title {
+  font-size: 20px;
+  color: #fd9827 !important;
+  margin: 10px 0px 5px;
+  padding: 0px;
+  font-weight: normal !important;
+  margin-top: 10px;
+  padding-top: 30px;
+  border-top: 1px dotted #384657;
+}
+
+#sidebar #footer h3.github-title {
+  font-size: 14px;
+  margin: 10px 0px 5px;
+  padding: 0px;
+  text-transform: uppercase;
+  letter-spacing: .15px;
+}
+
+#sidebar #footer h5.copyright, #sidebar #footer p.build-number {
+  font-size: 10px;
+  letter-spacing: .15px;
+  line-height: 150% !important;
 }
 
 #body a.highlight:after {
@@ -105,26 +131,22 @@ a:hover {
     border-color: var(--MENU-SECTION-HR-color);
 }
 
-#body .tags a.tag-link {
-    background-color: var(--MENU-HEADER-BG-color);
+#navigation a.nav-prev, #navigation a.nav-next {
+    color: #f19e39 !important;
 }
 
-#body .tags a.tag-link:before {
-    border-right-color: var(--MENU-HEADER-BG-color);
+#navigation a.nav-prev:hover, #navigation a.nav-next:hover  {
+    color: #e07d04 !important;
 }
 
-#homelinks {
-  background: var(--MENU-HEADER-BG-color);
-  background-color: var(--MENU-HEADER-BORDER-color);
-  border-bottom-color: var(--MENU-HEADER-BORDER-color);
-}
-
-#homelinks a {
-  color: var(--MENU-HOME-LINK-color);
-}
-
-#homelinks a:hover {
-  color: var(--MENU-HOME-LINK-HOVERED-color);
+div.notices p:first-child:before {
+    position: absolute;
+    top: 2px;
+    color: #fff;
+    font-family: 'Font Awesome\ 5 Free';
+    content: #F06A;
+    font-weight: 900; /* Fix version 5.0.9 */
+    left: 10px;
 }
 
 #chapter p, #chapter h3 {

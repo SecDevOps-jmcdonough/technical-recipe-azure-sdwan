@@ -10,7 +10,7 @@
     --MENU-HOME-LINK-color: #ccc; /* Color of the home button text */
     --MENU-HOME-LINK-HOVER-color: #e6e6e6; /* Color of the hovered home button text */
 
-    --MENU-HEADER-BG-color:#080808; /* Background color of menu header */
+    --MENU-HEADER-BG-color:#dc1010; /* Background color of menu header */
     --MENU-HEADER-BORDER-color:#e23131; /*Color of menu header border */
 
     --MENU-SEARCH-BG-color:#b90000; /* Search field background color (by default borders + icons) */
@@ -125,8 +125,4 @@ a:hover {
 
 #homelinks a:hover {
   color: var(--MENU-HOME-LINK-HOVERED-color);
-}
-
-#chapter p, #chapter h3 {
-    text-align: left;
 }

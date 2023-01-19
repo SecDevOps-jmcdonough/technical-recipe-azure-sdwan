@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.108.0">
+    <meta name="generator" content="Hugo 0.102.1" />
     <meta name="description" content="Fortigate Demo Architecture for SDWAN on Azure">
-<meta name="author" content="Jeff Kopko">
+<meta name="author" content="John McDgh, Jeff Kopko">
 
     <link rel="icon" href="https://awsmedia.s3.amazonaws.com/favicon.ico" type="image/x-icon" />
 
-    <title>Task 3 - Hub and Spoke VPN Verification :: Fortinet FortiGate Technical Recipie- Azure SDWAN</title>
+    <title>Task 3 - Hub and Spoke VPN Verification :: </title>
 
     
-    <link href="/css/nucleus.css?1671214041" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1671214041" rel="stylesheet">
-    <link href="/css/hybrid.css?1671214041" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1671214041" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1671214041" rel="stylesheet">
-    <link href="/css/auto-complete.css?1671214041" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1671214041" rel="stylesheet">
-    <link href="/css/theme.css?1671214041" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1671214041" rel="stylesheet">
+    <link href="/technical-recipe-azure-sdwan/css/nucleus.css?1674148911" rel="stylesheet">
+    <link href="/technical-recipe-azure-sdwan/css/fontawesome-all.min.css?1674148911" rel="stylesheet">
+    <link href="/technical-recipe-azure-sdwan/css/hybrid.css?1674148911" rel="stylesheet">
+    <link href="/technical-recipe-azure-sdwan/css/featherlight.min.css?1674148911" rel="stylesheet">
+    <link href="/technical-recipe-azure-sdwan/css/perfect-scrollbar.min.css?1674148911" rel="stylesheet">
+    <link href="/technical-recipe-azure-sdwan/css/auto-complete.css?1674148911" rel="stylesheet">
+    <link href="/technical-recipe-azure-sdwan/css/atom-one-dark-reasonable.css?1674148911" rel="stylesheet">
+    <link href="/technical-recipe-azure-sdwan/css/theme.css?1674148911" rel="stylesheet">
+    <link href="/technical-recipe-azure-sdwan/css/hugo-theme.css?1674148911" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1671214041" rel="stylesheet">
+    <link href="/technical-recipe-azure-sdwan/css/theme-red.css?1674148911" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1671214041"></script>
+    <script src="/technical-recipe-azure-sdwan/js/jquery-3.3.1.min.js?1674148911"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,15 +36,14 @@
     </style>
     
   </head>
-  <body class="" data-url="/02demo1/4_task3.html">
+  <body class="" data-url="/technical-recipe-azure-sdwan/02demo1/4_task3.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
 
   <div id="header-wrapper">
     <div id="header">
-      <a href="/" title="Fortinet FortiGate on Azure"><img style="vertical-align:middle" src="https://docs.fortinet.com/img/fortinet-black.svg" height="70px">
-
+      <a href="/" title="Fortinet Demos"><img style="vertical-align:middle" src="Fortinet-logo-rgb-white-red.svg" height="70px">
     </div>
     
         <div class="searchbox">
@@ -53,14 +52,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1671214041"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1671214041"></script>
+<script type="text/javascript" src="/technical-recipe-azure-sdwan/js/lunr.min.js?1674148911"></script>
+<script type="text/javascript" src="/technical-recipe-azure-sdwan/js/auto-complete.js?1674148911"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/";
+        var baseurl = "https:\/\/fortinetsecdevops.github.io\/technical-recipe-azure-sdwan\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1671214041"></script>
+<script type="text/javascript" src="/technical-recipe-azure-sdwan/js/search.js?1674148911"></script>
 
     
   </div>
@@ -87,12 +86,12 @@
  
   
     
-    <li data-nav-id="/01gettingstarted.html" title="Ch 1 Getting Started" class="dd-item
+    <li data-nav-id="/technical-recipe-azure-sdwan/01gettingstarted.html" title="Ch 1 Getting Started" class="dd-item
         
         
         
         ">
-      <a href="/01gettingstarted.html">
+      <a href="/technical-recipe-azure-sdwan/01gettingstarted.html">
           Ch 1 Getting Started
           
             <i class="fas fa-check read-icon"></i>
@@ -116,8 +115,8 @@
  
   
     
-      <li data-nav-id="/01gettingstarted/2_task1.html" title="Task 1 Setup Azure CloudShell" class="dd-item ">
-        <a href="/01gettingstarted/2_task1.html">
+      <li data-nav-id="/technical-recipe-azure-sdwan/01gettingstarted/2_task1.html" title="Task 1 Setup Azure CloudShell" class="dd-item ">
+        <a href="/technical-recipe-azure-sdwan/01gettingstarted/2_task1.html">
         Task 1 Setup Azure CloudShell
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -137,8 +136,8 @@
  
   
     
-      <li data-nav-id="/01gettingstarted/3_task2.html" title="Task 2 - Run Terraform" class="dd-item ">
-        <a href="/01gettingstarted/3_task2.html">
+      <li data-nav-id="/technical-recipe-azure-sdwan/01gettingstarted/3_task2.html" title="Task 2 - Run Terraform" class="dd-item ">
+        <a href="/technical-recipe-azure-sdwan/01gettingstarted/3_task2.html">
         Task 2 - Run Terraform
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -158,8 +157,8 @@
  
   
     
-      <li data-nav-id="/01gettingstarted/4_task3.html" title="task 3 - Terraform Verifications" class="dd-item ">
-        <a href="/01gettingstarted/4_task3.html">
+      <li data-nav-id="/technical-recipe-azure-sdwan/01gettingstarted/4_task3.html" title="task 3 - Terraform Verifications" class="dd-item ">
+        <a href="/technical-recipe-azure-sdwan/01gettingstarted/4_task3.html">
         task 3 - Terraform Verifications
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -179,8 +178,8 @@
  
   
     
-      <li data-nav-id="/01gettingstarted/5_chapter1quiz.html" title="Chapter 1 Quiz" class="dd-item ">
-        <a href="/01gettingstarted/5_chapter1quiz.html">
+      <li data-nav-id="/technical-recipe-azure-sdwan/01gettingstarted/5_chapter1quiz.html" title="Chapter 1 Quiz" class="dd-item ">
+        <a href="/technical-recipe-azure-sdwan/01gettingstarted/5_chapter1quiz.html">
         Chapter 1 Quiz
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -200,8 +199,8 @@
  
   
     
-      <li data-nav-id="/01gettingstarted/6_chapter1discussion.html" title="Chapter 1 Discussion" class="dd-item ">
-        <a href="/01gettingstarted/6_chapter1discussion.html">
+      <li data-nav-id="/technical-recipe-azure-sdwan/01gettingstarted/6_chapter1discussion.html" title="Chapter 1 Discussion" class="dd-item ">
+        <a href="/technical-recipe-azure-sdwan/01gettingstarted/6_chapter1discussion.html">
         Chapter 1 Discussion
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -228,12 +227,12 @@
  
   
     
-    <li data-nav-id="/02demo1.html" title="Ch 2 - Hub and Branch VPN Connectivity" class="dd-item
+    <li data-nav-id="/technical-recipe-azure-sdwan/02demo1.html" title="Ch 2 - Hub and Branch VPN Connectivity" class="dd-item
         parent
         
         
         ">
-      <a href="/02demo1.html">
+      <a href="/technical-recipe-azure-sdwan/02demo1.html">
           Ch 2 - Hub and Branch VPN Connectivity
           
             <i class="fas fa-check read-icon"></i>
@@ -257,8 +256,8 @@
  
   
     
-      <li data-nav-id="/02demo1/2_task1.html" title="Task 1 - FortiGate on Hub LB" class="dd-item ">
-        <a href="/02demo1/2_task1.html">
+      <li data-nav-id="/technical-recipe-azure-sdwan/02demo1/2_task1.html" title="Task 1 - FortiGate on Hub LB" class="dd-item ">
+        <a href="/technical-recipe-azure-sdwan/02demo1/2_task1.html">
         Task 1 - FortiGate on Hub LB
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -278,8 +277,8 @@
  
   
     
-      <li data-nav-id="/02demo1/3_task2.html" title="Task 2 - LB Rules for VPN Traffic" class="dd-item ">
-        <a href="/02demo1/3_task2.html">
+      <li data-nav-id="/technical-recipe-azure-sdwan/02demo1/3_task2.html" title="Task 2 - LB Rules for VPN Traffic" class="dd-item ">
+        <a href="/technical-recipe-azure-sdwan/02demo1/3_task2.html">
         Task 2 - LB Rules for VPN Traffic
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -299,8 +298,8 @@
  
   
     
-      <li data-nav-id="/02demo1/4_task3.html" title="Task 3 - Hub and Spoke VPN Verification" class="dd-item active">
-        <a href="/02demo1/4_task3.html">
+      <li data-nav-id="/technical-recipe-azure-sdwan/02demo1/4_task3.html" title="Task 3 - Hub and Spoke VPN Verification" class="dd-item active">
+        <a href="/technical-recipe-azure-sdwan/02demo1/4_task3.html">
         Task 3 - Hub and Spoke VPN Verification
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -320,8 +319,8 @@
  
   
     
-      <li data-nav-id="/02demo1/5_chapter2quiz.html" title="Chapter 2 Quiz" class="dd-item ">
-        <a href="/02demo1/5_chapter2quiz.html">
+      <li data-nav-id="/technical-recipe-azure-sdwan/02demo1/5_chapter2quiz.html" title="Chapter 2 Quiz" class="dd-item ">
+        <a href="/technical-recipe-azure-sdwan/02demo1/5_chapter2quiz.html">
         Chapter 2 Quiz
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -341,8 +340,8 @@
  
   
     
-      <li data-nav-id="/02demo1/6_ch2discussion.html" title="Chapter 2 Discussion" class="dd-item ">
-        <a href="/02demo1/6_ch2discussion.html">
+      <li data-nav-id="/technical-recipe-azure-sdwan/02demo1/6_ch2discussion.html" title="Chapter 2 Discussion" class="dd-item ">
+        <a href="/technical-recipe-azure-sdwan/02demo1/6_ch2discussion.html">
         Chapter 2 Discussion
         <i class="fas fa-check read-icon"></i>
         </a>
@@ -371,15 +370,19 @@
         <ul>
           
               <li>
-                  <a class="padding" href="https://docs.fortinet.com/document/fortigate/7.2.2/administration-guide/763117/terraform-fortios-as-a-provider"><i class='fas fa-graduation-cap'></i> Forti OS 7.2 Admin Guide </a>
+                  <a class="padding" href="https://aws-samples.github.io/aws-modernization-workshop-sample/"><i class='fas fa-graduation-cap'></i> Sample AWS Moderinization Workshop </a>
               </li>
           
               <li>
-                  <a class="padding" href="https://fndn.fortinet.net/index.php?/cloud/terraform/"><i class='fas fa-tools'></i> Terraform Providers </a>
+                  <a class="padding" href="https://github.com/martignoni/hugo-notice"><i class='fas fa-tools'></i> Hugo learn theme repo</a>
               </li>
           
               <li>
-                  <a class="padding" href="https://www.fortinet.com/products/public-cloud-security/azure"><i class='fas fa-tools'></i> FortiGate on Azure </a>
+                  <a class="padding" href="https://github.com/martignoni/hugo-notice"><i class='fas fa-tools'></i> Hugo Learn theme - Guide</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://github.com/martignoni/hugo-notice"><i class='fas fa-tools'></i> Hugo Notice Submodule </a>
               </li>
           
         </ul>
@@ -442,7 +445,7 @@
             
           
           
-            <a href='/'>Fortinet FortiGate SDWAN</a> > <a href='/02demo1.html'>Ch 2 - Hub and Branch VPN Connectivity</a> > Task 3 - Hub and Spoke VPN Verification
+            <a href='/technical-recipe-azure-sdwan/'>Fortinet FortiGate SDWAN</a> > <a href='/technical-recipe-azure-sdwan/02demo1.html'>Ch 2 - Hub and Branch VPN Connectivity</a> > Task 3 - Hub and Spoke VPN Verification
           
         
           
@@ -734,10 +737,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/02demo1/3_task2.html" title="Task 2 - LB Rules for VPN Traffic"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/technical-recipe-azure-sdwan/02demo1/3_task2.html" title="Task 2 - LB Rules for VPN Traffic"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/02demo1/5_chapter2quiz.html" title="Chapter 2 Quiz" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/technical-recipe-azure-sdwan/02demo1/5_chapter2quiz.html" title="Chapter 2 Quiz" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -747,19 +750,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1671214041"></script>
-    <script src="/js/perfect-scrollbar.min.js?1671214041"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1671214041"></script>
-    <script src="/js/jquery.sticky.js?1671214041"></script>
-    <script src="/js/featherlight.min.js?1671214041"></script>
-    <script src="/js/highlight.pack.js?1671214041"></script>
+    <script src="/technical-recipe-azure-sdwan/js/clipboard.min.js?1674148911"></script>
+    <script src="/technical-recipe-azure-sdwan/js/perfect-scrollbar.min.js?1674148911"></script>
+    <script src="/technical-recipe-azure-sdwan/js/perfect-scrollbar.jquery.min.js?1674148911"></script>
+    <script src="/technical-recipe-azure-sdwan/js/jquery.sticky.js?1674148911"></script>
+    <script src="/technical-recipe-azure-sdwan/js/featherlight.min.js?1674148911"></script>
+    <script src="/technical-recipe-azure-sdwan/js/highlight.pack.js?1674148911"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1671214041"></script>
-    <script src="/js/learn.js?1671214041"></script>
-    <script src="/js/hugo-learn.js?1671214041"></script>
+    <script src="/technical-recipe-azure-sdwan/js/modernizr.custom-3.6.0.js?1674148911"></script>
+    <script src="/technical-recipe-azure-sdwan/js/learn.js?1674148911"></script>
+    <script src="/technical-recipe-azure-sdwan/js/hugo-learn.js?1674148911"></script>
     
         
-            <script src="/mermaid/mermaid.js?1671214041"></script>
+            <script src="/technical-recipe-azure-sdwan/mermaid/mermaid.js?1674148911"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

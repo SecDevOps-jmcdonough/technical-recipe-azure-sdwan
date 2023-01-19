@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ch 1 Getting Started on Fortinet FortiGate Technical Recipie- Azure SDWAN</title>
-    <link>/01gettingstarted.html</link>
-    <description>Recent content in Ch 1 Getting Started on Fortinet FortiGate Technical Recipie- Azure SDWAN</description>
+    <title>Ch 1 Getting Started on </title>
+    <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted.html</link>
+    <description>Recent content in Ch 1 Getting Started on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="/01gettingstarted/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language><atom:link href="https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Task 1 Setup Azure CloudShell</title>
-      <link>/01gettingstarted/2_task1.html</link>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/2_task1.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/01gettingstarted/2_task1.html</guid>
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/2_task1.html</guid>
       <description>Task 1 - Setup your AzureCloud Shell Login to Azure Cloud Portal https://portal.azure.com/ with the provided login/password
 Click on Cloud Shell icon on the Top Right side of the portal
 Select Bash
@@ -22,10 +22,10 @@ Use existing Resource Group - it should auto populate with USERXX-workshop-sdwan
     
     <item>
       <title>Task 2 - Run Terraform</title>
-      <link>/01gettingstarted/3_task2.html</link>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/3_task2.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/01gettingstarted/3_task2.html</guid>
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/3_task2.html</guid>
       <description>Task 2 - Run the Terraform Code Perform the following step in your Cloudshell console to create your environment.
 Clone the Github repo Change directory to the se-conf-sdwan-workshop/se-summit folder Initialize Terraform Create Terraform Plan Apply Terraform Plan Copy and paste these commands into your Cloudshell console. The terraform variable username will be populated with the value of the environment variable USER
 git clone https://github.com/FortinetSecDevOps/se-conf-sdwan-workshop.git cd ./se-conf-sdwan-workshop/se-summit/ terraform init terraform plan -var=&amp;#34;username=${USER}&amp;#34; terraform apply -var=&amp;#34;username=${USER}&amp;#34; At the end of this step you should have the following architecture</description>
@@ -33,10 +33,10 @@ git clone https://github.com/FortinetSecDevOps/se-conf-sdwan-workshop.git cd ./s
     
     <item>
       <title>task 3 - Terraform Verifications</title>
-      <link>/01gettingstarted/4_task3.html</link>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/4_task3.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/01gettingstarted/4_task3.html</guid>
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/4_task3.html</guid>
       <description>Task 3 - Terraform Verifications Using the Terraform output, verify that you have Web and SSH access to the FortiGates.
 Terraform output can be redisplayed at any point as long as you are in the ./se-conf-sdwan-workshop/se-summit/ directory, by using the command terraform output
 cd cd se-conf-sdwan-workshop/se-summit/ terraform output Connect to the Branch sites FortiGates and check the VPN status.
@@ -45,10 +45,10 @@ Connect to the Hub FortiGates and check the WAN IP</description>
     
     <item>
       <title>Chapter 1 Quiz</title>
-      <link>/01gettingstarted/5_chapter1quiz.html</link>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/5_chapter1quiz.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/01gettingstarted/5_chapter1quiz.html</guid>
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/5_chapter1quiz.html</guid>
       <description>Chapter 1 - QUIZ FortiGates in the Hub do not have public IPs, how are they accessible via the Web UI?
 Why are the VPN connections down?
 FortiGates in the Hub do not have public IPs, how are they accessible via the Web UI?
@@ -57,10 +57,10 @@ The Public IPs on the external load balancers for the Hub, Branch1 and Branch2 F
     
     <item>
       <title>Chapter 1 Discussion</title>
-      <link>/01gettingstarted/6_chapter1discussion.html</link>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/6_chapter1discussion.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/01gettingstarted/6_chapter1discussion.html</guid>
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/6_chapter1discussion.html</guid>
       <description>Discussion Points During a Demo - Chapter 1 Fortinet provides a large library of infrastructure as code (IaC) templates to deploy baseline and iterate POC and production environments in public cloud. IaC support includes Terraform, Ansible, and cloud-specific services such as Azure ARM, AWS Cloudformation, and Google Deployment (jinja) templates. Terraform Providers are available for FortiGate and FortiManager to insert and iterate running configuration.
 For more information, review the following:</description>
     </item>
