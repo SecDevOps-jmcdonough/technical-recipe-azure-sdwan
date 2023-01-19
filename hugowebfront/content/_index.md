@@ -66,6 +66,51 @@ The purpose of this TEChnical Recipe is to familiarize the learner with routing,
 ***
 ***
 
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Post method example</title>
+    <style>
+      form {
+        width: 420px;
+      }
+
+      div {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: inline-block;
+        width: 240px;
+        text-align: right;
+        padding-right: 10px;
+      }
+
+      button, input {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="http://foo.com" method="post">
+      <div>
+        <label for="say">What greeting do you want to say?</label>
+        <input name="say" id="say" value="Hi">
+      </div>
+      <div>
+        <label for="to">Who do you want to say it to?</label>
+        <input name="to" value="Mom">
+      </div>
+      <div>
+        <button>Send my greetings</button>
+      </div>
+    </form>
+  </body>
+</html>
+
+
 {{% notice warning %}}
 <p style='text-align: left;'>
 The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how various Fortinet and Azure services can be architected to build a solution while demonstrating best practices along the way. These examples are not intended for use in production environments without full understanding of how they operate.
