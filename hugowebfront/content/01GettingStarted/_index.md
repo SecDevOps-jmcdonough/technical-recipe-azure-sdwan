@@ -8,27 +8,24 @@ weight: 1
 
 ### Welcome
 
-## Chapter 1 - Setting up the environment (40min)
+## Chapter 1 - Setting up the Azure environment (40min)
 
 ***[Deployment exercise - estimated duration 40min]***
+Click here to Provision your Demo Environment in Azure .  Enter your Fortinet Email address, and then click _Provision Lab_
+{{< launchdemoform >}}
 
+While somewhat unsatisfying, we ensure you there is magic happening behind the scenes
+![magic](https://learn.netlify.app/en/basics/requirements/images/magic.gif?classes=shadow)
+
+{{< notice warning >}} After submitting your email address, this page will return with a blank email address box and no other indications *** PLEASE DO NOT SUBMIT MULTIPLE TIMES ***.  {{< /notice >}}
+
+
+To verify the Azure provisioning has _*ACTUALLY*_ begun, do these things
+1. step 1 check
+2. step 2 check
+
+
+# xxxxxxxxx DELETE BELOW HERE xxxxxx  
 Click here to Provision your Demo Environment.  Enter your username and then click to get back here
 
 {{< button href="https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/LaunchDemoForm.html" >}}Provision Demo Azure Environment{{< /button >}}
-
-
-
-<form action="https://f1dcf3d2-d4e7-45f4-ac93-5394986d1fb4.webhook.eus.azure-automation.net/webhooks?token=alY0%2bX8%2fv%2fYrFP65PU0psQrwPoYWsTKIBdQgx9bF5v4%3d" method="post">
-<div>
-<label for="useremail">Please enter your email address</label>
-<input type="email" name="useremail" id="useremail" value="">
-</div>
-<div>
-<input type="hidden" name="userop" value="Create">
-<input type="hidden" name="username" value="">
-<input type="hidden" name="odlconfigname" value="test-lab">
-</div>
-<div>
-<button>Provision Environment</button>
-</div>
-</form>

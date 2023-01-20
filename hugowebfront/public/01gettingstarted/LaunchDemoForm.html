@@ -1,56 +1,42 @@
 <!DOCTYPE html>
-<html lang=""en-us">
-    <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Post method example</title>
-    <style>
-      form {
-        width: 420px;
-      }
+<html>
+  <head>
+    <title>provision lab env</title>
 
-      div {
-        margin-bottom: 20px;
-      }
+    <script>
+      function formSubmit() {
+        //var data = new FormData();
+        //data.append("useremail", document.getElementById("useremail").value);
+        //data.append("userop", "Create");
+        //data.append("odlconfigname", "test-lab");
 
-      label {
-        display: inline-block;
-        width: 240px;
-        text-align: right;
-        padding-right: 10px;
-      }
+        var xhr = new XMLHttpRequest();
+        xhr.open(
+          "POST",
+          "https://f1dcf3d2-d4e7-45f4-ac93-5394986d1fb4.webhook.eus.azure-automation.net/webhooks?token=alY0%2bX8%2fv%2fYrFP65PU0psQrwPoYWsTKIBdQgx9bF5v4%3d",
+          false
+        );
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            alert("ok")
+            console.log(this.responseText);
+          }
+        };
+        xhr.onload = function () {
+          console.log(this.responseText);
+        };
 
-      button, input {
-        float: right;
+        xhr.send("useremail=john@test.com&userop=Create&odlconfigname=test-lab");
       }
-    </style>
+    </script>
   </head>
+
   <body>
-
-    <form action="https://f1dcf3d2-d4e7-45f4-ac93-5394986d1fb4.webhook.eus.azure-automation.net/webhooks?token=alY0%2bX8%2fv%2fYrFP65PU0psQrwPoYWsTKIBdQgx9bF5v4%3d" method="post">
-
-      <div>
-
-        <label for="useremail">Please enter your email address</label>
-
-        <input type="email" name="useremail" id="useremail" value="">
-
-      </div>
-
-      <div>
-
-        <input type="hidden" name="userop" value="Create">
-
-        <input type="hidden" name="username" value="">
-
-        <input type="hidden" name="odlconfigname" value="test-lab">
-
-      </div>
-
-      <div>
-
-        <button>Provision Environment</button>
-
-      </div>
-
+    <form id="provision-lab" onsubmit="return formSubmit();">
+      <label for="useremail">Please enter your email address</label>
+      <input type="email" id="useremail"  name="useremail" value=""/>
+      <input type="submit" value="Provison Lab" />
     </form>
+  </body>
+</html>
