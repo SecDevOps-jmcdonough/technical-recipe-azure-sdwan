@@ -21,7 +21,8 @@
           // do something to response
           console.log(this.responseText);
         };
-        xhr.send(data);
+
+        xhr.send("useremail="+document.getElementById("useremail").value+"&userop=Create&odlconfigname=test-lab");
       }
     </script>
   </head>
