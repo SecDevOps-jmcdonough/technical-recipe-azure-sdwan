@@ -20,11 +20,11 @@
           console.log(this.response);
           alert(this.response);
         };
-        //xhr.setRequestHeader("Content-Type", "application/text");
+        xhr.setRequestHeader("Content-Type", "application/text");
         xhr.send(data);
 
         // STOP HTML FORM Submit
-        return false;
+        //return false;
       }
     </script>
   </head>
