@@ -33,11 +33,11 @@
         xhr.open("POST", "https://f1dcf3d2-d4e7-45f4-ac93-5394986d1fb4.webhook.eus.azure-automation.net/webhooks?token=alY0%2bX8%2fv%2fYrFP65PU0psQrwPoYWsTKIBdQgx9bF5v4%3d", true);
         xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
         xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4 && xhr.status === 200) {
+          //if (xhr.readyState === 4 && xhr.status === 200) {
             var res = JSON.parse(xhr.response);
             console.log(res);
             alert(res);
-          }
+          //}
         };
 
         xhr.send(JSON.stringify(data));
@@ -48,7 +48,7 @@
   <body>
     <form id="provision-env" onsubmit="ajaxgo2()">
       <div>
-        <label for="useremail">Please enter your email address..</label>
+        <label for="useremail">Please enter your email address.</label>
         <input type="email" name="useremail" id="useremail" value="" />
         <input type="submit" value="Provision Lab" />
       </div>
