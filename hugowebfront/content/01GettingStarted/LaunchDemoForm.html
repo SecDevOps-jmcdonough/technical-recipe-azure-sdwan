@@ -10,10 +10,10 @@
         //data.append("userop", "Create");
         //data.append("odlconfigname", "test-lab");
 
-        const useremail = document.getElementById("useremail").value;
-        const varandval = "useremail=";
-        const opandconfig = "&userop=Create&odlconfigname=test-lab";
-        const postdata = '${varandval}${useremail}${opandconfig}';
+        var useremail = document.getElementById("useremail").value;
+        //const varandval = "useremail=";
+        //const opandconfig = "&userop=Create&odlconfigname=test-lab";
+        var postdata =  "useremail=" + useremail + "&userop=Create&odlconfigname=test-lab";
 
         var xhr = new XMLHttpRequest();
         xhr.open(
