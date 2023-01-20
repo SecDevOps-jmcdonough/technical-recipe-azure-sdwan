@@ -1,5 +1,5 @@
 ---
-title: "Task 1 Setup Azure CloudShell"
+title: "Task 1 - Setup Azure CloudShell"
 chapter: true
 weight: 2
 ---
