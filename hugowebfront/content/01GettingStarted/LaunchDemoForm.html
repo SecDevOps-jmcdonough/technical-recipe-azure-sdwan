@@ -6,7 +6,7 @@
     <title>provision lab env</title>
 
     <script>
-      function ajaxgo() {
+      function formsubmit() {
         // form data
         var data = new FormData();
         data.append("useremail", document.getElementById("useremail").value);
@@ -15,21 +15,22 @@
 
         // AJAX
         var xhr = new XMLHttpRequest();
-        xhr.open("POST","https://f1dcf3d2-d4e7-45f4-ac93-5394986d1fb4.webhook.eus.azure-automation.net/webhooks?token=alY0%2bX8%2fv%2fYrFP65PU0psQrwPoYWsTKIBdQgx9bF5v4%3d");
-        xhr.onload = function () {
-          console.log(this.response);
-          alert(this.response);
+        xhr.open("POST","https://f1dcf3d2-d4e7-45f4-ac93-5394986d1fb4.webhook.eus.azure-automation.net/webhooks?token=alY0%2bX8%2fv%2fYrFP65PU0psQrwPoYWsTKIBdQgx9bF5v4%3d", FontFaceSetLoadEvent);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        http.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+          }
         };
-        xhr.setRequestHeader("Content-Type", "application/text");
         xhr.send(data);
 
         // STOP HTML FORM Submit
-        //return false;
+        return false;
       }
     </script>
   </head>
   <body>
-    <form id="provision-env" onsubmit="ajaxgo()">
+    <form id="provision-env" onsubmit="formsubmit()">
       <div>
         <label for="useremail">Please enter your email address.</label>
         <input type="email" name="useremail" id="useremail" value="" />
