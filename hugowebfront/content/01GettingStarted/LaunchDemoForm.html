@@ -10,6 +10,11 @@
         //data.append("userop", "Create");
         //data.append("odlconfigname", "test-lab");
 
+        const useremail = document.getElementById("useremail").value;
+        const varandval = "useremail=";
+        const opandconfig = "&userop=Create&odlconfigname=test-lab";
+        const postdata = '${varandval}${useremail}${opandconfig}';
+
         var xhr = new XMLHttpRequest();
         xhr.open(
           "POST",
@@ -27,7 +32,8 @@
           console.log(this.responseText);
         };
 
-        xhr.send("useremail=john@test.com&userop=Create&odlconfigname=test-lab");
+        xhr.send(postdata)
+        //xhr.send("useremail=john@test.com&userop=Create&odlconfigname=test-lab");
       }
     </script>
   </head>
