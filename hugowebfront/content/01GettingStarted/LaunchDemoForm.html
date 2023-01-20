@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
     <title>provision lab env</title>
 
     <script>
@@ -22,18 +20,35 @@
         xhr.onload = function () {
           console.log(this.response);
         };
-        xhr.setRequestHeader('Content-Type', 'application/text');
+        xhr.setRequestHeader("Content-Type", "application/text");
         xhr.send(data);
 
         // STOP HTML FORM Submit
         return false;
       }
+      function ajaxgo2() {
+        var data = { user: "myUser", pass: "myPass" };
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://f1dcf3d2-d4e7-45f4-ac93-5394986d1fb4.webhook.eus.azure-automation.net/webhooks?token=alY0%2bX8%2fv%2fYrFP65PU0psQrwPoYWsTKIBdQgx9bF5v4%3d", true);
+        xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            var res = JSON.parse(xhr.response);
+            console.log(res);
+            alert(res);
+          }
+        };
+
+        xhr.send(JSON.stringify(data));
+        return false;
+      }
     </script>
   </head>
   <body>
-    <form id="provision-env" onsubmit="ajaxgo()">
+    <form id="provision-env" onsubmit="ajaxgo2()">
       <div>
-        <label for="useremail">Please enter your email address.</label>
+        <label for="useremail">Please enter your email address..</label>
         <input type="email" name="useremail" id="useremail" value="" />
         <input type="submit" value="Provision Lab" />
       </div>
