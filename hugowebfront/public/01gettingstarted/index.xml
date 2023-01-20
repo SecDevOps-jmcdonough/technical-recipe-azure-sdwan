@@ -8,11 +8,12 @@
     <language>en-US</language><atom:link href="https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ch 1 Getting Started</title>
-      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/disabled_index.html</link>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/nonono_index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/disabled_index.html</guid>
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/nonono_index.html</guid>
       <description>Fortinet Workshop - Getting started Welcome Chapter 1 - Setting up the environment (40min) [Deployment exercise - estimated duration 40min]
+xxx999xxx Put the stuff here xxx999xxx
 Click here to Provision your Demo Environment. Enter your username and then click to get back here
 Provision Demo Azure Environment </description>
     </item>
@@ -43,7 +44,7 @@ git clone https://github.com/FortinetSecDevOps/se-conf-sdwan-workshop.git cd ./s
     </item>
     
     <item>
-      <title>task 3 - Terraform Verifications</title>
+      <title>Task 3 - Terraform Verifications</title>
       <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/4_task3.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

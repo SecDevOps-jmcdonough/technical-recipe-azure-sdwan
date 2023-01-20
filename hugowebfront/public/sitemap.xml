@@ -2,7 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/disabled_index.html</loc>
+    <loc>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/nonono_index.html</loc>
+  </url><url>
+    <loc>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/</loc>
   </url><url>
     <loc>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02demo1.html</loc>
   </url><url>
@@ -25,8 +27,6 @@
     <loc>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/6_chapter1discussion.html</loc>
   </url><url>
     <loc>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02demo1/6_ch2discussion.html</loc>
-  </url><url>
-    <loc>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/</loc>
   </url><url>
     <loc>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted.html</loc>
   </url><url>

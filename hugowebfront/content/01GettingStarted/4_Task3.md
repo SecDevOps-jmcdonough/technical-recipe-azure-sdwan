@@ -1,5 +1,5 @@
 ---
-title: "task 3 - Terraform Verifications"
+title: "Task 3 - Terraform Verifications"
 chapter: true
 weight: 4
 ---
