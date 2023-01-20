@@ -7,22 +7,18 @@
 
     <script>
       function ajaxgo() {
-        // form data
-        var data = new FormData();
-        data.append("useremail", document.getElementById("useremail").value);
-        data.append("userop", "Create");
-        data.append("odlconfifgname", "test-lab");
-
         // AJAX
         var xhr = new XMLHttpRequest();
         xhr.open(
           "POST",
           "https://f1dcf3d2-d4e7-45f4-ac93-5394986d1fb4.webhook.eus.azure-automation.net/webhooks?token=alY0%2bX8%2fv%2fYrFP65PU0psQrwPoYWsTKIBdQgx9bF5v4%3d"
         );
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.send(JSON.stringify({ "userop": "Create", "useremail": document.getElementById("useremail").value, "odlconfigname": "test-lab" }));
         xhr.onload = function () {
           console.log(this.response);
         };
-        xhr.send(data);
+        xhr.send(JSON.stringify({ "userop": "Create", "useremail": document.getElementById("useremail").value, "odlconfigname": "test-lab" }));
 
         // STOP HTML FORM Submit
         return false;
