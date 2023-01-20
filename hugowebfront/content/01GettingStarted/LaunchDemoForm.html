@@ -12,6 +12,7 @@
         var xhr = new XMLHttpRequest();
         xhr.onload = function(){ alert(xhr.responseText); }
         xhr.open(oFormElement.method, oFormElement.getAttribute("action"));
+        xhr.setRequestHeader("Access-Control-Allow-Origin", "*")
         xhr.send(new FormData(oFormElement));
         return false;
       }
