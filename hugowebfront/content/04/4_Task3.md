@@ -1,44 +1,48 @@
 ---
-title: "Task 3 - Hub and Spoke VPN Verification"
+title: "Task 3 - SDN Object"
 chapter: true
 weight: 4
 ---
 
-### Task 3 - Hub and Branch VPN Connectivity Verification
+### Task 3 - Create a Dynamic SDN object [troubleshooting required]
 
-**Verify** that the FortiGates are responding to Azure Load Balancer Health Checks
+* Can the Hub FortiGate Azure SDN Connector read the Azure environment?
+  * **Troubleshoot and Make the required changes to allow the FortiGate to retrieve the SDN filters.**
 
-1. **Select** the Hub External Load Balancer **sdwan-USERXX-workshop-hub1-elb1**
-1. **Click** Insights
-1. **Close** the Metrics panel
+    * Hub FortiGate debug the Azure SDN Connector
 
-Green, Red, and/or Yellow lines indicate FortiGate reachability.
+      ```bash
+      diagnose debug application azd -1
+      diagnose debug enable
+      ```
 
-**Clicking** the "Refresh" button a few times, if yellow lines are present. Eventually (30 seconds) red and green lines will replace the yellow.
+  * Hints:
 
-The diagram shows the load balancing rules along with the Inbound NAT Rules configured on the load balancer.
+    ***
 
-    ![hub-lb-insights1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbinsights-01.jpg)
-    ![hub-lb-insights2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbinsights-02.jpg)
-    ![hub-lb-insights3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbinsights-03.jpg)
+    * FGT Branch3 is able to retrieve the filters, why that is not the case for the FortiGates behind Load Balancers?
+    * FGT Branch3 is standalone, all other FortiGates are in A-P HA, how does that affect traffic to retrieve SDN information?
+    * Hub External Load Balancer needs a management nic backend pool and a TCP rule, any port suffices. This rule is about letting TCP traffic out. The External Load Balancer will let the response traffic back in because the traffic originated internally.
 
-**Verify** that the VPN connections from the Branches to the Hub are UP, check Branches 1, 2 and 3.
+    ![sdn fail](images/sdn-fail.jpg)
 
-1. **Login** to each Branch FortiGate
-1. **Click** "Dashboard"
-1. **Click** "Network"
-1. **Click** "Expand to full screen" in the IPsec widget
+1. **Create** a backend pool on the Hub load balancer using the Hub FortiGate Management Interfaces
 
-    ![vpnup1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vpnup-01.jpg)
-    ![vpnup2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vpnup-02.jpg)
+    * 10.10.4.4
+    * 10.10.4.5
 
-**Verify** that BGP peering with the Hub is UP and that the Branch FortiGates learned the Hub and other Branches' CIDRs. Check all Branch FortiGates.
+    ![mgmt be pool](images/mgmt-backend-pool.jpg)
 
-1. Open a FortiGate CLI session
-1. Run the Command `get router info routing-table all`
+    ![mgmt be pool list](images/mgmt-backend-pool-list.jpg)
 
-    ![vpnup3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vpnup-03.jpg)
+1. Create a TCP Load Balancer Rule, any port will do, e.g. 13000. This rule will allow TCP response traffic back through the load balancer, when to a TCP request originated from a device in a backend pool associated to the load balancer.
 
-* The current state of the Architecture is shown below.
+    ![tcp rule](images/tcp-rule.jpg)
 
-    ![global-step2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_02.jpg)
+1. **Create** a dynamic address object on the Hub FortiGate, named `Spoke_VNETs` that resolves to the Spoke VNETs VMs
+
+    ![Dynamic Address Object](images/dynamic-address-object.jpg)
+
+1. **Use** the object in an existing Policy named `Branch to Cloud` to restrict traffic coming from the Branches to only VMs in the Spoke VNETs.
+
+    ![Branch to Cloud Policy](images/policy3.jpg)

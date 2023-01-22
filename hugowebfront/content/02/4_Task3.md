@@ -18,9 +18,9 @@ Green, Red, and/or Yellow lines indicate FortiGate reachability.
 
 The diagram shows the load balancing rules along with the Inbound NAT Rules configured on the load balancer.
 
-    ![hub-lb-insights1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbinsights-01.jpg)
-    ![hub-lb-insights2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbinsights-02.jpg)
-    ![hub-lb-insights3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbinsights-03.jpg)
+![hub-lb-insights1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbinsights-01.jpg)
+![hub-lb-insights2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbinsights-02.jpg)
+![hub-lb-insights3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbinsights-03.jpg)
 
 **Verify** that the VPN connections from the Branches to the Hub are UP, check Branches 1, 2 and 3.
 
