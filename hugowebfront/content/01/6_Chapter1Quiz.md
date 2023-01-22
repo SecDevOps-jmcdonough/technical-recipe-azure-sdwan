@@ -10,8 +10,7 @@ weight: 6
 
 1. Why are the VPN connections down?
 
-  <details>
-  <summary>Quiz 1 Answers</summary>
+## Quiz 1 Answers
 
 1. **FortiGates in the Hub do not have public IPs, how are they accessible via the Web UI?**
 
@@ -20,8 +19,5 @@ weight: 6
 1. **Why are the VPN connections down?**
 
     * The external load balancer for the Hub FortiGates needs load balancing rules for UDP 500 and UDP 4500.
-
-  </details>
-</details>
 
 ***

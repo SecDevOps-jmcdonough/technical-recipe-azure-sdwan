@@ -1,5 +1,5 @@
 ---
-title: "Chapter 1 Getting Started"
+title: "Chapter 1 - Getting Started"
 chapter: true
 weight: 1
 ---

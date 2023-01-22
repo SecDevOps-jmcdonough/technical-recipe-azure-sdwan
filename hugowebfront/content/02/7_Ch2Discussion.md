@@ -1,10 +1,10 @@
 ---
 title: "Chapter 2 Discussion"
 chapter: true
-weight: 6
+weight: 7
 ---
 
-## ![Customer-Demo](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/demo_play.png) ***Discussion Points During a Dem - Chapter 2***
+## ***Discussion Points During a Demo - Chapter 2***
 
 When discussing load balanced traffic with the customer, point out key details about the Azure Load Balancers such as the following:
 
