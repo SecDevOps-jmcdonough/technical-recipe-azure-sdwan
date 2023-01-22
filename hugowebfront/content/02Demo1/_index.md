@@ -1,9 +1,15 @@
 ---
-title: "Ch 2 - Hub and Branch VPN Connectivity"
+title: "Chapter 2 - Hub and Branch VPN Connectivity"
 chapter: true
 weight: 2
 ---
 
-### ***[Configuration exercise - estimated duration 20min]***
+## Fortinet Azure SDWAN Networking Workshop
 
+### Chapter 2 - Hub and Branch VPN Connectivity (20min)
 
+Tasks
+
+* Add the FortiGate to the Hub Load Balancer Backend Pool
+* Create load balancing rules for IPSEC VPN Traffic
+* Hub and Branch VPN Connectivity Verifications

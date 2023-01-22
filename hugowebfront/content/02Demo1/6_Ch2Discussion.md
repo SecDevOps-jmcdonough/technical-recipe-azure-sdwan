@@ -19,7 +19,7 @@ Don't forget that the CLI is still a great place to get targeted information wit
 
 ## Key questions during your demo - Chapter 2
 
-When giving this TEChnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
+When giving this TEC Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
 
 * How sensitive are your applications to session timeout?  Do they require large TTL values for long-lived sessions?
 * What type of VPN scaling (tunnel count and bandwidth) are required for your deployment?  

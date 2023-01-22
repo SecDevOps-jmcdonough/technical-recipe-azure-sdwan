@@ -163,7 +163,7 @@ For more information, review the following:
 
 ## Key questions during your demo - Chapter 1
 
-When giving this TEChnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
+When giving this TEC Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
 
 * Has your organization standardized on an IaC tool-set for infrastructure provisioning and iteration?
 * How are the responsibilities for infrastructure assigned?  Does cloud network fall under a DevOps, Cloud Networking, or Application Delivery team, as examples?
@@ -181,13 +181,21 @@ When giving this TEChnical Recipe as as demo, the following questions will provi
 ### Task 1 - Add the FortiGates to the Hub Load Balancer Backend Pool
 
 1. **Select** the Hub External Load Balancer **sdwan-USERXX-workshop-hub1-elb1**
-1. **Click** on Backend pools
-1. **Add** FortiGate1 and FortiGate2 **port1 interfaces** and then click on Save
+1. **Click** Backend pools
+1. **Select** "hub1-ext-fgt"
+1. **Click** "+Add"
+1. **Select** sdwan-USERXX-workshop-hub1-fgt1 and sdwan-USERXX-workshop-hub1-fgt2 **port1 interfaces**
+    * 10.10.0.4
+    * 10.10.0.5
+1. **Click** "Add"
+1. **Click** "Save"
 
-* 10.10.0.4
-* 10.10.0.5
-
-  ![hub-lb-backend](images/externallbbackend.jpg)
+  ![hub-lb-backend1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-01.jpg)
+  ![hub-lb-backend2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-02.jpg)
+  ![hub-lb-backend3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-03.jpg)
+  ![hub-lb-backend4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-04.jpg)
+  ![hub-lb-backend5](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-05.jpg)
+  ![hub-lb-backend6](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-06.jpg)
 
 ### Task 2 - Create load balancing rules for IPSEC VPN Traffic
 
@@ -258,7 +266,7 @@ Don't forget that the CLI is still a great place to get targeted information wit
 
 ## Key questions during your demo - Chapter 2
 
-When giving this TEChnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
+When giving this TEC Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
 
 * How sensitive are your applications to session timeout?  Do they require large TTL values for long-lived sessions?
 * What type of VPN scaling (tunnel count and bandwidth) are required for your deployment?  
@@ -278,7 +286,7 @@ The Azure Route Server (ASR) is used to connect NVAs to the Azure network to sim
 
 ## Key questions during your demo - Chapter 3
 
-When giving this TEChnical Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
+When giving this TEC Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
 
 * Describe your organizations routing requirements.  
 * Does your environment require more than 8 BGP peers or more than 1000 routes

@@ -1,5 +1,5 @@
 ---
-title: "Ch 1 Getting Started"
+title: "Chapter 1 Getting Started"
 chapter: true
 weight: 1
 ---
@@ -23,3 +23,9 @@ When provisioning is complete, one of the following will happen.
 * You will receive and email indicating that there are no environments available to utilize. In this case please try again at a later date.
 * You will receive an email indicating that the supplied email address is from an unsupported domain.
 * No email received due to an unexpected error. You can try again or notify the Azure CSE team.
+
+Tasks
+
+* Setup Azure Cloud Shell
+* Run Terraform
+* Verify Terraform
