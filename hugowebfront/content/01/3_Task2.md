@@ -29,6 +29,6 @@ terraform apply -var="username=${USER}" -auto-approve
   ![terraform2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-02.jpg)
   ![terraform3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-03.jpg)
 
-* At the end of this step you should have the following architecture
+* The current state of the Architecture is shown below.
 
     ![global-step1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_01.jpg)
