@@ -174,11 +174,9 @@ When giving this TEC Recipe as as demo, the following questions will provide a b
 
 ## Chapter 2 - Hub and Branch VPN Connectivity (20min)
 
-***[Configuration exercise - estimated duration 20min]***
-
 <details>
 
-### Task 1 - Add the FortiGates to the Hub Load Balancer Backend Pool
+### Task 1 - Add FortiGates to Hub Load Balancer Backend Pool
 
 1. **Select** the Hub External Load Balancer **sdwan-USERXX-workshop-hub1-elb1**
 1. **Click** Backend pools

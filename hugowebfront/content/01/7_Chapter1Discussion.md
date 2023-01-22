@@ -24,8 +24,3 @@ When giving this TEC Recipe as as demo, the following questions will provide a b
 * Is workflow automation in cloud and cross-organizational collaboration important within your cloud business?
 
 ***
-
-{{% notice warning %}}
-The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how various Fortinet and Azure services can be architected to build a solution while demonstrating best practices along the way. These examples are not intended for use in production environments without full understanding of how they operate.
-</p>
-{{% /notice %}}

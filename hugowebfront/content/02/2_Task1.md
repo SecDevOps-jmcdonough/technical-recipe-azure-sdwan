@@ -4,7 +4,7 @@ chapter: true
 weight: 2
 ---
 
-### Task 1 - Add the FortiGates to the Hub Load Balancer Backend Pool
+### Task 1 - Add FortiGates to Hub Load Balancer Backend Pool
 
 1. **Select** the Hub External Load Balancer **sdwan-USERXX-workshop-hub1-elb1**
 1. **Click** Backend pools

@@ -1,5 +1,5 @@
 ---
-title: "Chapter 2 - Hub and Branch VPN Connectivity"
+title: "Chapter 2 - Hub and Branch VPN"
 chapter: true
 weight: 2
 ---
@@ -10,6 +10,6 @@ weight: 2
 
 Tasks
 
-* Add the FortiGate to the Hub Load Balancer Backend Pool
-* Create load balancing rules for IPSEC VPN Traffic
+* Add FortiGates to Hub Load Balancer Backend Pool
+* Create load balancing rules for VPN Traffic
 * Hub and Branch VPN Connectivity Verifications
