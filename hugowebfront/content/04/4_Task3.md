@@ -53,7 +53,6 @@ Hints:
     ![mgmt be pool2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/mgmt-backend-pool-02.jpg)
     ![mgmt be pool3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/mgmt-backend-pool-03.jpg)
 
-
 1. Create a TCP Load Balancer Rule, any port will do, e.g. 13000. This rule will allow TCP response traffic back through the load balancer, when to a TCP request originated from a device in a backend pool associated to the load balancer.
 
     * Name - `tcp-rule`
