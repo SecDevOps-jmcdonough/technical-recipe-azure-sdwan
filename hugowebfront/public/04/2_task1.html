@@ -9,7 +9,7 @@
 
     <link rel="icon" href="https://www.fortinet.com/etc/designs/fortinet/favicon.ico" type="image/x-icon" />
 
-    <title>Tags :: </title>
+    <title>Task 1 - VNET Peering :: </title>
 
     
     <link href="/technical-recipe-azure-sdwan/css/nucleus.css?1674503246" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/technical-recipe-azure-sdwan/tags.html">
+  <body class="" data-url="/technical-recipe-azure-sdwan/04/2_task1.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -411,7 +411,7 @@
   
     
     <li data-nav-id="/technical-recipe-azure-sdwan/04.html" title="Chapter 4 - Hub / Spoke Peering" class="dd-item
-        
+        parent
         
         
         ">
@@ -439,7 +439,7 @@
  
   
     
-      <li data-nav-id="/technical-recipe-azure-sdwan/04/2_task1.html" title="Task 1 - VNET Peering" class="dd-item ">
+      <li data-nav-id="/technical-recipe-azure-sdwan/04/2_task1.html" title="Task 1 - VNET Peering" class="dd-item active">
         <a href="/technical-recipe-azure-sdwan/04/2_task1.html">
         Task 1 - VNET Peering
         <i class="fas fa-check read-icon"></i>
@@ -652,8 +652,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -664,7 +662,13 @@
             
           
           
-            <a href='/technical-recipe-azure-sdwan/'>Fortinet FortiGate SDWAN on Azure</a> > Tags
+            
+            
+          
+          
+            <a href='/technical-recipe-azure-sdwan/'>Fortinet FortiGate SDWAN on Azure</a> > <a href='/technical-recipe-azure-sdwan/04.html'>Chapter 4 - Hub / Spoke Peering</a> > Task 1 - VNET Peering
+          
+        
           
         
           
@@ -673,13 +677,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -687,31 +684,80 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-                tag ::
-              
-              Tags
-            </h1>
           
 
         
 
 
-
-
-
+<h3 id="task-1---create-hub-and-spoke-vnet-peering">Task 1 - Create Hub and Spoke VNET peering</h3>
+<p>Create a VNET peering between the Spoke11 VNET and the Hub VNET</p>
+<ol>
+<li>
+<p><strong>Select</strong> Spoke VNET, <strong>USERXX-workshop-sdwan-spoke11</strong></p>
+</li>
+<li>
+<p><strong>Click</strong> on Peerings</p>
+</li>
+<li>
+<p><strong>Add</strong> peering to Hub VNET, <strong>USERXX-workshop-sdwan-hub1</strong></p>
+<p>This virtual network</p>
 <ul>
-	
+<li>Peering link name - <code>spoke11-to-hub</code></li>
+<li>Traffic to remote virtual network - &ldquo;Allow (default)&rdquo;</li>
+<li>Traffic forwarded from remote virtual network - &ldquo;Allow (default)&rdquo;</li>
+<li>Virtual network gateway or Route Server - &ldquo;Use the remote virtual network&rsquo;s gateway or Route&rdquo; Server</li>
 </ul>
+<p>Remote virtual network</p>
+<ul>
+<li>Peering link name - <code>hub-to-spoke11</code></li>
+<li>Virtual network deployment model - &ldquo;Resource manager&rdquo;</li>
+<li>Subscription - &ldquo;Internal-Training&rdquo;</li>
+<li>Virtual network - &ldquo;<strong>USERXX-workshop-sdwan-hub1</strong>&rdquo;</li>
+<li>Traffic to remote virtual network - &ldquo;Allow (default)&rdquo;</li>
+<li>Traffic forwarded from remote virtual network - &ldquo;Allow (default)&rdquo;</li>
+<li>Virtual network gateway or Route Server - &ldquo;Use this virtual network&rsquo;s gateway or Route Server&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><strong>Repeat</strong> for Spoke12 VNET, <strong>USERXX-workshop-sdwan-spoke12</strong></p>
+</li>
+<li>
+<p><strong>Select</strong> Spoke VNET, <strong>USERXX-workshop-sdwan-spoke11</strong></p>
+</li>
+<li>
+<p><strong>Click</strong> on Peerings</p>
+</li>
+<li>
+<p><strong>Add</strong> peering to Hub VNET, <strong>USERXX-workshop-sdwan-hub1</strong></p>
+<p>This virtual network</p>
+<ul>
+<li>Peering link name - <code>spoke12-to-hub</code></li>
+</ul>
+<p>Remote virtual network</p>
+<ul>
+<li>Peering link name - <code>hub-to-spoke12</code></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>You will see errors until all the correct selections are made.</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spoke11-to-Hub-peering-01.jpg" alt="vnetpeering1">
+<img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spoke11-to-Hub-peering-02.jpg" alt="vnetpeering2">
+<img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spoke11-to-Hub-peering-03.jpg" alt="vnetpeering3">
+<img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spoke11-to-Hub-peering-04.jpg" alt="vnetpeering4"></p>
+<p><strong>Verify</strong> that the Branch FortiGates have learned the Spoke11 VNET and Spoke12 VNET CIDRs. Run the Command <code>get router info routing-table all</code> on all the Branch FortiGates.</p>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
+        
+            </div> 
         
         </div>
         
@@ -983,6 +1029,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -998,6 +1045,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1102,8 +1152,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/technical-recipe-azure-sdwan/04.html" title="Chapter 4 - Hub / Spoke Peering"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/technical-recipe-azure-sdwan/01.html" title="Chapter 1 - Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/technical-recipe-azure-sdwan/04/3_task2.html" title="Task 2 - Azure Route Server" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1135,3 +1187,4 @@
 
   </body>
 </html>
+

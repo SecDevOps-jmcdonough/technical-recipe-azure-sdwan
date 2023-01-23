@@ -1,137 +1,226 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fortinet FortiGate SDWAN on </title>
+    <title>Fortinet FortiGate SDWAN on Azure on </title>
     <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/</link>
-    <description>Recent content in Fortinet FortiGate SDWAN on </description>
+    <description>Recent content in Fortinet FortiGate SDWAN on Azure on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language><atom:link href="https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ch 1 Getting Started</title>
-      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/nonono_index.html</link>
+      <title>Task 1 - Add FortiGates to Hub LB</title>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02/2_task1.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/nonono_index.html</guid>
-      <description>Fortinet Workshop - Getting started Welcome Chapter 1 - Setting up the environment (40min) [Deployment exercise - estimated duration 40min]
-xxx999xxx Put the stuff here xxx999xxx
-Click here to Provision your Demo Environment. Enter your username and then click to get back here
-Provision Demo Azure Environment </description>
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02/2_task1.html</guid>
+      <description>Task 1 - Add FortiGates to Hub Load Balancer Backend Pool Select the Hub External Load Balancer sdwan-USERXX-workshop-hub1-elb1 Click Backend pools Select &amp;ldquo;hub1-ext-fgt&amp;rdquo; Click &amp;ldquo;+Add&amp;rdquo; Select sdwan-USERXX-workshop-hub1-fgt1 and sdwan-USERXX-workshop-hub1-fgt2 port1 interfaces 10.10.0.4 10.10.0.5 Click &amp;ldquo;Add&amp;rdquo; Click &amp;ldquo;Save&amp;rdquo; </description>
     </item>
     
     <item>
-      <title>Task 1 - FortiGate on Hub LB</title>
-      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02demo1/2_task1.html</link>
+      <title>Task 1 - Setup Azure CloudShell</title>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01/2_task1.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02demo1/2_task1.html</guid>
-      <description>Task 1 - Add the FortiGates to the Hub Load Balancer Backend Pool Select the Hub External Load Balancer sdwan-USERXX-workshop-hub1-elb1 Click on Backend pools Add FortiGate1 and FortiGate2 port1 interfaces and then click on Save 10.10.0.4
-10.10.0.5</description>
-    </item>
-    
-    <item>
-      <title>Task 1 Setup Azure CloudShell</title>
-      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/2_task1.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/2_task1.html</guid>
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01/2_task1.html</guid>
       <description>Task 1 - Setup your AzureCloud Shell Login to Azure Cloud Portal https://portal.azure.com/ with the provided login/password
+Click the link &amp;ldquo;Skip for now (14 days until this is required)&amp;rdquo; do not click the &amp;ldquo;Next&amp;rdquo; button
+Click the &amp;ldquo;Next&amp;rdquo; button
 Click on Cloud Shell icon on the Top Right side of the portal
 Select Bash
 Click on Show advanced settings
 Select
-Use existing Resource Group - it should auto populate with USERXX-workshop-sdwan (USERXX is your Username) Use existing Storage account - it should auto populate with USERXX##########workshopsdwa (########## is a random string) Use existing File Share - type cloudshell Click &amp;ldquo;Attach Storage&amp;rdquo;</description>
+Use existing Resource Group - it should auto populate with USERXX-workshop-sdwan (USERXX is your Username) Use existing Storage account - it should auto populate with USERXX########## (########## is a random string) Use existing File Share - type cloudshellshare Click &amp;ldquo;Attach Storage&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Task 1 - VNET Peering</title>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/04/2_task1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/04/2_task1.html</guid>
+      <description>Task 1 - Create Hub and Spoke VNET peering Create a VNET peering between the Spoke11 VNET and the Hub VNET
+Select Spoke VNET, USERXX-workshop-sdwan-spoke11
+Click on Peerings
+Add peering to Hub VNET, USERXX-workshop-sdwan-hub1
+This virtual network
+Peering link name - spoke11-to-hub Traffic to remote virtual network - &amp;ldquo;Allow (default)&amp;rdquo; Traffic forwarded from remote virtual network - &amp;ldquo;Allow (default)&amp;rdquo; Virtual network gateway or Route Server - &amp;ldquo;Use the remote virtual network&amp;rsquo;s gateway or Route&amp;rdquo; Server Remote virtual network</description>
+    </item>
+    
+    <item>
+      <title>Task 2 - Azure Route Server</title>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/04/3_task2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/04/3_task2.html</guid>
+      <description>Task 2 - Check Azure Route Server Configuration and Learned Routes Select the Azure Route Server USERXX-workshop-sdwan-RouteServer contained within your Resource Group.
+Click on Peers on the left side of the menu, verify the connection to the Hub FortiGates
+List the routes learned by Azure Route Server, run the commands below from your Azure Cloud Shell
+The variable ${USER} in the commands reads your username from the environment az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --routeserver ${USER}-workshop-sdwan-RouteServer --name sdwan-fgt1 az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --routeserver ${USER}-workshop-sdwan-RouteServer --name sdwan-fgt2 { &amp;#34;RouteServiceRole_IN_0&amp;#34;: [ { &amp;#34;asPath&amp;#34;: &amp;#34;64622&amp;#34;, &amp;#34;localAddress&amp;#34;: &amp;#34;10.</description>
     </item>
     
     <item>
       <title>Task 2 - LB Rules for VPN Traffic</title>
-      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02demo1/3_task2.html</link>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02/3_task2.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02demo1/3_task2.html</guid>
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02/3_task2.html</guid>
       <description>Task 2 - Create load balancing rules for IPSEC VPN Traffic Select the Hub External Load Balancer sdwan-USERXX-workshop-hub1-elb1
 Click on Load balancing rules
-Create Load balancing rules for UDP 500 and UDP 4500 - one rule for each</description>
+Click &amp;ldquo;+ Add&amp;rdquo;
+Create Load balancing rules for UDP 500 and UDP 4500 - one rule for each
+Name - udp-500 Name - udp-4500 Option value value Name udp-500 udp-4500 IP Version IPv4 IPv4 Frontend IP address hub-pip1 hub-pip1 Backend pool hub1-ext-fgt hub1-ext-fgt Protocol UDP UDP Port 500 4500 Backend port 500 4500 Health probe hub1-elb1-probe hub1-elb1-probe Session persistence None None Floating IP Disabled Disabled Outbound SNAT Use implicit Use implicit </description>
     </item>
     
     <item>
       <title>Task 2 - Run Terraform</title>
-      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/3_task2.html</link>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01/3_task2.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/3_task2.html</guid>
-      <description>Task 2 - Run the Terraform Code Perform the following step in your Cloudshell console to create your environment.
-Clone the Github repo Change directory to the se-conf-sdwan-workshop/se-summit folder Initialize Terraform Create Terraform Plan Apply Terraform Plan Copy and paste these commands into your Cloudshell console. The terraform variable username will be populated with the value of the environment variable USER
-git clone https://github.com/FortinetSecDevOps/se-conf-sdwan-workshop.git cd ./se-conf-sdwan-workshop/se-summit/ terraform init terraform plan -var=&amp;#34;username=${USER}&amp;#34; terraform apply -var=&amp;#34;username=${USER}&amp;#34; At the end of this step you should have the following architecture</description>
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01/3_task2.html</guid>
+      <description>Task 2 - Run the Terraform Deployment Perform the following step in your Cloudshell console to create your environment.
+Clone the Github repo Change directory to the technical-recipe-azure-sdwan/terraform folder Run terraform init Run terraform plan for your username Run terraform apply for your username Copy and paste these commands into your Cloud Shell console. The terraform variable username will be populated with the value of the environment variable USER
+git clone https://github.</description>
     </item>
     
     <item>
       <title>Task 3 - Hub and Spoke VPN Verification</title>
-      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02demo1/4_task3.html</link>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02/4_task3.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02demo1/4_task3.html</guid>
-      <description>Task 3 - Hub and Branch VPN Connectivity Verifications Verify that the FortiGates are responding to Azure Load Balancer Health Checks
-Select the Hub External Load Balancer sdwan-USERXX-workshop-hub1-elb1
-Click on Insights - Click the &amp;ldquo;Refresh&amp;rdquo; button a few times, eventually (~30 seconds) the FortiGate reachability will be indicated.
-Verify that the VPN connections from the Branch to the Hub are UP
-Verify that the BGP peering with the Hub is UP and that the Branch FortiGate learned the Hub and other Branches&amp;rsquo; CIDRs.</description>
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02/4_task3.html</guid>
+      <description>Task 3 - Hub and Branch VPN Connectivity Verification Verify that the FortiGates are responding to Azure Load Balancer Health Checks
+Select the Hub External Load Balancer sdwan-USERXX-workshop-hub1-elb1 Click Insights Close the Metrics panel Green, Red, and/or Yellow lines indicate FortiGate reachability.
+Clicking the &amp;ldquo;Refresh&amp;rdquo; button a few times, if yellow lines are present. Eventually (30 seconds) red and green lines will replace the yellow.
+The diagram shows the load balancing rules along with the Inbound NAT Rules configured on the load balancer.</description>
+    </item>
+    
+    <item>
+      <title>Task 3 - SDN Object</title>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/04/4_task3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/04/4_task3.html</guid>
+      <description>Task 3 - Create a Dynamic SDN object [troubleshooting required] Can the Hub FortiGate Azure SDN Connector read the Azure environment? Troubleshoot and Make the required changes to allow the FortiGate to retrieve the SDN filters.
+Hub FortiGate debug the Azure SDN Connector
+diagnose debug application azd -1 diagnose debug enable Hints:
+FGT Branch3 is able to retrieve the filters, why that is not the case for the FortiGates behind Load Balancers?</description>
     </item>
     
     <item>
       <title>Task 3 - Terraform Verifications</title>
-      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/4_task3.html</link>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01/4_task3.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/4_task3.html</guid>
-      <description>Task 3 - Terraform Verifications Using the Terraform output, verify that you have Web and SSH access to the FortiGates.
-Terraform output can be redisplayed at any point as long as you are in the ./se-conf-sdwan-workshop/se-summit/ directory, by using the command terraform output
-cd cd se-conf-sdwan-workshop/se-summit/ terraform output Connect to the Branch sites FortiGates and check the VPN status.
-Connect to the Hub FortiGates and check the WAN IP</description>
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01/4_task3.html</guid>
+      <description>Task 3 - Terraform Verification Using the Terraform output, verify that you have Web and SSH access to the FortiGates.
+Terraform output can be redisplayed at any point as long as you are in the ./technical-recipe-azure-sdwan/terraform/ directory, by using the command terraform output
+cd cd ./technical-recipe-azure-sdwan/terraform/ terraform output Connect to the Branch FortiGates and check the VPN IPSec status.
+Connect to the Hub FortiGates and check the WAN IP.</description>
     </item>
     
     <item>
       <title>Chapter 1 Quiz</title>
-      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/5_chapter1quiz.html</link>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01/5_chapter1quiz.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/5_chapter1quiz.html</guid>
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01/5_chapter1quiz.html</guid>
       <description>Chapter 1 - QUIZ FortiGates in the Hub do not have public IPs, how are they accessible via the Web UI?
-Why are the VPN connections down?
-FortiGates in the Hub do not have public IPs, how are they accessible via the Web UI?
-The Public IPs on the external load balancers for the Hub, Branch1 and Branch2 FortiGates have inbound NAT rules setup. Why are the VPN connections down?</description>
+Why are the VPN connections down?</description>
     </item>
     
     <item>
       <title>Chapter 2 Quiz</title>
-      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02demo1/5_chapter2quiz.html</link>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02/5_chapter2quiz.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02demo1/5_chapter2quiz.html</guid>
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02/5_chapter2quiz.html</guid>
       <description>Chapter 2 - QUIZ Why is one FortiGate depicted as unhealthy by the Azure Hub External Load Balancer?
 Why is NAT used to access the FortiGates, but for IPSEC VPN traffic Load balancing rules are used?
-Do FortiGates in the Branches learn Spoke11 and Spoke12 CIDRs?
-Why is one FortiGate depicted as unhealthy by the Azure Hub External Load Balancer?
-The passive FortiGate does not respond to the load balancer health probes.</description>
+Do FortiGates in the Branches learn Spoke11 and Spoke12 CIDRs?</description>
+    </item>
+    
+    <item>
+      <title>Chapter 2 Quiz Answers</title>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02/6_chapter2quiz.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02/6_chapter2quiz.html</guid>
+      <description>Chapter 2 - QUIZ Answers Why is one FortiGate depicted as unhealthy by the Azure Hub External Load Balancer?
+The passive FortiGate does not respond to the load balancer health probes. Only after a failover event will the newly active FortiGate start responding to health probes. Why is NAT used to access the FortiGates, but for IPSEC VPN traffic Load balancing rules are used?
+NAT allows each individual FortiGate to be accessed via the Public IP of the load balancer.</description>
+    </item>
+    
+    <item>
+      <title>Task 4 - Traffic generation</title>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/04/5_task4.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/04/5_task4.html</guid>
+      <description>Task 4 - Traffic generation Generate Traffic from Branch1 Primary FortiGate:
+Connect to the Branch1 Primary FortiGate Configure ping-options to initiate traffic from FortiGate&amp;rsquo;s private nic (port2). execute ping-options source 172.16.2.5 - source IP depends on which Branch1 FortiGate is primary br1fgt1 or br1fgt2 execute ping-options repeat-count 100 Initiate a ping to Spoke11 and Spoke12 Linux VMs (10.11.1.4 and 10.12.1.4) execute ping 10.11.1.4 execute ping 10.12.1.4 Generate Traffic from Branch1 Linux VM:</description>
+    </item>
+    
+    <item>
+      <title>Chapter 1 Quiz Answers</title>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01/6_chapter1quiz.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01/6_chapter1quiz.html</guid>
+      <description>Chapter 1 - QUIZ FortiGates in the Hub do not have public IPs, how are they accessible via the Web UI?
+Why are the VPN connections down?
+Quiz 1 Answers FortiGates in the Hub do not have public IPs, how are they accessible via the Web UI?
+The Public IPs on the external load balancers for the Hub, Branch1 and Branch2 FortiGates have inbound NAT rules setup. Why are the VPN connections down?</description>
+    </item>
+    
+    <item>
+      <title>Chapter 4 Quiz</title>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/04/6_chapter4quiz.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/04/6_chapter4quiz.html</guid>
+      <description>Chapter 4 - QUIZ What was missing to allow the FortiGates to retrieve SDN connector filters?
+Why is the FortiGate only able to retrieve the SDN connector filters in its own Resource Group?
+Why is the Branch FortiGate able to reach the remote Spoke VNETs VMs (10.11.1.4 and 10.12.1.4) but the Linux VM behind the Branch1 FortiGate cannot?
+FortiGates at Branch1 and Branch2 site are both behind Azure Load Balancers (behind NAT).</description>
     </item>
     
     <item>
       <title>Chapter 1 Discussion</title>
-      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/6_chapter1discussion.html</link>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01/7_chapter1discussion.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01gettingstarted/6_chapter1discussion.html</guid>
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/01/7_chapter1discussion.html</guid>
       <description>Discussion Points During a Demo - Chapter 1 Fortinet provides a large library of infrastructure as code (IaC) templates to deploy baseline and iterate POC and production environments in public cloud. IaC support includes Terraform, Ansible, and cloud-specific services such as Azure ARM, AWS Cloudformation, and Google Deployment (jinja) templates. Terraform Providers are available for FortiGate and FortiManager to insert and iterate running configuration.
 For more information, review the following:</description>
     </item>
     
     <item>
       <title>Chapter 2 Discussion</title>
-      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02demo1/6_ch2discussion.html</link>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02/7_ch2discussion.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02demo1/6_ch2discussion.html</guid>
-      <description>Discussion Points During a Dem - Chapter 2 When discussing load balanced traffic with the customer, point out key details about the Azure Load Balancers such as the following:
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/02/7_ch2discussion.html</guid>
+      <description>Discussion Points During a Demo - Chapter 2 When discussing load balanced traffic with the customer, point out key details about the Azure Load Balancers such as the following:
 Azure LB uses 5-tuple hash for traffic distribution IPSec in an Active/Active configuration is not supported as session stability cannot be guaranteed to IkE rekeys, and deterministic IP termination. TCP/UDP headers are rewritten to the backend pool. HTTP/s headers are not changed.</description>
+    </item>
+    
+    <item>
+      <title>Chapter 4 Quiz Answers</title>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/04/7_chapter4quiz.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/04/7_chapter4quiz.html</guid>
+      <description>Chapter 4 - QUIZ Answers What was missing to allow the FortiGates to retrieve SDN connector filters?
+The FortiGate&amp;rsquo;s management interfaces need access to the Azure APIs via a public IP address. This required adding a backend pool for the FortiGate management interfaces and a TCP load balancing rule to let the API response to an internal request back through the external load balancer. Why is the FortiGate only able to retrieve the SDN connector filters in its own Resource Group?</description>
+    </item>
+    
+    <item>
+      <title>Chapter 2 Discussion</title>
+      <link>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/04/8_ch4discussion.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fortinetsecdevops.github.io/technical-recipe-azure-sdwan/04/8_ch4discussion.html</guid>
+      <description>Discussion Points During a Demo - Chapter 4 Azure Virtual Network (VNET) Peering provides the ability to connect multiple VNETs together and direct traffic flow based on existence of a gateway in a connected peer or with a user defined route (UDR) in a route table.
+Utilizing an Azure Route Server (ARS) and setting the FortiGates as a BGP peers enables the FortiGates to be updated with newly available routes or the removal of routes as VNETs are peered or when a peering relationship is removed.</description>
     </item>
     
   </channel>

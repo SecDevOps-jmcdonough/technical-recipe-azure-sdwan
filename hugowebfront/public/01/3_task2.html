@@ -9,7 +9,7 @@
 
     <link rel="icon" href="https://www.fortinet.com/etc/designs/fortinet/favicon.ico" type="image/x-icon" />
 
-    <title>Tags :: </title>
+    <title>Task 2 - Run Terraform :: </title>
 
     
     <link href="/technical-recipe-azure-sdwan/css/nucleus.css?1674503246" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/technical-recipe-azure-sdwan/tags.html">
+  <body class="" data-url="/technical-recipe-azure-sdwan/01/3_task2.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -87,7 +87,7 @@
   
     
     <li data-nav-id="/technical-recipe-azure-sdwan/01.html" title="Chapter 1 - Getting Started" class="dd-item
-        
+        parent
         
         
         ">
@@ -136,7 +136,7 @@
  
   
     
-      <li data-nav-id="/technical-recipe-azure-sdwan/01/3_task2.html" title="Task 2 - Run Terraform" class="dd-item ">
+      <li data-nav-id="/technical-recipe-azure-sdwan/01/3_task2.html" title="Task 2 - Run Terraform" class="dd-item active">
         <a href="/technical-recipe-azure-sdwan/01/3_task2.html">
         Task 2 - Run Terraform
         <i class="fas fa-check read-icon"></i>
@@ -652,8 +652,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -664,7 +662,13 @@
             
           
           
-            <a href='/technical-recipe-azure-sdwan/'>Fortinet FortiGate SDWAN on Azure</a> > Tags
+            
+            
+          
+          
+            <a href='/technical-recipe-azure-sdwan/'>Fortinet FortiGate SDWAN on Azure</a> > <a href='/technical-recipe-azure-sdwan/01.html'>Chapter 1 - Getting Started</a> > Task 2 - Run Terraform
+          
+        
           
         
           
@@ -673,13 +677,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -687,31 +684,49 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-                tag ::
-              
-              Tags
-            </h1>
           
 
         
 
 
-
-
-
+<h3 id="task-2---run-the-terraform-deployment">Task 2 - Run the Terraform Deployment</h3>
+<p>Perform the following step in your Cloudshell console to create your environment.</p>
+<ol>
+<li>Clone the Github repo</li>
+<li>Change directory to the <code>technical-recipe-azure-sdwan/terraform</code> folder</li>
+<li>Run <code>terraform init</code></li>
+<li>Run <code>terraform plan</code> for your <code>username</code></li>
+<li>Run <code>terraform apply</code> for your <code>username</code></li>
+</ol>
+<blockquote>
+<p><strong>Copy and paste these commands into your Cloud Shell console.</strong>
+The terraform variable <code>username</code> will be populated with the value of the environment variable <code>USER</code></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone https://github.com/FortinetSecDevOps/technical-recipe-azure-sdwan
+</span></span><span style="display:flex;"><span>cd ./technical-recipe-azure-sdwan/terraform/
+</span></span><span style="display:flex;"><span>terraform init
+</span></span><span style="display:flex;"><span>terraform plan -var<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username=</span><span style="color:#e6db74">${</span>USER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>terraform apply -var<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username=</span><span style="color:#e6db74">${</span>USER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> -auto-approve
+</span></span></code></pre></div><p><img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-01.jpg" alt="terraform1">
+<img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-02.jpg" alt="terraform2">
+<img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-03.jpg" alt="terraform3"></p>
 <ul>
-	
+<li>
+<p>The current state of the Architecture is shown below.</p>
+<p><img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_01.jpg" alt="global-step1"></p>
+</li>
 </ul>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
+        
+            </div> 
         
         </div>
         
@@ -775,6 +790,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -790,6 +806,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1102,8 +1121,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/technical-recipe-azure-sdwan/01/2_task1.html" title="Task 1 - Setup Azure CloudShell"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/technical-recipe-azure-sdwan/01.html" title="Chapter 1 - Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/technical-recipe-azure-sdwan/01/4_task3.html" title="Task 3 - Terraform Verifications" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1135,3 +1156,4 @@
 
   </body>
 </html>
+

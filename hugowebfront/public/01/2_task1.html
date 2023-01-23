@@ -9,7 +9,7 @@
 
     <link rel="icon" href="https://www.fortinet.com/etc/designs/fortinet/favicon.ico" type="image/x-icon" />
 
-    <title>Tags :: </title>
+    <title>Task 1 - Setup Azure CloudShell :: </title>
 
     
     <link href="/technical-recipe-azure-sdwan/css/nucleus.css?1674503246" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/technical-recipe-azure-sdwan/tags.html">
+  <body class="" data-url="/technical-recipe-azure-sdwan/01/2_task1.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -87,7 +87,7 @@
   
     
     <li data-nav-id="/technical-recipe-azure-sdwan/01.html" title="Chapter 1 - Getting Started" class="dd-item
-        
+        parent
         
         
         ">
@@ -115,7 +115,7 @@
  
   
     
-      <li data-nav-id="/technical-recipe-azure-sdwan/01/2_task1.html" title="Task 1 - Setup Azure CloudShell" class="dd-item ">
+      <li data-nav-id="/technical-recipe-azure-sdwan/01/2_task1.html" title="Task 1 - Setup Azure CloudShell" class="dd-item active">
         <a href="/technical-recipe-azure-sdwan/01/2_task1.html">
         Task 1 - Setup Azure CloudShell
         <i class="fas fa-check read-icon"></i>
@@ -652,8 +652,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -664,7 +662,13 @@
             
           
           
-            <a href='/technical-recipe-azure-sdwan/'>Fortinet FortiGate SDWAN on Azure</a> > Tags
+            
+            
+          
+          
+            <a href='/technical-recipe-azure-sdwan/'>Fortinet FortiGate SDWAN on Azure</a> > <a href='/technical-recipe-azure-sdwan/01.html'>Chapter 1 - Getting Started</a> > Task 1 - Setup Azure CloudShell
+          
+        
           
         
           
@@ -673,13 +677,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -687,31 +684,66 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-                tag ::
-              
-              Tags
-            </h1>
           
 
         
 
 
-
-
-
+<h3 id="task-1---setup-your-azurecloud-shell">Task 1 - Setup your AzureCloud Shell</h3>
 <ul>
-	
+<li>
+<p>Login to Azure Cloud Portal <a href="https://portal.azure.com/">https://portal.azure.com/</a> with the provided login/password</p>
+<p><img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-01.jpg" alt="cloudshell1">
+<img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-02.jpg" alt="cloudshell2"></p>
+</li>
+<li>
+<p>Click the link &ldquo;Skip for now (14 days until this is required)&rdquo; do not click the &ldquo;Next&rdquo; button</p>
+<p><img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-03.jpg" alt="cloudshell3"></p>
+</li>
+<li>
+<p>Click the &ldquo;Next&rdquo; button</p>
+<p><img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-04.jpg" alt="cloudshell4"></p>
+</li>
+<li>
+<p>Click on Cloud Shell icon on the Top Right side of the portal</p>
+<p><img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-05.jpg" alt="cloudshell5"></p>
+</li>
+<li>
+<p>Select <strong>Bash</strong></p>
+<p><img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-06.jpg" alt="cloudshell6"></p>
+</li>
+<li>
+<p>Click on <strong>Show advanced settings</strong></p>
+<p><img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-07.jpg" alt="cloudshell7"></p>
+</li>
+<li>
+<p>Select</p>
+<ul>
+<li>Use existing Resource Group  - it <em><strong>should</strong></em> auto populate with USERXX-workshop-sdwan (USERXX is your Username)</li>
+<li>Use existing Storage account - it <em><strong>should</strong></em> auto populate with USERXX########## (########## is a random string)</li>
+<li>Use existing File Share  - type <strong>cloudshellshare</strong></li>
+</ul>
+</li>
+<li>
+<p>Click &ldquo;Attach Storage&rdquo;</p>
+<p><img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-08.jpg" alt="cloudshell8"></p>
+</li>
+<li>
+<p>You should now have access to Azure Cloud Shell console</p>
+<p><img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-09.jpg" alt="cloudshell9"></p>
+</li>
 </ul>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
+        
+            </div> 
         
         </div>
         
@@ -759,6 +791,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -774,6 +807,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1102,8 +1138,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/technical-recipe-azure-sdwan/01.html" title="Chapter 1 - Getting Started"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/technical-recipe-azure-sdwan/01.html" title="Chapter 1 - Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/technical-recipe-azure-sdwan/01/3_task2.html" title="Task 2 - Run Terraform" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1135,3 +1173,4 @@
 
   </body>
 </html>
+

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="https://www.fortinet.com/etc/designs/fortinet/favicon.ico" type="image/x-icon" />
 
-    <title>Tags :: </title>
+    <title>Task 4 - Traffic generation :: </title>
 
     
     <link href="/technical-recipe-azure-sdwan/css/nucleus.css?1674503246" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/technical-recipe-azure-sdwan/tags.html">
+  <body class="" data-url="/technical-recipe-azure-sdwan/04/5_task4.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -411,7 +411,7 @@
   
     
     <li data-nav-id="/technical-recipe-azure-sdwan/04.html" title="Chapter 4 - Hub / Spoke Peering" class="dd-item
-        
+        parent
         
         
         ">
@@ -502,7 +502,7 @@
  
   
     
-      <li data-nav-id="/technical-recipe-azure-sdwan/04/5_task4.html" title="Task 4 - Traffic generation" class="dd-item ">
+      <li data-nav-id="/technical-recipe-azure-sdwan/04/5_task4.html" title="Task 4 - Traffic generation" class="dd-item active">
         <a href="/technical-recipe-azure-sdwan/04/5_task4.html">
         Task 4 - Traffic generation
         <i class="fas fa-check read-icon"></i>
@@ -652,8 +652,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -664,7 +662,13 @@
             
           
           
-            <a href='/technical-recipe-azure-sdwan/'>Fortinet FortiGate SDWAN on Azure</a> > Tags
+            
+            
+          
+          
+            <a href='/technical-recipe-azure-sdwan/'>Fortinet FortiGate SDWAN on Azure</a> > <a href='/technical-recipe-azure-sdwan/04.html'>Chapter 4 - Hub / Spoke Peering</a> > Task 4 - Traffic generation
+          
+        
           
         
           
@@ -673,13 +677,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -687,31 +684,83 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-                tag ::
-              
-              Tags
-            </h1>
           
 
         
 
 
-
-
-
+<h3 id="task-4---traffic-generation">Task 4 - Traffic generation</h3>
 <ul>
-	
+<li>
+<p>Generate Traffic from Branch1 Primary FortiGate:</p>
+<ol>
+<li>Connect to the Branch1 Primary FortiGate</li>
+<li>Configure ping-options to initiate traffic from FortiGate&rsquo;s private nic (port2).
+<ul>
+<li><code>execute ping-options source 172.16.2.5</code> - source IP depends on which Branch1 FortiGate is primary br1fgt1 or br1fgt2</li>
+<li><code>execute ping-options repeat-count 100</code></li>
+</ul>
+</li>
+<li>Initiate a ping to Spoke11 and Spoke12 Linux VMs (10.11.1.4 and 10.12.1.4)
+<ul>
+<li><code>execute ping 10.11.1.4</code></li>
+<li><code>execute ping 10.12.1.4</code></li>
+</ul>
+</li>
+</ol>
+<p><img src="images/traffic2.jpg" alt="traffic2"></p>
+<p><img src="images/traffic1.jpg" alt="traffic1"></p>
+</li>
+<li>
+<p>Generate Traffic from Branch1 Linux VM:</p>
+<ol>
+<li>
+<p>Enable serial console access on Branch1 Linux VM</p>
+<ul>
+<li>
+<p>Click on the VM <strong>sdwan-USERXX-workshop-br1lnx1</strong></p>
+</li>
+<li>
+<p>Go to Boot diagnostics -&gt; Settings -&gt;  Select <strong>Enable with managed storage account (recommended)</strong></p>
+</li>
+<li>
+<p>Click Save</p>
+<p><img src="images/ssh-br-lnx-console1.jpg" alt="console1">
+<img src="images/managed-storage.jpg" alt="console2"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Go to the VM Serial Console
+<img src="images/ssh-br-lnx-console3.jpg" alt="console3"></p>
+</li>
+<li>
+<p>Initiate a ping to Spoke11 and Spoke12 Linux VMs</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping 10.11.1.4
+</span></span><span style="display:flex;"><span>ping 10.12.1.4 
+</span></span></code></pre></div><p><img src="images/traffic3.jpg" alt="traffic3"></p>
+</li>
+<li>
+<p>Does it work?</p>
+</li>
+</ol>
+</li>
+<li>
+<p>At the end of this step  you should have the following architecture</p>
+<p><img src="images/sdwan_architecture_03.jpg" alt="global-step3"></p>
+</li>
 </ul>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
+        
+            </div> 
         
         </div>
         
@@ -1031,6 +1080,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1046,6 +1096,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1102,8 +1155,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/technical-recipe-azure-sdwan/04/4_task3.html" title="Task 3 - SDN Object"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/technical-recipe-azure-sdwan/01.html" title="Chapter 1 - Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/technical-recipe-azure-sdwan/04/6_chapter4quiz.html" title="Chapter 4 Quiz" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1135,3 +1190,4 @@
 
   </body>
 </html>
+

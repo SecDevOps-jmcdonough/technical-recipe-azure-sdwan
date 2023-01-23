@@ -9,7 +9,7 @@
 
     <link rel="icon" href="https://www.fortinet.com/etc/designs/fortinet/favicon.ico" type="image/x-icon" />
 
-    <title>Tags :: </title>
+    <title>Task 1 - Add FortiGates to Hub LB :: </title>
 
     
     <link href="/technical-recipe-azure-sdwan/css/nucleus.css?1674503246" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/technical-recipe-azure-sdwan/tags.html">
+  <body class="" data-url="/technical-recipe-azure-sdwan/02/2_task1.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -249,7 +249,7 @@
   
     
     <li data-nav-id="/technical-recipe-azure-sdwan/02.html" title="Chapter 2 - Hub / Branch VPN" class="dd-item
-        
+        parent
         
         
         ">
@@ -277,7 +277,7 @@
  
   
     
-      <li data-nav-id="/technical-recipe-azure-sdwan/02/2_task1.html" title="Task 1 - Add FortiGates to Hub LB" class="dd-item ">
+      <li data-nav-id="/technical-recipe-azure-sdwan/02/2_task1.html" title="Task 1 - Add FortiGates to Hub LB" class="dd-item active">
         <a href="/technical-recipe-azure-sdwan/02/2_task1.html">
         Task 1 - Add FortiGates to Hub LB
         <i class="fas fa-check read-icon"></i>
@@ -652,8 +652,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -664,7 +662,13 @@
             
           
           
-            <a href='/technical-recipe-azure-sdwan/'>Fortinet FortiGate SDWAN on Azure</a> > Tags
+            
+            
+          
+          
+            <a href='/technical-recipe-azure-sdwan/'>Fortinet FortiGate SDWAN on Azure</a> > <a href='/technical-recipe-azure-sdwan/02.html'>Chapter 2 - Hub / Branch VPN</a> > Task 1 - Add FortiGates to Hub LB
+          
+        
           
         
           
@@ -673,13 +677,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -687,31 +684,43 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-                tag ::
-              
-              Tags
-            </h1>
           
 
         
 
 
-
-
-
+<h3 id="task-1---add-fortigates-to-hub-load-balancer-backend-pool">Task 1 - Add FortiGates to Hub Load Balancer Backend Pool</h3>
+<ol>
+<li><strong>Select</strong> the Hub External Load Balancer <strong>sdwan-USERXX-workshop-hub1-elb1</strong></li>
+<li><strong>Click</strong> Backend pools</li>
+<li><strong>Select</strong> &ldquo;hub1-ext-fgt&rdquo;</li>
+<li><strong>Click</strong> &ldquo;+Add&rdquo;</li>
+<li><strong>Select</strong> sdwan-USERXX-workshop-hub1-fgt1 and sdwan-USERXX-workshop-hub1-fgt2 <strong>port1 interfaces</strong>
 <ul>
-	
+<li>10.10.0.4</li>
+<li>10.10.0.5</li>
 </ul>
+</li>
+<li><strong>Click</strong> &ldquo;Add&rdquo;</li>
+<li><strong>Click</strong> &ldquo;Save&rdquo;</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-01.jpg" alt="hub-lb-backend1">
+<img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-02.jpg" alt="hub-lb-backend2">
+<img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-03.jpg" alt="hub-lb-backend3">
+<img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-04.jpg" alt="hub-lb-backend4">
+<img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-05.jpg" alt="hub-lb-backend5">
+<img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-06.jpg" alt="hub-lb-backend6"></p>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
+        
+            </div> 
         
         </div>
         
@@ -871,6 +880,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -886,6 +896,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1102,8 +1115,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/technical-recipe-azure-sdwan/02.html" title="Chapter 2 - Hub / Branch VPN"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/technical-recipe-azure-sdwan/01.html" title="Chapter 1 - Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/technical-recipe-azure-sdwan/02/3_task2.html" title="Task 2 - LB Rules for VPN Traffic" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1135,3 +1150,4 @@
 
   </body>
 </html>
+

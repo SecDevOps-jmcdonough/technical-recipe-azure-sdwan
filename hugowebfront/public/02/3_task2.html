@@ -9,7 +9,7 @@
 
     <link rel="icon" href="https://www.fortinet.com/etc/designs/fortinet/favicon.ico" type="image/x-icon" />
 
-    <title>Tags :: </title>
+    <title>Task 2 - LB Rules for VPN Traffic :: </title>
 
     
     <link href="/technical-recipe-azure-sdwan/css/nucleus.css?1674503246" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/technical-recipe-azure-sdwan/tags.html">
+  <body class="" data-url="/technical-recipe-azure-sdwan/02/3_task2.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -249,7 +249,7 @@
   
     
     <li data-nav-id="/technical-recipe-azure-sdwan/02.html" title="Chapter 2 - Hub / Branch VPN" class="dd-item
-        
+        parent
         
         
         ">
@@ -298,7 +298,7 @@
  
   
     
-      <li data-nav-id="/technical-recipe-azure-sdwan/02/3_task2.html" title="Task 2 - LB Rules for VPN Traffic" class="dd-item ">
+      <li data-nav-id="/technical-recipe-azure-sdwan/02/3_task2.html" title="Task 2 - LB Rules for VPN Traffic" class="dd-item active">
         <a href="/technical-recipe-azure-sdwan/02/3_task2.html">
         Task 2 - LB Rules for VPN Traffic
         <i class="fas fa-check read-icon"></i>
@@ -652,8 +652,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -664,7 +662,13 @@
             
           
           
-            <a href='/technical-recipe-azure-sdwan/'>Fortinet FortiGate SDWAN on Azure</a> > Tags
+            
+            
+          
+          
+            <a href='/technical-recipe-azure-sdwan/'>Fortinet FortiGate SDWAN on Azure</a> > <a href='/technical-recipe-azure-sdwan/02.html'>Chapter 2 - Hub / Branch VPN</a> > Task 2 - LB Rules for VPN Traffic
+          
+        
           
         
           
@@ -673,13 +677,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -687,31 +684,124 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-                tag ::
-              
-              Tags
-            </h1>
           
 
         
 
 
-
-
-
+<h3 id="task-2---create-load-balancing-rules-for-ipsec-vpn-traffic">Task 2 - Create load balancing rules for IPSEC VPN Traffic</h3>
+<ol>
+<li>
+<p><strong>Select</strong> the Hub External Load Balancer <strong>sdwan-USERXX-workshop-hub1-elb1</strong></p>
+</li>
+<li>
+<p><strong>Click</strong> on Load balancing rules</p>
+</li>
+<li>
+<p><strong>Click</strong> &ldquo;+ Add&rdquo;</p>
+</li>
+<li>
+<p><strong>Create</strong> Load balancing rules for UDP 500 and UDP 4500 - <em><strong>one rule for each</strong></em></p>
 <ul>
-	
+<li>Name - <code>udp-500</code></li>
+<li>Name - <code>udp-4500</code></li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>value</th>
+<th></th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>udp-500</td>
+<td></td>
+<td>udp-4500</td>
+</tr>
+<tr>
+<td>IP Version</td>
+<td>IPv4</td>
+<td></td>
+<td>IPv4</td>
+</tr>
+<tr>
+<td>Frontend IP address</td>
+<td>hub-pip1</td>
+<td></td>
+<td>hub-pip1</td>
+</tr>
+<tr>
+<td>Backend pool</td>
+<td>hub1-ext-fgt</td>
+<td></td>
+<td>hub1-ext-fgt</td>
+</tr>
+<tr>
+<td>Protocol</td>
+<td>UDP</td>
+<td></td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>Port</td>
+<td>500</td>
+<td></td>
+<td>4500</td>
+</tr>
+<tr>
+<td>Backend port</td>
+<td>500</td>
+<td></td>
+<td>4500</td>
+</tr>
+<tr>
+<td>Health probe</td>
+<td>hub1-elb1-probe</td>
+<td></td>
+<td>hub1-elb1-probe</td>
+</tr>
+<tr>
+<td>Session persistence</td>
+<td>None</td>
+<td></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Floating IP</td>
+<td>Disabled</td>
+<td></td>
+<td>Disabled</td>
+</tr>
+<tr>
+<td>Outbound SNAT</td>
+<td>Use implicit</td>
+<td></td>
+<td>Use implicit</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbrule-01.jpg" alt="hub-lb-rule1">
+<img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbrule-02.jpg" alt="hub-lb-rule2">
+<img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbrule-03.jpg" alt="hub-lb-rule3">
+<img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbrule-04.jpg" alt="hub-lb-rule4">
+<img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbrule-05.jpg" alt="hub-lb-rule5"></p>
+</li>
+</ol>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
+        
+            </div> 
         
         </div>
         
@@ -887,6 +977,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -902,6 +993,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1102,8 +1196,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/technical-recipe-azure-sdwan/02/2_task1.html" title="Task 1 - Add FortiGates to Hub LB"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/technical-recipe-azure-sdwan/01.html" title="Chapter 1 - Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/technical-recipe-azure-sdwan/02/4_task3.html" title="Task 3 - Hub and Spoke VPN Verification" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1135,3 +1231,4 @@
 
   </body>
 </html>
+
