@@ -7,10 +7,11 @@ weight: 3
 ### Task 2 - Check Azure Route Server Configuration and Learned Routes
 
 1. **Select** the Azure Route Server **USERXX-workshop-sdwan-RouteServer** contained within your Resource Group.
-
-    ![routeserver](images/routeserver.jpg)
-
 1. **Click** on Peers on the left side of the menu, verify the connection to the Hub FortiGates
+
+    ![routeserver1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/routeserver-01.jpg)
+    ![routeserver2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/routeserver-02.jpg)
+
 1. **List** the routes learned by Azure Route Server, run the commands below from your Azure Cloud Shell
 
 * The variable `${USER}` in the commands reads your username from the environment
@@ -18,6 +19,89 @@ weight: 3
 ```bash
 az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --routeserver ${USER}-workshop-sdwan-RouteServer --name sdwan-fgt1
 az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --routeserver ${USER}-workshop-sdwan-RouteServer --name sdwan-fgt2
+```
+
+![routeserver3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/routeserver-03.jpg)
+
+```json
+{
+  "RouteServiceRole_IN_0": [
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.4",
+      "network": "10.10.255.1/32",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    },
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.4",
+      "network": "172.18.0.0/16",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    },
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.4",
+      "network": "172.17.0.0/16",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    },
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.4",
+      "network": "172.16.0.0/16",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    }
+  ],
+  "RouteServiceRole_IN_1": [
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.5",
+      "network": "10.10.255.1/32",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    },
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.5",
+      "network": "172.18.0.0/16",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    },
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.5",
+      "network": "172.17.0.0/16",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    },
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.5",
+      "network": "172.16.0.0/16",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    }
+  ]
+}
 ```
 
 > The passive FortiGate will produce empty output
