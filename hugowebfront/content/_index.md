@@ -4,13 +4,11 @@ chapter: true
 weight: 1
 ---
 
-# Fortinet FortiGate Workshop on Azure
+## Fortinet FortiGate SDWAN Networking Workshop on Azure
 
-### Welcome!
+In this workshop you will learn how to deploy Fortinet's FortiGate NGFW on Azure in several different use cases
 
-In this workshop you will learn how to deploy Fortinet's FortiGate NGFW on Azure in several different use cases 
-
-# About TEC Recipes
+### About TEC Recipes
 
 TEC Recipes provide the learner with the opportunity to put into practice newly developed skills in an easy to launch environment that can be used for customer engagements. At a minimum a TEC Recipe will include the following:
 
@@ -51,10 +49,7 @@ The purpose of this TEC Recipe is to familiarize the learner with routing, data-
 * Understand the different available architecture options
 
 ***
-***
 
 {{< notice warning >}}
-
 The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how various Fortinet and Azure services can be architected to build a solution while demonstrating best practices along the way. These examples are not intended for use in production environments without full understanding of how they operate.
-
 {{< /notice >}}

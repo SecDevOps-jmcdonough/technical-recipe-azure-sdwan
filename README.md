@@ -697,24 +697,33 @@ Several settings in Azure determine traffic flow review the following for Azure 
 
 ### Branch to Cloud
 
-#### Task 1 - Create a User Defined Route (UDR) in the Branch1 route table
+### Task 1 - Create a User Defined Route (UDR) in the Branch route tables
 
 1. **Click** on the Branch1 private route table **sdwan-USERXX-workshop-branch1_rt**
 1. **Click** Routes
 1. **Add** a default route for `0.0.0.0/0` that points to the Branch1 **Internal Load balancer listener IP**
-1. **Repeat** the previous step for the **Branch2** and **Branch3** Route Tables
+    * Name - `default`
+    * Address prefix destination - "IP Addresses"
+    * Destination IP addresses/CIDR ranges - `0.0.0.0/0`
+    * Next hop type - "Virtual appliance"
+    * Next hop address
+      * Branch1 - `172.16.2.10`
+      * Branch2 - `172.17.2.10`
+      * Branch3 - `172.17.2.4`
+1. **Repeat** for **Branch2** and **Branch3** Route Tables
   
-    * Be sure to use the correct IP as the next hop, that is the correct Internal Load balancer listener IP or FortiGate internal interface.
+    * Be sure to use the correct IP as the next hop, that is the correct internal Load balancer frontend IP or FortiGate internal interface.
 
-    Hint: The next hop is a load balancer or a stand-alone FortiGate.
+    * The next hop is a load balancer or a stand-alone FortiGate.
 
-    ![add udr](images/add-defaultroutebranch1.jpg)
+    ![add udr branch1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/add-defaultroutebranch1-01.jpg)
+    ![add udr branch2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/add-defaultroutebranch1-02.jpg)
+    ![add udr branch3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/add-defaultroutebranch1-03.jpg)
+    ![add udr branch4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/add-defaultroutebranch1-04.jpg)
 
-    ![udr](images/defaultroutebranch1.jpg)
+### Task 2 - Generate Branch traffic to the Hub
 
-#### Task 2 - Generate traffic to the Hub
-
-1. **Connect** to the Branch1 Linux Host via the serial console
+1. **Connect** to the Branch1 Linux VM via the serial console
 1. **Generate** traffic to Hub
 
     ```bash
@@ -722,50 +731,59 @@ Several settings in Azure determine traffic flow review the following for Azure 
      ping 10.12.1.4 
     ```
 
-1. Does it work now?
+    ![console3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/ssh-br-lnx-console-01.jpg)
 
-#### Task 3 - Check effective routes
+1. Why does it work now?
 
-1. **Click** on Spoke11 Linux VM sdwan-USERXX-workshop-spoke11-subnet1-lnx
-1. **Click** on Networking in the Navigation Menu
+* Now when traffic leaves the branch linux VM the next hop is the Branch FortiGate, because the Azure route table default route.
 
-    ![effectiveroutes1](images/effectiveroutes-lnx-1.jpg)
+### Task 3 - Check Effective Routes
 
-1. **Click** on the VM nic
+Check the Effective Routes for Spoke 11 Linux VM
 
-    ![effectiveroutes2](images/effectiveroutes-lnx-2.jpg)
-
+1. **Click** on Spoke11 Linux VM **sdwan-USERXX-workshop-spoke11-subnet1-lnx**
+1. **Click** on Networking
+1. **Click** on the VM Nic **sdwan-se10-workshop-spoke11-subnet1-lnx-nic**
 1. **Click** on **Effective routes**
 
-    ![effectiveroutes3](images/effectiveroutes-lnx-3.jpg)
+    ![effectiveroutes1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/images/effectiveroutes-lnx-01.jpg)
+    ![effectiveroutes2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/images/effectiveroutes-lnx-02.jpg)
 
-1. **Check** that Azure Route Server has injected the Branch sites CIDRs learnt from the FGT
+1. **Check** that Azure Route Server has injected the Branch sites CIDRs learned from the FortiGate
 
-1. **Click** on the Hub FGT VM sdwan-USERXX-workshop-hub1-fgt1
-1. **Click** on Networking in the Navigation Menu
+    ![effectiveroutes3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/images/effectiveroutes-lnx-03.jpg)
 
-    ![effectiveroutes4](images/effectiveroutes-lnx-4.jpg)
+Check the Effective Routes for Hub FortiGate
 
-1. **Click** on the VM port2 nic
-    ![effectiveroutes5](images/effectiveroutes-lnx-5.jpg)
-
+1. **Click** on the Hub FGT **sdwan-USERXX-workshop-hub1-fgt1**
+1. **Click** on Networking
+1. **Click** on the VM Nic port1 Nic **hub1-fgt1-port1**
 1. **Click** on **Effective routes**
-    ![effectiveroutes6](images/effectiveroutes-lnx-6.jpg)
 
-* Has Azure Route Server injected the Branch sites CIDRs learnt from the FGT?  Why ?
+    ![effectiveroutes4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/images/effectiveroutes-lnx-04.jpg)
+    ![effectiveroutes5](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/images/effectiveroutes-lnx-05.jpg)
+
+Has Azure Route Server injected the Branch sites CIDRs learned from the FortiGates?
+
+* In this case it is the FortiGate that knows how to route from the Hub to the Branches, but these routes are not given to the Azure Route Server. These BGP routes are learned through the IPsec VPN connections.
 
 ### Branch to Branch
 
-#### Task 4 - Generate traffic between Branches
+### Task 4 - Generate Traffic between Branches
 
 1. **Connect** to the Branch1 Linux Host via the serial console - **sdwan-USERXX-workshop-br1lnx1**
-1. **Generate** traffic to Branch2 Linux Host
+1. **Generate** traffic to Branch2 Linux VM and Branch3 Linux VM
 
-   ```bash
+    ```bash
      ping 172.17.5.4
+     ping 172.18.5.4
     ```
 
-1. **Check** if an ADVPN shortcut has been created. Run the command `get router info routing-table bgp`
+    ![console3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/ssh-br-lnx-console-03.jpg)
+
+1. **Login** to any Branch FortiGate
+1. **Check** from the CLI if an ADVPN shortcut has been created.
+1. **Run** the command `get router info routing-table bgp`
 
     ![advpn check](images/advpn-check.jpg)
 

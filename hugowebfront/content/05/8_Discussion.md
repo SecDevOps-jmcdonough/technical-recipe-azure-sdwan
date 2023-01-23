@@ -1,10 +1,10 @@
 ---
-title: "Chapter 4 Discussion"
+title: "Chapter 5 Discussion"
 chapter: true
 weight: 8
 ---
 
-## ***Discussion Points During a Demo - Chapter 4***
+## ***Discussion Points During a Demo - Chapter 5***
 
 Azure Virtual Network (VNET) Peering provides the ability to connect multiple VNETs together and direct traffic flow based on existence of a gateway in a connected peer or with a user defined route (UDR) in a route table.
 
