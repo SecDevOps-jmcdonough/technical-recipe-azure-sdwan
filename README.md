@@ -49,39 +49,39 @@ The purpose of this TEC Recipe is to familiarize the learner with routing, data-
 
 * Login to Azure Cloud Portal [https://portal.azure.com/](https://portal.azure.com/) with the provided login/password
 
-    ![cloudshell1](images/cloudshell-01.jpg)
-    ![cloudshell2](images/cloudshell-02.jpg)
+    ![cloudshell1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-01.jpg)
+    ![cloudshell2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-02.jpg)
 
 * Click the link "Skip for now (14 days until this is required)" do not click the "Next" button
 
-    ![cloudshell3](images/cloudshell-03.jpg)
+    ![cloudshell3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-03.jpg)
 
 * Click the "Next" button
 
-    ![cloudshell4](images/cloudshell-04.jpg)
+    ![cloudshell4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-04.jpg)
 
 * Click on Cloud Shell icon on the Top Right side of the portal
 
-    ![cloudshell5](images/cloudshell-05.jpg)
+    ![cloudshell5](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-05.jpg)
 
 * Select **Bash**
 
-    ![cloudshell6](images/cloudshell-06.jpg)
+    ![cloudshell6](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-06.jpg)
 
 * Click on **Show advanced settings**
 
-    ![cloudshell7](images/cloudshell-07.jpg)
+    ![cloudshell7](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-07.jpg)
 * Select
   * Use existing Resource Group  - it ***should*** auto populate with USERXX-workshop-sdwan (USERXX is your Username)
   * Use existing Storage account - it ***should*** auto populate with USERXX########## (########## is a random string)
   * Use existing File Share  - type **cloudshellshare**
 * Click "Attach Storage"
 
-    ![cloudshell8](images/cloudshell-08.jpg)
+    ![cloudshell8](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-08.jpg)
 
 * You should now have access to Azure Cloud Shell console
 
-    ![cloudshell9](images/cloudshell-09.jpg)
+    ![cloudshell9](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-09.jpg)
 
 ### Task 2 - Run the Terraform Deployment
 
@@ -104,19 +104,19 @@ terraform plan -var="username=${USER}"
 terraform apply -var="username=${USER}" -auto-approve
 ```
 
-  ![terraform1](images/terraform-01.jpg)
-  ![terraform2](images/terraform-02.jpg)
-  ![terraform3](images/terraform-03.jpg)
+  ![terraform1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-01.jpg)
+  ![terraform2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-02.jpg)
+  ![terraform3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-03.jpg)
 
-* At the end of this step you should have the following architecture
+* The current state of the Architecture is shown below.
 
-    ![global-step1](images/sdwan_architecture_01.jpg)
+    ![global-step1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_01.jpg)
 
 ### Task 3 - Terraform Verifications
 
   1. Using the Terraform output, verify that you have Web and SSH access to the FortiGates.
 
-      ![terraform4](images/terraform-04.jpg)
+      ![terraform4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-04.jpg)
 
       * Terraform output can be redisplayed at any point as long as you are in the `./technical-recipe-azure-sdwan/terraform/` directory, by using the command `terraform output`
 
@@ -151,7 +151,7 @@ terraform apply -var="username=${USER}" -auto-approve
 
 ***
 
-## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 1***
+## ***Discussion Points During a Demo - Chapter 1***
 
 Fortinet provides a large library of infrastructure as code (IaC) templates to deploy baseline and iterate POC and production environments in public cloud.  IaC support includes Terraform, Ansible, and cloud-specific services such as Azure ARM, AWS Cloudformation, and Google Deployment (jinja) templates. Terraform Providers are available for FortiGate and FortiManager to insert and iterate running configuration.
 
@@ -289,7 +289,7 @@ The diagram shows the load balancing rules along with the Inbound NAT Rules conf
   </details>
 </details>
 
-## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Dem - Chapter 2***
+## ***Discussion Points During a Demo - Chapter 2***
 
 When discussing load balanced traffic with the customer, point out key details about the Azure Load Balancers such as the following:
 
@@ -316,9 +316,7 @@ When giving this TEC Recipe as as demo, the following questions will provide a b
 
 ## Chapter 3 - Azure Route Server Presentation (30min)
 
-***[Presentation about Azure Route Server- estimated duration 30min]***
-
-## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 3***
+## ***Discussion Points During a Demo - Chapter 3***
 
 The Azure Route Server (ASR) is used to connect NVAs to the Azure network to simplify VNet routing with external networks.  SD-WAN is a primary use case for the ASR where BGP routes are exchanged between a premise-based and the ASR to advertise premise-originated routes to the VNets and VNet routes to the premise.  For many customers, this may be a great fit.  For some customers, there may be more complex routing requirements such as multiple egress points,load balanced routes, large number of BGP peers, large volume of routes (>1000); where these needs require advanced BGP.  More complex use cases will require FortiGate to FortiGate peering in those cases.  Let your customer know about Fortinet's ability to support [advanced dynamic routing services](https://docs.fortinet.com/document/fortiswitch/7.2.2/administration-guide/939731/bgp-routing).  
 
@@ -384,10 +382,11 @@ Create a VNET peering between the Spoke11 VNET and the Hub VNET
 ### Task 2 - Check Azure Route Server Configuration and Learned Routes
 
 1. **Select** the Azure Route Server **USERXX-workshop-sdwan-RouteServer** contained within your Resource Group.
-
-    ![routeserver](images/routeserver.jpg)
-
 1. **Click** on Peers on the left side of the menu, verify the connection to the Hub FortiGates
+
+    ![routeserver1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/routeserver-01.jpg)
+    ![routeserver2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/routeserver-02.jpg)
+
 1. **List** the routes learned by Azure Route Server, run the commands below from your Azure Cloud Shell
 
 * The variable `${USER}` in the commands reads your username from the environment
@@ -395,6 +394,89 @@ Create a VNET peering between the Spoke11 VNET and the Hub VNET
 ```bash
 az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --routeserver ${USER}-workshop-sdwan-RouteServer --name sdwan-fgt1
 az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --routeserver ${USER}-workshop-sdwan-RouteServer --name sdwan-fgt2
+```
+
+![routeserver3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/routeserver-03.jpg)
+
+```json
+{
+  "RouteServiceRole_IN_0": [
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.4",
+      "network": "10.10.255.1/32",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    },
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.4",
+      "network": "172.18.0.0/16",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    },
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.4",
+      "network": "172.17.0.0/16",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    },
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.4",
+      "network": "172.16.0.0/16",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    }
+  ],
+  "RouteServiceRole_IN_1": [
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.5",
+      "network": "10.10.255.1/32",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    },
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.5",
+      "network": "172.18.0.0/16",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    },
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.5",
+      "network": "172.17.0.0/16",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    },
+    {
+      "asPath": "64622",
+      "localAddress": "10.10.2.5",
+      "network": "172.16.0.0/16",
+      "nextHop": "10.10.1.4",
+      "origin": "EBgp",
+      "sourcePeer": "10.10.1.4",
+      "weight": 32768
+    }
+  ]
+}
 ```
 
 > The passive FortiGate will produce empty output
@@ -409,88 +491,150 @@ az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --r
 
 ### Task 3 - Create a Dynamic SDN object [troubleshooting required]
 
-* Can the Hub FortiGate Azure SDN Connector read the Azure environment?
-  * **Troubleshoot and Make the required changes to allow the FortiGate to retrieve the SDN filters.**
+Can the Hub FortiGate Azure SDN Connector read the Azure environment?
 
-    * Hub FortiGate debug the Azure SDN Connector
+* **Troubleshoot and Make the required changes to allow the FortiGate to retrieve the SDN filters.**
+
+On the Hub FortiGate view the Azure SDN Connector
+
+1. **Login** to the Hub FortiGate
+1. **Click** "Security Fabric"
+1. **Click** "External Connectors"
+1. **Hover** Over Azure Connector - "AzureSDN"
+1. **Click** "View Connector Objects"
+
+On the Hub FortiGate debug the Azure SDN Connector
+
+![sdn fail1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdn-fail-01.jpg)
+![sdn fail2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdn-fail-02.jpg)
+
+1. **Open** a FortiGate CLI session
+1. **Enter** the SDN connector debug commands
 
       ```bash
       diagnose debug application azd -1
       diagnose debug enable
       ```
 
-  * Hints:
+In a few minutes the output will indicate the SDN Connector's inability to make an call to the Azure Management API.
 
-    ***
+![sdn fail3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdn-fail-03.jpg)
 
-    * FGT Branch3 is able to retrieve the filters, why that is not the case for the FortiGates behind Load Balancers?
-    * FGT Branch3 is standalone, all other FortiGates are in A-P HA, how does that affect traffic to retrieve SDN information?
-    * Hub External Load Balancer needs a management nic backend pool and a TCP rule, any port suffices. This rule is about letting TCP traffic out. The External Load Balancer will let the response traffic back in because the traffic originated internally.
+Hints:
+***
 
-    ![sdn fail](images/sdn-fail.jpg)
+* Branch3 FortiGate is able to retrieve the filters, why that is not the case for the FortiGates behind Load Balancers?
+* Branch3 FortiGate is standalone, all other FortiGates are in Active-Passive HA, how does that affect traffic to retrieve SDN information?
+* Hub External Load Balancer needs a management nic backend pool and a TCP rule, any port suffices. This rule is about letting TCP traffic out. The External Load Balancer will let the response traffic back in because the traffic originated internally.
 
 1. **Create** a backend pool on the Hub load balancer using the Hub FortiGate Management Interfaces
 
-    * 10.10.4.4
-    * 10.10.4.5
+    * Name - `mgmt-pool`
+    * Interfaces
+        * 10.10.4.4
+        * 10.10.4.5
 
-    ![mgmt be pool](images/mgmt-backend-pool.jpg)
-
-    ![mgmt be pool list](images/mgmt-backend-pool-list.jpg)
+    ![mgmt be pool1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/mgmt-backend-pool-01.jpg)
+    ![mgmt be pool2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/mgmt-backend-pool-02.jpg)
+    ![mgmt be pool3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/mgmt-backend-pool-03.jpg)
 
 1. Create a TCP Load Balancer Rule, any port will do, e.g. 13000. This rule will allow TCP response traffic back through the load balancer, when to a TCP request originated from a device in a backend pool associated to the load balancer.
 
-    ![tcp rule](images/tcp-rule.jpg)
+    * Name - `tcp-rule`
+    * Frontend IP address - "hub-pip1"
+    * Backend pool - "mgmt-pool"
+    * Protocol - "TCP"
+    * Port - `13000`
+    * Backend port - `13000`
+    * Health probe - hub1-elb1-probe (TCP:8008)
+    * Session Persistence - "None"
+    * Idle timeout (minutes) - "4"
+    * TCP reset - "Disabled"
+    * Floating IP - "Disabled"
+    * Outbound source network address translation (SNAT) - "Use default outbound access"
 
-1. **Create** a dynamic address object on the Hub FortiGate, named `Spoke_VNETs` that resolves to the Spoke VNETs VMs
+    ![tcp rule1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/tcp-rule-01.jpg)
 
-    ![Dynamic Address Object](images/dynamic-address-object.jpg)
+Utilize the SDN connector results in a Dynamic Address Object and Policy
 
-1. **Use** the object in an existing Policy named `Branch to Cloud` to restrict traffic coming from the Branches to only VMs in the Spoke VNETs.
+1. **Login** to the Hub FortiGate
+1. **Click** "Policy & Objects"
+1. **Click** "Addresses"
+1. **Create New** dynamic address object on the Hub FortiGate, named `Spoke_VNETs` that resolves to the Spoke VNETs VMs
 
-    ![Branch to Cloud Policy](images/policy3.jpg)
+    * Name - `Spoke_VNETs`
+    * Type - "Dynamic"
+    * SDN Connector - "AzureSDN"
+    * SDN address type - "Private"
+    * Filter
+        * se10-workshop-sdwan-spoke11
+        * se10-workshop-sdwan-spoke12
+    * Interface - "priv (port2)"
+
+    ![Dynamic Address Object1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/dynamic-address-object-01.jpg)
+
+**Use** the address object in an existing Policy to restrict traffic coming from the Branches to only VMs in the Spoke VNETs.
+
+1. **Click** "Policy & Objects"
+1. **Click** "Firewall Policy"
+1. **Edit** the policy "Branch to Cloud"
+1. **Set** the policy destination to "Spoke_VNETs"
+
+    ![Branch to Cloud Policy1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/policy-branch-to-spoke-01.jpg)
+    ![Branch to Cloud Policy2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/policy-branch-to-spoke-02.jpg)
+    ![Branch to Cloud Policy3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/policy-branch-to-spoke-03.jpg)
 
 ### Task 4 - Traffic generation
 
-* Generate Traffic from Branch1 Primary FortiGate:  
-  1. Connect to the Branch1 Primary FortiGate
-  2. Configure ping-options to initiate traffic from FortiGate's private nic (port2).
-      * `execute ping-options source 172.16.2.5` - source IP depends on which Branch1 FortiGate is primary br1fgt1 or br1fgt2
-      * `execute ping-options repeat-count 100`
-  3. Initiate a ping to Spoke11 and Spoke12 Linux VMs (10.11.1.4 and 10.12.1.4)
-      * `execute ping 10.11.1.4`
-      * `execute ping 10.12.1.4`
+Generate Traffic from Branch1 Primary FortiGate:
 
-    ![traffic2](images/traffic2.jpg)
+1. Connect to the Branch1 Primary FortiGate
+1. Configure ping-options to initiate traffic from FortiGate's private nic (port2).
+    * Source IP depends on which Branch1 FortiGate is primary br1fgt1 or br1fgt2
+        * `execute ping-options source 172.16.2.4`
+        * `execute ping-options source 172.16.2.5`
+    * Set the ping repeat count
+        * `execute ping-options repeat-count 100`
 
-    ![traffic1](images/traffic1.jpg)
+1. Initiate a ping to Spoke11 and Spoke12 Linux VMs (10.11.1.4 and 10.12.1.4)
+    * `execute ping 10.11.1.4`
+    * `execute ping 10.12.1.4`
 
-* Generate Traffic from Branch1 Linux VM:  
-    1. Enable serial console access on Branch1 Linux VM
-        * Click on the VM **sdwan-USERXX-workshop-br1lnx1**
-        * Go to Boot diagnostics -> Settings ->  Select **Enable with managed storage account (recommended)**
-        * Click Save
+    ![traffic1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branch-fgt-to-spoke-01.jpg)
 
-            ![console1](images/ssh-br-lnx-console1.jpg)
-            ![console2](images/managed-storage.jpg)
+    ![traffic2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/traffic2.jpg)
 
-    2. Go to the VM Serial Console
-        ![console3](images/ssh-br-lnx-console3.jpg)
+Generate Traffic from Branch1 Linux VM:
 
-    3. Initiate a ping to Spoke11 and Spoke12 Linux VMs
+1. Enable serial console access on Branch1 Linux VM
+    * **Select** VM **sdwan-USERXX-workshop-br1lnx1**
+    * **Click** "Boot diagnostics"
+    * **Click** "Settings"
+    * ***Select** **Enable with managed storage account (recommended)**
+    * **Click** Save
+
+        ![bootdiagnostics1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/boot-diagnostics-01.jpg)
+        ![bootdiagnostics2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/boot-diagnostics-02.jpg)
+        ![bootdiagnostics3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/boot-diagnostics-03.jpg)
+
+1. Ping from VM Serial Console
+    * **Click** "Serial Console"
+
+    * Initiate a ping to Spoke11 and Spoke12 Linux VMs
+    * Does it work?
 
         ```bash
         ping 10.11.1.4
         ping 10.12.1.4 
         ```
 
-        ![traffic3](images/traffic3.jpg)
+    ![console3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/ssh-br-lnx-console-01.jpg)
 
-    4. Does it work?
+    ![traffic3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/traffic3.jpg)
 
-* At the end of this step  you should have the following architecture
+* The current state of the Architecture is shown below.
 
-    ![global-step3](images/sdwan_architecture_03.jpg)
+    ![global-step3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_03.jpg)
 
 ### Chapter 4 - QUIZ
 
@@ -524,7 +668,7 @@ az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --r
   </details>
 </details>
 
-## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 4***
+## ***Discussion Points During a Demo - Chapter 4***
 
 Azure Virtual Network (VNET) Peering provides the ability to connect multiple VNETs together and direct traffic flow based on existence of a gateway in a connected peer or with a user defined route (UDR) in a route table.
 
@@ -548,8 +692,6 @@ Several settings in Azure determine traffic flow review the following for Azure 
 ***
 
 ## Chapter 5 - Branch to Cloud and Branch to Branch Connectivity (20min)
-
-***[Configuration exercise - estimated duration 20min]***
 
 <details>
 
@@ -648,7 +790,7 @@ Several settings in Azure determine traffic flow review the following for Azure 
   </details>
 </details>
 
-## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 5***
+## ***Discussion Points During a Demo - Chapter 5***
 
 Through the use of IPSEC an ADVPN is established between branches, the complexity of branch to branch connectivity is seamlessly added to the environment. Determining workload traffic routing can be done by reviewing the network interface's effective routes. When troubleshooting a perceived networking issue, checking an interfaces effective routes is a first step in determining if the interface has awareness of the routes or what the next-hop is for the route.
 
@@ -663,8 +805,6 @@ Through the use of IPSEC an ADVPN is established between branches, the complexit
 ***
 
 ## Chapter 6 - Redundancy (20min)
-
-**[failover exercise - estimated duration 20min]***
 
 <details>
 
@@ -730,7 +870,7 @@ Through the use of IPSEC an ADVPN is established between branches, the complexit
 
 </details>
 
-## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 6***
+## ***Discussion Points During a Demo - Chapter 6***
 
 In Active/Passive FortiGate deployments the failover methodology has an impact on the continuation of traffic flow. Utilizing Azure Load Balancers as traffic direction devices in a FortiGate Active/Passive deployment, the load balancer will only send traffic to the FortiGate that is responding to the load balancer's health probe. A FortiGate in passive mode will not respond to the load balancer health probe, causing the load balancer to mark the passive FortiGate as unhealthy and not send traffic to the passive FortiGate. In a failover event the previously passive FortiGate will start responding to the load balancer health probe, resulting in traffic being directed to the newly active FortiGate.
 
@@ -750,7 +890,7 @@ Reiterating, `ping` can be an effective way to determine reachability in the Clo
 
 ***[Presentation about FGT A/A and SD-WAN use case - estimated duration 20min]***
 
-## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 7***
+## ***Discussion Points During a Demo - Chapter 7***
 
 Active/Active FortiGate deployments can scale both horizontally and vertically, additionally there is a lower interface requirement resulting in an ability to deploy smaller Azure instance types. However, SD-WAN Active/Active FortiGate deployments come with some limitations, mainly traffic asymmetry and a larger IPSEC deployment. For example, a two FortiGate Active/Active deployment would require each branch FortiGate to maintain four IPSEC connections to each Active/Active FortiGate.
 
@@ -764,8 +904,6 @@ Active/Passive FortiGate deployments only support vertical scalability, but only
 ***
 
 ## Chapter 8 - Azure virtualWAN [estimated duration 60min]
-
-***[Configuration exercise - estimated duration 20min]***
 
 <details>
 
@@ -870,7 +1008,7 @@ Active/Passive FortiGate deployments only support vertical scalability, but only
 
       ![vwanhubrouting5](images/vwanhubrouting5.jpg)
 
-* At the end of this step you should have the following architecture
+* The current state of the Architecture is shown below.
 
     ![global4](images/sdwan_architecture_04.jpg)  
 
@@ -961,7 +1099,7 @@ Active/Passive FortiGate deployments only support vertical scalability, but only
   </details>
 </details>
 
-## ![Customer-Demo](images/demo_play.png) ***Discussion Points During a Demo - Chapter 8***
+## ***Discussion Points During a Demo - Chapter 8***
 
 Azure Virtual WAN and Azure Route Server cannot both supply routing information in the same VNET, because both supply BGP. FortiGate NVAs can be deployed in an Azure vWAN a few different ways, in this scenario the FortiGates were deployed in their own VNET and traffic was directed to the FortiGate VNET using route tables.
 
