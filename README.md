@@ -785,7 +785,7 @@ Has Azure Route Server injected the Branch sites CIDRs learned from the FortiGat
 1. **Check** from the CLI if an ADVPN shortcut has been created.
 1. **Run** the command `get router info routing-table bgp`
 
-    ![advpn check](images/advpn-check.jpg)
+    ![advpn check](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/advpn-check.jpg)
 
 ### Chapter 5 - QUIZ
 
