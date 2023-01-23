@@ -56,19 +56,24 @@ enableEmoji = true
 home = [ "HTML", "RSS", "JSON"]
 
 [[menu.shortcuts]]
+name = "<i class='fas fa-graduation-cap'></i> Ref Architecture - Azure SDWAN w/ FortiGate"
+url = "https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_02.jpg"
+weight = 10
+
+[[menu.shortcuts]]
 name = "<i class='fas fa-graduation-cap'></i> Forti OS 7.2 Admin Guide "
 url = "https://docs.fortinet.com/document/fortigate/7.2.2/administration-guide/763117/terraform-fortios-as-a-provider"
-weight = 10
+weight = 20
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-tools'></i> Terraform Providers "
 url = "https://fndn.fortinet.net/index.php?/cloud/terraform/"
-weight = 11
+weight = 21
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-tools'></i> FortiGate on Azure "
 url = "https://www.fortinet.com/products/public-cloud-security/azure"
-weight = 21
+weight = 25
 
 
 [markup]
