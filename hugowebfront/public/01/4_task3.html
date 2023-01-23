@@ -9,7 +9,7 @@
 
     <link rel="icon" href="https://www.fortinet.com/etc/designs/fortinet/favicon.ico" type="image/x-icon" />
 
-    <title>Tags :: </title>
+    <title>Task 3 - Terraform Verifications :: </title>
 
     
     <link href="/technical-recipe-azure-sdwan/css/nucleus.css?1674503246" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/technical-recipe-azure-sdwan/tags.html">
+  <body class="" data-url="/technical-recipe-azure-sdwan/01/4_task3.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -87,7 +87,7 @@
   
     
     <li data-nav-id="/technical-recipe-azure-sdwan/01.html" title="Chapter 1 - Getting Started" class="dd-item
-        
+        parent
         
         
         ">
@@ -157,7 +157,7 @@
  
   
     
-      <li data-nav-id="/technical-recipe-azure-sdwan/01/4_task3.html" title="Task 3 - Terraform Verifications" class="dd-item ">
+      <li data-nav-id="/technical-recipe-azure-sdwan/01/4_task3.html" title="Task 3 - Terraform Verifications" class="dd-item active">
         <a href="/technical-recipe-azure-sdwan/01/4_task3.html">
         Task 3 - Terraform Verifications
         <i class="fas fa-check read-icon"></i>
@@ -652,8 +652,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -664,7 +662,13 @@
             
           
           
-            <a href='/technical-recipe-azure-sdwan/'>Fortinet FortiGate SDWAN on Azure</a> > Tags
+            
+            
+          
+          
+            <a href='/technical-recipe-azure-sdwan/'>Fortinet FortiGate SDWAN on Azure</a> > <a href='/technical-recipe-azure-sdwan/01.html'>Chapter 1 - Getting Started</a> > Task 3 - Terraform Verifications
+          
+        
           
         
           
@@ -673,13 +677,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -687,31 +684,43 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-                tag ::
-              
-              Tags
-            </h1>
           
 
         
 
 
-
-
-
+<h3 id="task-3---terraform-verification">Task 3 - Terraform Verification</h3>
+<ol>
+<li>
+<p>Using the Terraform output, verify that you have Web and SSH access to the FortiGates.</p>
+<p><img src="https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-04.jpg" alt="terraform4"></p>
 <ul>
-	
+<li>
+<p>Terraform output can be redisplayed at any point as long as you are in the <code>./technical-recipe-azure-sdwan/terraform/</code> directory, by using the command <code>terraform output</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cd
+</span></span><span style="display:flex;"><span>cd ./technical-recipe-azure-sdwan/terraform/
+</span></span><span style="display:flex;"><span>terraform output
+</span></span></code></pre></div></li>
 </ul>
+</li>
+<li>
+<p>Connect to the Branch FortiGates and check the VPN IPSec status.</p>
+</li>
+<li>
+<p>Connect to the Hub FortiGates and check the WAN IP.</p>
+</li>
+</ol>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
+        
+            </div> 
         
         </div>
         
@@ -791,6 +800,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -806,6 +816,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1102,8 +1115,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/technical-recipe-azure-sdwan/01/3_task2.html" title="Task 2 - Run Terraform"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/technical-recipe-azure-sdwan/01.html" title="Chapter 1 - Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/technical-recipe-azure-sdwan/01/5_chapter1quiz.html" title="Chapter 1 Quiz" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1135,3 +1150,4 @@
 
   </body>
 </html>
+
