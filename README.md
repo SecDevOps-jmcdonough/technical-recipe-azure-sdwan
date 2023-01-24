@@ -950,7 +950,7 @@ Use the Hub FortiGate location for the VWAN location.
 1. Set the variable LOCATION to the location of the Hub FortiGates with this Azure CLI Command
 
     ```bash
-    LOCATION=`az vm show -g ${USER}-workshop-sdwan -n sdwan-${USER}-workshop-hub1-fgt1 --query '[location]' -otsv`
+    LOCATION=`az vm show -g ${USER}-workshop-sdwan -n sdwan-${USER}-workshop-hub1-fgt1 --query '[location]' -otsv`; echo ${LOCATION}
     ```
 
 * The variable `${USER}` in the commands reads your username from the environment
