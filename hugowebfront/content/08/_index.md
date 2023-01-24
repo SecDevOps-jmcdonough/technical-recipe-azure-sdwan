@@ -1,9 +1,13 @@
 ---
-title: "Chapter 8 -"
+title: "Chapter 8 - Azure Virtual WAN"
 chapter: true
 weight: 8
 ---
 
-### Chapter 6 - Redundancy (20min)
+### Chapter 8 - Azure Virtual WAN (20min)
 
 Tasks
+
+* Deployment
+* Routing and VNET connection Configuration
+* Traffic generation [troubleshooting required]

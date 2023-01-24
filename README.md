@@ -1104,7 +1104,7 @@ Active/Passive FortiGate deployments only support vertical scalability, but only
 
 1. Why was the vWAN not able to inject Spoke11 and Spoke12 VNETs CIDRs to FortiGate Private UDR?
 
-1. The above setting is normally set to "yes", why did we set it to "no" ? Hint: We had Azure Route Server before
+1. The Hub FortiGate **sdwan-USERXX-workshop-hub1_fgt-priv_rt** route table configuration "Propagate gateway routes" is normally set to "yes", why did we set it to "no"?
 
 1. In the Spoke-VNETS vWAN Route Table, the next-hop is the Primary FortiGate IP. What should we add/do to handle failover?
 
@@ -1120,9 +1120,9 @@ Active/Passive FortiGate deployments only support vertical scalability, but only
 
     * Route propagation for the FortiGate route table sdwan-USERXX-workshop-hub1_fgt-priv_rt was set to no.
 
-1. **The above setting is normally set to "yes", why did we set it to "no"?**
+1. **The Hub FortiGate sdwan-USERXX-workshop-hub1_fgt-priv_rt route table configuration "Propagate gateway routes" is normally set to "yes", why did we set it to "no"?**
 
-    * Azure RouteServer provided the routes
+    * Azure RouteServer provided the routes.
 
 1. **In the Spoke-VNETS vWAN Route Table, the next-hop is the Primary FortiGate IP. What should we add/do to handle failover?**
 
