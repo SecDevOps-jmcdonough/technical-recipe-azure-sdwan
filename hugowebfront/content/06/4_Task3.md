@@ -26,7 +26,7 @@ weight: 4
   done
   ```
 
-  [continuoustcpping1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/continuoustcpping-01.jpg)
+  ![continuoustcpping1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/continuoustcpping-01.jpg)
 
 1. **Login** to the Branch1 Primary FortiGate.
     * It may be - **sdwan-USERXX-workshop-br1-fgt1** or **sdwan-USERXX-workshop-br1-fgt2**

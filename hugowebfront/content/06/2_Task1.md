@@ -12,4 +12,4 @@ weight: 2
     * `ping 10.11.1.4`
     * Let the ping run
 
-  [branchtospokeping1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branchtospokeping-01.jpg)
+  ![branchtospokeping1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branchtospokeping-01.jpg)

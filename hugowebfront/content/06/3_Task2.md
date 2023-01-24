@@ -14,8 +14,8 @@ weight: 3
   execute ha failover set 1
   ```
 
-  [initiatefailover](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/initiatefailover-01.jpg)
-  [branchtospokeping2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branchtospokeping-02.jpg)
+  ![initiatefailover](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/initiatefailover-01.jpg)
+  ![branchtospokeping2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branchtospokeping-02.jpg)
 
 * Monitor the number of **lost Pings** and the **failover time**
 * How long did it take?

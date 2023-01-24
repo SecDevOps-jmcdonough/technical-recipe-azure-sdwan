@@ -332,8 +332,6 @@ When giving this TEC Recipe as as demo, the following questions will provide a b
 
 ## Chapter 4 - Hub VNET and Spoke VNET Connectivity (40min)
 
-***[Configuration and troubleshooting exercise - estimated duration 40min]***
-
 <details>
 
 ### Task 1 - Create Hub and Spoke VNET peering
@@ -833,7 +831,7 @@ Through the use of IPSEC an ADVPN is established between branches, the complexit
   * `ping 10.11.1.4`
   * Let the ping run
 
-  [branchtospokeping1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branchtospokeping-01.jpg)
+  ![branchtospokeping1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branchtospokeping-01.jpg)
 
 ### Task 2 - Initiate Failover
 
@@ -845,8 +843,8 @@ Through the use of IPSEC an ADVPN is established between branches, the complexit
   execute ha failover set 1
   ```
 
-  [initiatefailover](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/initiatefailover-01.jpg)
-  [branchtospokeping2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branchtospokeping-02.jpg)
+  ![initiatefailover](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/initiatefailover-01.jpg)
+  ![branchtospokeping2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branchtospokeping-02.jpg)
 
 * Monitor the number of **lost Pings** and the **failover time**
 * How long did it take?
@@ -874,7 +872,7 @@ Through the use of IPSEC an ADVPN is established between branches, the complexit
   done
   ```
 
-  [continuoustcpping1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/continuoustcpping-01.jpg)
+  ![continuoustcpping1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/continuoustcpping-01.jpg)
 
 1. **Login** to the Branch1 Primary FortiGate.
     * It may be - **sdwan-USERXX-workshop-br1-fgt1** or **sdwan-USERXX-workshop-br1-fgt2**
@@ -923,8 +921,6 @@ Reiterating, `ping` can be an effective way to determine reachability in the Clo
 ***
 
 ## Chapter 7 - Scaling (20min)
-
-***[Presentation about FGT A/A and SD-WAN use case - estimated duration 20min]***
 
 ## ***Discussion Points During a Demo - Chapter 7***
 
