@@ -10,7 +10,7 @@ Check the Effective Routes for Spoke 11 Linux VM
 
 1. **Click** on Spoke11 Linux VM **sdwan-USERXX-workshop-spoke11-subnet1-lnx**
 1. **Click** on Networking
-1. **Click** on the VM Nic **sdwan-se10-workshop-spoke11-subnet1-lnx-nic**
+1. **Click** on the VM Nic **sdwan-USERXX-workshop-spoke11-subnet1-lnx-nic**
 1. **Click** on **Effective routes**
 
     ![effectiveroutes1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/effectiveroutes-lnx-01.jpg)
