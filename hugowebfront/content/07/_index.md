@@ -1,5 +1,5 @@
 ---
-title: "Chapter 3 - Scaling"
+title: "Chapter 7 - Scaling"
 chapter: true
 weight: 7
 ---

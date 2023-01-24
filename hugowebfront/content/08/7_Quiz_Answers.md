@@ -6,7 +6,7 @@ weight: 7
 
 ### Chapter 8 - QUIZ Answers
 
-1. **Why were we not able to attach the Hub FortiGate VNET to vWAN until we deleted Azure Route Server?**
+1. **Why did the Azure Route Server need to be deleted?**
 
     * An Azure VNET cannot receive routes from the vWAN and the RouteServer at the same time.
 

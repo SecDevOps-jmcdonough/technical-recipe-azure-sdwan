@@ -105,4 +105,4 @@ Verify that this default route has been propagated to the Spokes VNETs
 
 * The current state of the Architecture is shown below.
 
-    ![global4](images/sdwan_architecture_04.jpg)  
+    ![global4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_04.jpg)  

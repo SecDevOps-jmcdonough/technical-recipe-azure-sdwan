@@ -6,7 +6,7 @@ weight: 6
 
 ### Chapter 8 - QUIZ
 
-1. Why were we not able to attach the Hub FortiGate VNET to vWAN until we deleted Azure Route Server?
+1. Why did the Azure Route Server need to be deleted?
 
 1. Why was the vWAN not able to inject Spoke11 and Spoke12 VNETs CIDRs to FortiGate Private UDR?
 
