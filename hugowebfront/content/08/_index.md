@@ -4,10 +4,11 @@ chapter: true
 weight: 8
 ---
 
-### Chapter 8 - Azure Virtual WAN (20min)
+### Chapter 8 - Azure Virtual WAN (60min)
 
 Tasks
 
-* Deployment
+* Azure Virtual WAN Deployment
+* Delete Hub and Spoke VNET Peerings / Delete Azure Route Server
 * Routing and VNET connection Configuration
-* Traffic generation [troubleshooting required]
+* Traffic generation

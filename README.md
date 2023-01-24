@@ -967,91 +967,143 @@ Use the Hub FortiGate location for the VWAN location.
 
     > The second command can take several minutes to run, do not Ctrl-C to break out or stop the command. If your Cloud Shell session disconnects, reconnect and run `ps -ef` to determine if `az network vhub create...` command is still running. Once the command is no longer seen in the `ps` output the VWAN should be created. Use the command `az network vhub list` to view your VWAN hub.
 
-    ![vwan1](images/vwan1.jpg)
+    ![vwan1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-01.jpg)
 
-* Navigate to your Resource Group and verify that you see your vWAN
+1. **Navigate** to your Resource Group and verify that you see your vWAN
+1. **Click** on your vWAN and verify that you see the virtual Hub you just deployed
+1. **Click** on the vWAN Hub and verify that the deployment and routing status complete
 
-    ![vwan2](images/vwan2.jpg)
+    ![vwan2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-02.jpg)
+    ![vwan3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-03.jpg)
+    ![vwan4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-04.jpg)
 
-* Click on your vWAN and verify that you see the virtual Hub you just deployed
+### Task 2 - Delete VNET Peerings / Delete Azure Route Server
 
-    ![vwan3](images/vwan3.jpg)
+1. **Select** the Hub VNET - **USERXX-workshop-sdwan-hub1**
+1. **Click** on Peerings
+1. **Delete** the Hub to Spoke VNET peerings
+    * hub-to-spoke11
+    * hub-to-spoke12
 
-* Click on the vWAN Hub and verify that the deployment and routing status complete
+    ![peeringdelete1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/peeringdelete-01.jpg)
+    ![peeringdelete2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/peeringdelete-02.jpg)
 
-    ![vwan4](images/vwan4.jpg)
+Deleting a peering in the Azure Portal from one virtual network will delete its corresponding peering from the peered VNET. When using the Azure API to create or remove peerings, directly or via IaC tools, e.g., Terraform, each side of the peering needs to be created or deleted.
 
-### Task 2 - Routing and VNET connection Configuration
+Delete the Azure Route Server. The Azure VWAN or the Azure Route Server can provide routing for a VNET **but not both**. To continue with the Azure VWAN setup the Azure Route Server needs to be deleted.
 
-* Go to your resource Group and then click on the Hub VNET - **USERXX-workshop-sdwan-hub1**
-* Delete the Hub to Spoke VNET peerings, delete both Spoke11 and Spoke12 peerings
+1. **Locate** Azure Route Server
+1. **Click** Delete
 
-    ![peeringdelete.jpg](images/peeringdelete.jpg)
+      ![deletears1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/deletears-01.jpg)
+      ![deletears2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/deletears-02.jpg)
 
-* Create Virtual WAN Route Tables
-  * Click on your virtual Hub and then click on Route Tables
+Deleting the Azure Route Server will take several minutes to complete.
 
-    ![vwan3](images/vwan3.jpg)
-    ![vwan-rtb1](images/vwan-rtb1.jpg)
+### Task 3 - VWAN Routing and VNET Connection Configuration
 
-  * Create a Route Table Called Spoke-VNETS. Keep all other settings unchanged
+Create Virtual WAN Route Tables
 
-    ![vwan-rtb2](images/vwan-rtb2.jpg)
+1. **Select** your virtual WAN - **sdwan-USERXX-workshop-vwan**
+1. **Select** your virtual Hub - **USERXX-vwanhub**
+1. **Click** "Route Tables"
+1. **Click** "+ Create route table"
 
-  * Repeat the same for FGT vWAN Route Table: FGT-VNET
+    ![vwan-rt1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-rt-01.jpg)
+    ![vwan-rt2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-rt-02.jpg)
 
-    ![vwan-rtb3](images/vwan-rtb3.jpg)
+1. **Create** two Route Tables
+    * Name - `Spoke-VNETS`
+    * Name - `FGT-VNET`
+1. **Click** "Review + create"
+1. **Click** "Create"
 
-* Create Virtual WAN  VNET Connections
+    ![vwan-rt3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-rt-03.jpg)
+    ![vwan-rt4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-rt-04.jpg)
+    ![vwan-rt5](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-rt-05.jpg)
 
-  * Go to the vWAN, Click on Virtual Network Connection
+Create Virtual WAN  VNET Connections
 
-    ![vwanconnection1](images/vnetconnection1.jpg)
+1. **Select** your virtual WAN - **sdwan-USERXX-workshop-vwan**
+1. **Click** "Virtual Network Connections"
 
-    * Create a VNET connection for Spoke11, attach it to the Spoke-VNETS Route Table and propagate it to FGT-VNET Route Table - select **your resource group and VNET** - USERXX
+## Add Spoke11 VNET
 
-      ![vwanconnection2](images/vnetconnection2.jpg)
+1. **Click** "+ Add Connection"
+    * Connection Name - `spoke11`
+    * Hubs - "USERXX-vwanhub"
+    * Subscription - "Internal-Training"
+    * Resource group - "USERXX-workshop-sdwan"
+    * Virtual Network - "USERXX-workshop-sdwan-spoke11"
+    * Propagate to none - "No"
+    * Associate Route Table - "Spoke-VNETS"
+    * Propagate to Route Tables - "FGT-VNET"
+    * Leave other settings unchanged
+1. **Click** "Create"
 
-    * Repeat the same for Spoke12
+## Add Spoke12 VNET
 
-    * Repeat the same for FGT VNET connection, attach it to the FGT-VNET Route Table but do not propagate to other Route Tables.
+1. **Click** "+ Add Connection"
+    * Connection Name - `spoke12`
+    * Hubs - "USERXX-vwanhub"
+    * Subscription - "Internal-Training"
+    * Resource group - "USERXX-workshop-sdwan"
+    * Virtual Network - "USERXX-workshop-sdwan-spoke12"
+    * Propagate to none - "No"
+    * Associate Route Table - "Spoke-VNETS"
+    * Propagate to Route Tables - "FGT-VNET"
+    * Leave other settings unchanged
+1. **Click** "Create"
 
-      ![vwanconnection3](images/vnetconnection3.jpg)
+## Add FortiGate Hub VNET
 
-      * Is the connection for FGT VNET created?
-      * Why not?
+1. **Click** "+ Add Connection"
+    * Connection Name - `FGT-VNET`
+    * Hubs - "USERXX-vwanhub"
+    * Subscription - "Internal-Training"
+    * Resource group - "USERXX-workshop-sdwan"
+    * Virtual Network - "USERXX-workshop-sdwan-hub1"
+    * Propagate to none - "No"
+    * Associate Route Table - "FGT-VNET"
+    * Leave other settings unchanged
+1. **Click** "Create"
 
-    * Locate your own Azure Route Server and delete it
+    ![vwanconnection1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vnetconnection-01.jpg)
+    ![vwanconnection2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vnetconnection-02.jpg)
+    ![vwanconnection3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vnetconnection-03.jpg)
 
-      ![deletears](images/deletears.jpg)
+Configure Spoke-VNETS Route Table
 
-    * Try now to connect the FGT VNET to the vWAN Hub, attach it to the FGT-VNET Route Table.
-      * Is the connection for FGT VNET created, this try?
-      * Why did it work?
+1. **Select** your virtual WAN - **sdwan-USERXX-workshop-vwan**
+1. **Select** your virtual Hub - **USERXX-vwanhub**
+1. **Click** "Route Tables"
+1. **Click** "Spoke-VNETS"
+1. **Add** Route
+    * Route Name - `default`
+    * Destination Type - "CIDR"
+    * Destination prefix - `0.0.0.0/0`
+    * Next hop - "FGT-VNET"
+    * Next hop IP - **Click** "Configure"
+        * Next hop IP - `10.10.1.4` <-- **Primary FGT port2 ip**
+1. **Click** "Confirm"
+1. **Click** "Review + create"
+1. **Click** "Create"
 
-        ![vwanconnection3](images/vnetconnection3.jpg)
-        ![vwanconnection4](images/vnetconnection4.jpg)
+      ![vwanhubrouting1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwanhubrouting-01.jpg)
+      ![vwanhubrouting2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwanhubrouting-02.jpg)
+      ![vwanhubrouting3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwanhubrouting-03.jpg)
 
-* Configure Spoke-VNETS Route Table
+Verify that this default route has been propagated to the Spokes VNETs
 
-  * Go your vWAN Hub, click on Routing and then click on Spoke-VNETS Route Table
+1. **View** Spoke11 Linux VM nic **Effective Routes**
 
-      ![vwanhubrouting1](images/vwanhubrouting1.jpg)
-      ![vwanhubrouting2](images/vwanhubrouting2.jpg)
-
-    * Add a default route that points to the FortiGate VNET connection. The next hop ip is the **Primary FGT port2 ip**
-      ![vwanhubrouting3](images/vwanhubrouting3.jpg)
-
-    * Verify that this default route has been propagated to the Spokes VNETs
-      * Go to the Spoke11 Linux VM -> Networking -> Click on nic and then click on **Effective Routes**
-
-      ![vwanhubrouting5](images/vwanhubrouting5.jpg)
+      ![vwanhubrouting4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwanhubrouting-04.jpg)
 
 * The current state of the Architecture is shown below.
 
     ![global4](images/sdwan_architecture_04.jpg)  
 
-### Task 3 - Traffic generation [troubleshooting required]
+### Task 4 - Traffic generation
 
 * Connect to the Branch1 Linux Host via the serial console
 * Generate traffic to Hub
