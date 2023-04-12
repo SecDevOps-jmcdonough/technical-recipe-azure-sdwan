@@ -10,14 +10,7 @@ enableEmoji = true
 
 
 [params]
-  # Prefix URL to edit current page. Will display an "Edit this page" button on top right hand corner of every page. 
-  # Useful to give opportunity to people to create merge request for your doc.
-  # See the config.toml file from this documentation site to have an example.
-  #editURL = ""
-  # Author of the site, will be used in meta information
-  author = "John McDonough, Jeff Kopko"
-  # Description of the site, will be used in meta information
-  description = "Fortigate Demo Architecture for SDWAN on Azure"
+  description = "Workshop Documentation"
   # Shows a checkmark for visited pages on the menu
   showVisitedLinks = true
   # Disable search function. It will hide search bar
@@ -46,10 +39,6 @@ enableEmoji = true
   ordersectionsby = "weight"
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "red"
-  # themeVariant = "mine"
-
-
-
 
 
 [outputs]
@@ -57,7 +46,7 @@ home = [ "HTML", "RSS", "JSON"]
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-graduation-cap'></i> Ref Architecture - Azure SDWAN w/ FortiGate"
-url = "https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/docs/content/images/sdwan_architecture_02.jpg"
+url = "../images/sdwan_architecture_02.jpg"
 weight = 10
 
 [[menu.shortcuts]]
