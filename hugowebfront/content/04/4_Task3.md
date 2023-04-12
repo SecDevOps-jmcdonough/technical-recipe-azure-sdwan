@@ -82,8 +82,8 @@ Utilize the SDN connector results in a Dynamic Address Object and Policy
     * SDN Connector - "AzureSDN"
     * SDN address type - "Private"
     * Filter
-        * USERXX-workshop-sdwan-spoke11
-        * USERXX-workshop-sdwan-spoke12
+        * Vnet=**userxx**-workshop-sdwan-spoke11
+        * Vnet=**userxx**-workshop-sdwan-spoke12
     * Interface - "priv (port2)"
 
     ![Dynamic Address Object1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/dynamic-address-object-01.jpg)
