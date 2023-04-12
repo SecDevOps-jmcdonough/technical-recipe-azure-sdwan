@@ -25,10 +25,10 @@ terraform plan -var="username=${USER}"
 terraform apply -var="username=${USER}" -auto-approve
 ```
 
-  ![terraform1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-01.jpg)
-  ![terraform2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-02.jpg)
-  ![terraform3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-03.jpg)
+  ![terraform1](../images/terraform-01.jpg)
+  ![terraform2](../images/terraform-02.jpg)
+  ![terraform3](../images/terraform-03.jpg)
 
 * The current state of the Architecture is shown below.
 
-    ![global-step1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_01.jpg)
+    ![global-step1](../images/sdwan_architecture_01.jpg)

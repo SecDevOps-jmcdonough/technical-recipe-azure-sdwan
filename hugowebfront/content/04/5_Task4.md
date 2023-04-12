@@ -20,9 +20,9 @@ Generate Traffic from Branch1 Primary FortiGate:
     * `execute ping 10.11.1.4`
     * `execute ping 10.12.1.4`
 
-    ![traffic1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branch-fgt-to-spoke-01.jpg)
+    ![traffic1](../images/branch-fgt-to-spoke-01.jpg)
 
-    ![traffic2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/traffic2.jpg)
+    ![traffic2](../images/traffic2.jpg)
 
 Generate Traffic from Branch1 Linux VM:
 
@@ -33,9 +33,9 @@ Generate Traffic from Branch1 Linux VM:
     * ***Select** **Enable with managed storage account (recommended)**
     * **Click** Save
 
-        ![bootdiagnostics1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/boot-diagnostics-01.jpg)
-        ![bootdiagnostics2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/boot-diagnostics-02.jpg)
-        ![bootdiagnostics3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/boot-diagnostics-03.jpg)
+        ![bootdiagnostics1](../images/boot-diagnostics-01.jpg)
+        ![bootdiagnostics2](../images/boot-diagnostics-02.jpg)
+        ![bootdiagnostics3](../images/boot-diagnostics-03.jpg)
 
 1. Ping from VM Serial Console
     * **Click** "Serial Console"
@@ -48,10 +48,10 @@ Generate Traffic from Branch1 Linux VM:
         ping 10.12.1.4 
         ```
 
-    ![console3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/ssh-br-lnx-console-01.jpg)
+    ![console3](../images/ssh-br-lnx-console-01.jpg)
 
-    ![traffic3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/traffic3.jpg)
+    ![traffic3](../images/traffic3.jpg)
 
 * The current state of the Architecture is shown below.
 
-    ![global-step3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_03.jpg)
+    ![global-step3](../images/sdwan_architecture_03.jpg)

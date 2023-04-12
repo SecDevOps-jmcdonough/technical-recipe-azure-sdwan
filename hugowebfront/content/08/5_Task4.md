@@ -15,12 +15,12 @@ Generate traffic from the Branch1 Linux VM to a Spoke Linux VM
      ping 10.11.1.4
     ```
 
-    ![branchtospokevwanping1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branch-to-spoke-vwan-ping-01.jpg)
+    ![branchtospokevwanping1](../images/branch-to-spoke-vwan-ping-01.jpg)
 
 * Does it work?
   * Azure VWAN Route Tables enable the Spoke Networks to know the route to the Hub FortiGates, however, the Branches do not know how to get to the Spoke VNETs.
 
-    ![vwan traffic flow](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-traffic1.jpg)  
+    ![vwan traffic flow](../images/vwan-traffic1.jpg)  
 
 Make the required changes for ping to work
 
@@ -50,8 +50,8 @@ Add Spoke12
     * Interface - "priv (port2)"
 1. **Click** "OK"
 
-    ![staticroutes1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/static-routes-01.jpg)
-    ![staticroutes2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/static-routes-02.jpg)
+    ![staticroutes1](../images/static-routes-01.jpg)
+    ![staticroutes2](../images/static-routes-02.jpg)
 
 1. **Add** Spoke11 and Spoke12 to the list of networks under BGP configuration - via CLI or UI
 
@@ -71,26 +71,26 @@ Add Spoke12
     end
     ```
 
-    ![spokebgp1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spokebgp-01.jpg)
-    ![spokebgp2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spokebgp-02.jpg)
+    ![spokebgp1](../images/spokebgp-01.jpg)
+    ![spokebgp2](../images/spokebgp-02.jpg)
 
 1. Verify that Branches are now receiving Spoke11 and Spoke12 CIDRs - via CLI
     * `get router info routing-table all`
 
-    ![branch1bgproutes1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branch1bgp-01.jpg)
+    ![branch1bgproutes1](../images/branch1bgp-01.jpg)
 
     * Does it work now or not yet?
 
 1. **Sniff** packets on the Hub FortiGate, are echo-requests arriving?  
     * `diagnose sniffer packet any 'net 10.11.0.0/16' 4 0 a`
 
-    ![sniffpings1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sniffpings-01.jpg)
+    ![sniffpings1](../images/sniffpings-01.jpg)
 
     * Traffic is egressing the Hub FortiGate on port2, but no reply?... What is missing?  
 
 1. **Check** FortiGate Hub port2 **effective routes**?
 
-    ![hubeffectiveroutes1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/hub-effective-routes-01.jpg)
+    ![hubeffectiveroutes1](../images/hub-effective-routes-01.jpg)
 
     * Is the vWAN propagating spoke11 and spoke12 to the Route Table attached to the FortiGate private subnet, **sdwan-USERXX-workshop-hub1_fgt-priv_rt**?
 
@@ -98,10 +98,10 @@ Add Spoke12
 1. **Select** "Yes"
 1. **Click** "Save"
 
-    ![rtconfigsettings](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/rt-config-settings-01.jpg)
+    ![rtconfigsettings](../images/rt-config-settings-01.jpg)
 
-    ![hubeffectiveroutes2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/hub-effective-routes-02.jpg)
+    ![hubeffectiveroutes2](../images/hub-effective-routes-02.jpg)
 
 Traffic should now be flowing between Branch1 Linux VM and Spoke11 Linux VM.  If the pings are not working, try cancelling the ping and trying again.
 
-  ![branchtospokevwanping1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branch-to-spoke-vwan-ping-01.jpg)
+  ![branchtospokevwanping1](../images/branch-to-spoke-vwan-ping-01.jpg)

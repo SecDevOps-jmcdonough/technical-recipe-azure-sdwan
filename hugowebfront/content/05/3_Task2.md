@@ -14,7 +14,7 @@ weight: 3
      ping 10.12.1.4 
     ```
 
-    ![console3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/ssh-br-lnx-console-01.jpg)
+    ![console3](../images/ssh-br-lnx-console-01.jpg)
 
 1. Why does it work now?
 

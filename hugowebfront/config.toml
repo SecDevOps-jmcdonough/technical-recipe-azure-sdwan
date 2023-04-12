@@ -57,7 +57,7 @@ home = [ "HTML", "RSS", "JSON"]
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-graduation-cap'></i> Ref Architecture - Azure SDWAN w/ FortiGate"
-url = "https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_02.jpg"
+url = "https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/docs/content/images/sdwan_architecture_02.jpg"
 weight = 10
 
 [[menu.shortcuts]]

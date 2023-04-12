@@ -40,9 +40,9 @@ Create a VNET peering between the Spoke11 VNET and the Hub VNET
 
 >You will see errors until all the correct selections are made.
 
-  ![vnetpeering1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spoke11-to-Hub-peering-01.jpg)
-  ![vnetpeering2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spoke11-to-Hub-peering-02.jpg)
-  ![vnetpeering3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spoke11-to-Hub-peering-03.jpg)
-  ![vnetpeering4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spoke11-to-Hub-peering-04.jpg)
+  ![vnetpeering1](../images/spoke11-to-Hub-peering-01.jpg)
+  ![vnetpeering2](../images/spoke11-to-Hub-peering-02.jpg)
+  ![vnetpeering3](../images/spoke11-to-Hub-peering-03.jpg)
+  ![vnetpeering4](../images/spoke11-to-Hub-peering-04.jpg)
 
 **Verify** that the Branch FortiGates have learned the Spoke11 VNET and Spoke12 VNET CIDRs. Run the Command `get router info routing-table all` on all the Branch FortiGates.

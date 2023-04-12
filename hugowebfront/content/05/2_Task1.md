@@ -23,7 +23,7 @@ weight: 2
 
     * The next hop is a load balancer or a stand-alone FortiGate.
 
-    ![add udr branch1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/add-defaultroutebranch1-01.jpg)
-    ![add udr branch2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/add-defaultroutebranch1-02.jpg)
-    ![add udr branch3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/add-defaultroutebranch1-03.jpg)
-    ![add udr branch4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/add-defaultroutebranch1-04.jpg)
+    ![add udr branch1](../images/add-defaultroutebranch1-01.jpg)
+    ![add udr branch2](../images/add-defaultroutebranch1-02.jpg)
+    ![add udr branch3](../images/add-defaultroutebranch1-03.jpg)
+    ![add udr branch4](../images/add-defaultroutebranch1-04.jpg)

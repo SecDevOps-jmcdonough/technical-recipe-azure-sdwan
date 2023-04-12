@@ -13,8 +13,8 @@ Create Virtual WAN Route Tables
 1. **Click** "Route Tables"
 1. **Click** "+ Create route table"
 
-    ![vwan-rt1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-rt-01.jpg)
-    ![vwan-rt2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-rt-02.jpg)
+    ![vwan-rt1](../images/vwan-rt-01.jpg)
+    ![vwan-rt2](../images/vwan-rt-02.jpg)
 
 1. **Create** two Route Tables
     * Name - `Spoke-VNETS`
@@ -22,9 +22,9 @@ Create Virtual WAN Route Tables
 1. **Click** "Review + create"
 1. **Click** "Create"
 
-    ![vwan-rt3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-rt-03.jpg)
-    ![vwan-rt4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-rt-04.jpg)
-    ![vwan-rt5](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-rt-05.jpg)
+    ![vwan-rt3](../images/vwan-rt-03.jpg)
+    ![vwan-rt4](../images/vwan-rt-04.jpg)
+    ![vwan-rt5](../images/vwan-rt-05.jpg)
 
 Create Virtual WAN  VNET Connections
 
@@ -72,9 +72,9 @@ Create Virtual WAN  VNET Connections
     * Leave other settings unchanged
 1. **Click** "Create"
 
-    ![vwanconnection1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vnetconnection-01.jpg)
-    ![vwanconnection2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vnetconnection-02.jpg)
-    ![vwanconnection3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vnetconnection-03.jpg)
+    ![vwanconnection1](../images/vnetconnection-01.jpg)
+    ![vwanconnection2](../images/vnetconnection-02.jpg)
+    ![vwanconnection3](../images/vnetconnection-03.jpg)
 
 Configure Spoke-VNETS Route Table
 
@@ -93,16 +93,16 @@ Configure Spoke-VNETS Route Table
 1. **Click** "Review + create"
 1. **Click** "Create"
 
-      ![vwanhubrouting1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwanhubrouting-01.jpg)
-      ![vwanhubrouting2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwanhubrouting-02.jpg)
-      ![vwanhubrouting3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwanhubrouting-03.jpg)
+      ![vwanhubrouting1](../images/vwanhubrouting-01.jpg)
+      ![vwanhubrouting2](../images/vwanhubrouting-02.jpg)
+      ![vwanhubrouting3](../images/vwanhubrouting-03.jpg)
 
 Verify that this default route has been propagated to the Spokes VNETs
 
 1. **View** Spoke11 Linux VM nic **Effective Routes**
 
-      ![vwanhubrouting4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwanhubrouting-04.jpg)
+      ![vwanhubrouting4](../images/vwanhubrouting-04.jpg)
 
 * The current state of the Architecture is shown below.
 
-    ![global4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_04.jpg)  
+    ![global4](../images/sdwan_architecture_04.jpg)  

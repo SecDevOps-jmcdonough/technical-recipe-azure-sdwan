@@ -49,39 +49,39 @@ The purpose of this TEC Recipe is to familiarize the learner with routing, data-
 
 * Login to Azure Cloud Portal [https://portal.azure.com/](https://portal.azure.com/) with the provided login/password
 
-    ![cloudshell1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-01.jpg)
-    ![cloudshell2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-02.jpg)
+    ![cloudshell1](../images/cloudshell-01.jpg)
+    ![cloudshell2](../images/cloudshell-02.jpg)
 
 * Click the link "Skip for now (14 days until this is required)" do not click the "Next" button
 
-    ![cloudshell3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-03.jpg)
+    ![cloudshell3](../images/cloudshell-03.jpg)
 
 * Click the "Next" button
 
-    ![cloudshell4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-04.jpg)
+    ![cloudshell4](../images/cloudshell-04.jpg)
 
 * Click on Cloud Shell icon on the Top Right side of the portal
 
-    ![cloudshell5](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-05.jpg)
+    ![cloudshell5](../images/cloudshell-05.jpg)
 
 * Select **Bash**
 
-    ![cloudshell6](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-06.jpg)
+    ![cloudshell6](../images/cloudshell-06.jpg)
 
 * Click on **Show advanced settings**
 
-    ![cloudshell7](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-07.jpg)
+    ![cloudshell7](../images/cloudshell-07.jpg)
 * Select
   * Use existing Resource Group  - it ***should*** auto populate with USERXX-workshop-sdwan (USERXX is your Username)
   * Use existing Storage account - it ***should*** auto populate with USERXX########## (########## is a random string)
   * Use existing File Share  - type **cloudshellshare**
 * Click "Attach Storage"
 
-    ![cloudshell8](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-08.jpg)
+    ![cloudshell8](../images/cloudshell-08.jpg)
 
 * You should now have access to Azure Cloud Shell console
 
-    ![cloudshell9](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/cloudshell-09.jpg)
+    ![cloudshell9](../images/cloudshell-09.jpg)
 
 ### Task 2 - Run the Terraform Deployment
 
@@ -104,19 +104,19 @@ terraform plan -var="username=${USER}"
 terraform apply -var="username=${USER}" -auto-approve
 ```
 
-  ![terraform1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-01.jpg)
-  ![terraform2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-02.jpg)
-  ![terraform3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-03.jpg)
+  ![terraform1](../images/terraform-01.jpg)
+  ![terraform2](../images/terraform-02.jpg)
+  ![terraform3](../images/terraform-03.jpg)
 
 * The current state of the Architecture is shown below.
 
-    ![global-step1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_01.jpg)
+    ![global-step1](../images/sdwan_architecture_01.jpg)
 
 ### Task 3 - Terraform Verifications
 
   1. Using the Terraform output, verify that you have Web and SSH access to the FortiGates.
 
-      ![terraform4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/terraform-04.jpg)
+      ![terraform4](../images/terraform-04.jpg)
 
       * Terraform output can be redisplayed at any point as long as you are in the `./technical-recipe-azure-sdwan/terraform/` directory, by using the command `terraform output`
 
@@ -188,12 +188,12 @@ When giving this TEC Recipe as as demo, the following questions will provide a b
 1. **Click** "Add"
 1. **Click** "Save"
 
-  ![hub-lb-backend1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-01.jpg)
-  ![hub-lb-backend2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-02.jpg)
-  ![hub-lb-backend3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-03.jpg)
-  ![hub-lb-backend4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-04.jpg)
-  ![hub-lb-backend5](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-05.jpg)
-  ![hub-lb-backend6](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-06.jpg)
+  ![hub-lb-backend1](../images/externallbbackend-01.jpg)
+  ![hub-lb-backend2](../images/externallbbackend-02.jpg)
+  ![hub-lb-backend3](../images/externallbbackend-03.jpg)
+  ![hub-lb-backend4](../images/externallbbackend-04.jpg)
+  ![hub-lb-backend5](../images/externallbbackend-05.jpg)
+  ![hub-lb-backend6](../images/externallbbackend-06.jpg)
 
 ### Task 2 - Create load balancing rules for IPSEC VPN Traffic
 
@@ -218,11 +218,11 @@ When giving this TEC Recipe as as demo, the following questions will provide a b
     |Floating IP|Disabled||Disabled|
     |Outbound SNAT|Use implicit||Use implicit|
 
-    ![hub-lb-rule1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbrule-01.jpg)
-    ![hub-lb-rule2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbrule-02.jpg)
-    ![hub-lb-rule3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbrule-03.jpg)
-    ![hub-lb-rule4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbrule-04.jpg)
-    ![hub-lb-rule5](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbrule-05.jpg)
+    ![hub-lb-rule1](../images/externallbrule-01.jpg)
+    ![hub-lb-rule2](../images/externallbrule-02.jpg)
+    ![hub-lb-rule3](../images/externallbrule-03.jpg)
+    ![hub-lb-rule4](../images/externallbrule-04.jpg)
+    ![hub-lb-rule5](../images/externallbrule-05.jpg)
 
 ### Task 3 - Hub and Branch VPN Connectivity Verification
 
@@ -238,9 +238,9 @@ Green, Red, and/or Yellow lines indicate FortiGate reachability.
 
 The diagram shows the load balancing rules along with the Inbound NAT Rules configured on the load balancer.
 
-  ![hub-lb-insights1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbinsights-01.jpg)
-  ![hub-lb-insights2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbinsights-02.jpg)
-  ![hub-lb-insights3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbinsights-03.jpg)
+  ![hub-lb-insights1](../images/externallbinsights-01.jpg)
+  ![hub-lb-insights2](../images/externallbinsights-02.jpg)
+  ![hub-lb-insights3](../images/externallbinsights-03.jpg)
 
 **Verify** that the VPN connections from the Branches to the Hub are UP, check Branches 1, 2 and 3.
 
@@ -249,19 +249,19 @@ The diagram shows the load balancing rules along with the Inbound NAT Rules conf
 1. **Click** "Network"
 1. **Click** "Expand to full screen" in the IPsec widget
 
-    ![vpnup1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vpnup-01.jpg)
-    ![vpnup2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vpnup-02.jpg)
+    ![vpnup1](../images/vpnup-01.jpg)
+    ![vpnup2](../images/vpnup-02.jpg)
 
 **Verify** that BGP peering with the Hub is UP and that the Branch FortiGates learned the Hub and other Branches' CIDRs. Check all Branch FortiGates.
 
 1. Open a FortiGate CLI session
 1. Run the Command `get router info routing-table all`
 
-    ![vpnup3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vpnup-03.jpg)
+    ![vpnup3](../images/vpnup-03.jpg)
 
 * The current state of the Architecture is shown below.
 
-    ![global-step2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_02.jpg)
+    ![global-step2](../images/sdwan_architecture_02.jpg)
 
 ### Chapter 2 - QUIZ
 
@@ -370,10 +370,10 @@ Create a VNET peering between the Spoke11 VNET and the Hub VNET
 
 >You will see errors until all the correct selections are made.
 
-  ![vnetpeering1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spoke11-to-Hub-peering-01.jpg)
-  ![vnetpeering2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spoke11-to-Hub-peering-02.jpg)
-  ![vnetpeering3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spoke11-to-Hub-peering-03.jpg)
-  ![vnetpeering4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spoke11-to-Hub-peering-04.jpg)
+  ![vnetpeering1](../images/spoke11-to-Hub-peering-01.jpg)
+  ![vnetpeering2](../images/spoke11-to-Hub-peering-02.jpg)
+  ![vnetpeering3](../images/spoke11-to-Hub-peering-03.jpg)
+  ![vnetpeering4](../images/spoke11-to-Hub-peering-04.jpg)
 
 **Verify** that the Branch FortiGates have learned the Spoke11 VNET and Spoke12 VNET CIDRs. Run the Command `get router info routing-table all` on all the Branch FortiGates.
 
@@ -382,8 +382,8 @@ Create a VNET peering between the Spoke11 VNET and the Hub VNET
 1. **Select** the Azure Route Server **USERXX-workshop-sdwan-RouteServer** contained within your Resource Group.
 1. **Click** on Peers on the left side of the menu, verify the connection to the Hub FortiGates
 
-    ![routeserver1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/routeserver-01.jpg)
-    ![routeserver2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/routeserver-02.jpg)
+    ![routeserver1](../images/routeserver-01.jpg)
+    ![routeserver2](../images/routeserver-02.jpg)
 
 1. **List** the routes learned by Azure Route Server, run the commands below from your Azure Cloud Shell
 
@@ -394,7 +394,7 @@ az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --r
 az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --routeserver ${USER}-workshop-sdwan-RouteServer --name sdwan-fgt2
 ```
 
-![routeserver3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/routeserver-03.jpg)
+![routeserver3](../images/routeserver-03.jpg)
 
 ```json
 {
@@ -503,8 +503,8 @@ On the Hub FortiGate view the Azure SDN Connector
 
 On the Hub FortiGate debug the Azure SDN Connector
 
-![sdn fail1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdn-fail-01.jpg)
-![sdn fail2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdn-fail-02.jpg)
+![sdn fail1](../images/sdn-fail-01.jpg)
+![sdn fail2](../images/sdn-fail-02.jpg)
 
 1. **Open** a FortiGate CLI session
 1. **Enter** the SDN connector debug commands
@@ -516,7 +516,7 @@ On the Hub FortiGate debug the Azure SDN Connector
 
 In a few minutes the output will indicate the SDN Connector's inability to make an call to the Azure Management API.
 
-![sdn fail3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdn-fail-03.jpg)
+![sdn fail3](../images/sdn-fail-03.jpg)
 
 Hints:
 ***
@@ -532,9 +532,9 @@ Hints:
         * 10.10.4.4
         * 10.10.4.5
 
-    ![mgmt be pool1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/mgmt-backend-pool-01.jpg)
-    ![mgmt be pool2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/mgmt-backend-pool-02.jpg)
-    ![mgmt be pool3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/mgmt-backend-pool-03.jpg)
+    ![mgmt be pool1](../images/mgmt-backend-pool-01.jpg)
+    ![mgmt be pool2](../images/mgmt-backend-pool-02.jpg)
+    ![mgmt be pool3](../images/mgmt-backend-pool-03.jpg)
 
 1. Create a TCP Load Balancer Rule, any port will do, e.g. 13000. This rule will allow TCP response traffic back through the load balancer, when to a TCP request originated from a device in a backend pool associated to the load balancer.
 
@@ -551,7 +551,7 @@ Hints:
     * Floating IP - "Disabled"
     * Outbound source network address translation (SNAT) - "Use default outbound access"
 
-    ![tcp rule1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/tcp-rule-01.jpg)
+    ![tcp rule1](../images/tcp-rule-01.jpg)
 
 Utilize the SDN connector results in a Dynamic Address Object and Policy
 
@@ -569,7 +569,7 @@ Utilize the SDN connector results in a Dynamic Address Object and Policy
         * USERXX-workshop-sdwan-spoke12
     * Interface - "priv (port2)"
 
-    ![Dynamic Address Object1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/dynamic-address-object-01.jpg)
+    ![Dynamic Address Object1](../images/dynamic-address-object-01.jpg)
 
 **Use** the address object in an existing Policy to restrict traffic coming from the Branches to only VMs in the Spoke VNETs.
 
@@ -578,9 +578,9 @@ Utilize the SDN connector results in a Dynamic Address Object and Policy
 1. **Edit** the policy "Branch to Cloud"
 1. **Set** the policy destination to "Spoke_VNETs"
 
-    ![Branch to Cloud Policy1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/policy-branch-to-spoke-01.jpg)
-    ![Branch to Cloud Policy2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/policy-branch-to-spoke-02.jpg)
-    ![Branch to Cloud Policy3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/policy-branch-to-spoke-03.jpg)
+    ![Branch to Cloud Policy1](../images/policy-branch-to-spoke-01.jpg)
+    ![Branch to Cloud Policy2](../images/policy-branch-to-spoke-02.jpg)
+    ![Branch to Cloud Policy3](../images/policy-branch-to-spoke-03.jpg)
 
 ### Task 4 - Traffic generation
 
@@ -598,9 +598,9 @@ Generate Traffic from Branch1 Primary FortiGate:
     * `execute ping 10.11.1.4`
     * `execute ping 10.12.1.4`
 
-    ![traffic1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branch-fgt-to-spoke-01.jpg)
+    ![traffic1](../images/branch-fgt-to-spoke-01.jpg)
 
-    ![traffic2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/traffic2.jpg)
+    ![traffic2](../images/traffic2.jpg)
 
 Generate Traffic from Branch1 Linux VM:
 
@@ -611,9 +611,9 @@ Generate Traffic from Branch1 Linux VM:
     * ***Select** **Enable with managed storage account (recommended)**
     * **Click** Save
 
-        ![bootdiagnostics1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/boot-diagnostics-01.jpg)
-        ![bootdiagnostics2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/boot-diagnostics-02.jpg)
-        ![bootdiagnostics3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/boot-diagnostics-03.jpg)
+        ![bootdiagnostics1](../images/boot-diagnostics-01.jpg)
+        ![bootdiagnostics2](../images/boot-diagnostics-02.jpg)
+        ![bootdiagnostics3](../images/boot-diagnostics-03.jpg)
 
 1. Ping from VM Serial Console
     * **Click** "Serial Console"
@@ -626,13 +626,13 @@ Generate Traffic from Branch1 Linux VM:
         ping 10.12.1.4 
         ```
 
-    ![console3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/ssh-br-lnx-console-01.jpg)
+    ![console3](../images/ssh-br-lnx-console-01.jpg)
 
-    ![traffic3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/traffic3.jpg)
+    ![traffic3](../images/traffic3.jpg)
 
 * The current state of the Architecture is shown below.
 
-    ![global-step3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_03.jpg)
+    ![global-step3](../images/sdwan_architecture_03.jpg)
 
 ### Chapter 4 - QUIZ
 
@@ -714,10 +714,10 @@ Several settings in Azure determine traffic flow review the following for Azure 
 
     * The next hop is a load balancer or a stand-alone FortiGate.
 
-    ![add udr branch1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/add-defaultroutebranch1-01.jpg)
-    ![add udr branch2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/add-defaultroutebranch1-02.jpg)
-    ![add udr branch3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/add-defaultroutebranch1-03.jpg)
-    ![add udr branch4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/add-defaultroutebranch1-04.jpg)
+    ![add udr branch1](../images/add-defaultroutebranch1-01.jpg)
+    ![add udr branch2](../images/add-defaultroutebranch1-02.jpg)
+    ![add udr branch3](../images/add-defaultroutebranch1-03.jpg)
+    ![add udr branch4](../images/add-defaultroutebranch1-04.jpg)
 
 ### Task 2 - Generate Branch traffic to the Hub
 
@@ -729,7 +729,7 @@ Several settings in Azure determine traffic flow review the following for Azure 
      ping 10.12.1.4 
     ```
 
-    ![console3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/ssh-br-lnx-console-01.jpg)
+    ![console3](../images/ssh-br-lnx-console-01.jpg)
 
 1. Why does it work now?
 
@@ -744,12 +744,12 @@ Check the Effective Routes for Spoke 11 Linux VM
 1. **Click** on the VM Nic **sdwan-USERXX-workshop-spoke11-subnet1-lnx-nic**
 1. **Click** on **Effective routes**
 
-    ![effectiveroutes1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/effectiveroutes-lnx-01.jpg)
-    ![effectiveroutes2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/effectiveroutes-lnx-02.jpg)
+    ![effectiveroutes1](../images/effectiveroutes-lnx-01.jpg)
+    ![effectiveroutes2](../images/effectiveroutes-lnx-02.jpg)
 
 1. **Check** that Azure Route Server has injected the Branch sites CIDRs learned from the FortiGate
 
-    ![effectiveroutes3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/effectiveroutes-lnx-03.jpg)
+    ![effectiveroutes3](../images/effectiveroutes-lnx-03.jpg)
 
 Check the Effective Routes for Hub FortiGate
 
@@ -758,8 +758,8 @@ Check the Effective Routes for Hub FortiGate
 1. **Click** on the VM Nic port1 Nic **hub1-fgt1-port1**
 1. **Click** on **Effective routes**
 
-    ![effectiveroutes4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/effectiveroutes-lnx-04.jpg)
-    ![effectiveroutes5](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/effectiveroutes-lnx-05.jpg)
+    ![effectiveroutes4](../images/effectiveroutes-lnx-04.jpg)
+    ![effectiveroutes5](../images/effectiveroutes-lnx-05.jpg)
 
 Has Azure Route Server injected the Branch sites CIDRs learned from the FortiGates?
 
@@ -777,13 +777,13 @@ Has Azure Route Server injected the Branch sites CIDRs learned from the FortiGat
      ping 172.18.5.4
     ```
 
-    ![console3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/ssh-br-lnx-console-03.jpg)
+    ![console3](../images/ssh-br-lnx-console-03.jpg)
 
 1. **Login** to any Branch FortiGate
 1. **Check** from the CLI if an ADVPN shortcut has been created.
 1. **Run** the command `get router info routing-table bgp`
 
-    ![advpn check](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/advpn-check.jpg)
+    ![advpn check](../images/advpn-check.jpg)
 
 ### Chapter 5 - QUIZ
 
@@ -831,7 +831,7 @@ Through the use of IPSEC an ADVPN is established between branches, the complexit
   * `ping 10.11.1.4`
   * Let the ping run
 
-  ![branchtospokeping1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branchtospokeping-01.jpg)
+  ![branchtospokeping1](../images/branchtospokeping-01.jpg)
 
 ### Task 2 - Initiate Failover
 
@@ -843,8 +843,8 @@ Through the use of IPSEC an ADVPN is established between branches, the complexit
   execute ha failover set 1
   ```
 
-  ![initiatefailover](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/initiatefailover-01.jpg)
-  ![branchtospokeping2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branchtospokeping-02.jpg)
+  ![initiatefailover](../images/initiatefailover-01.jpg)
+  ![branchtospokeping2](../images/branchtospokeping-02.jpg)
 
 * Monitor the number of **lost Pings** and the **failover time**
 * How long did it take?
@@ -872,7 +872,7 @@ Through the use of IPSEC an ADVPN is established between branches, the complexit
   done
   ```
 
-  ![continuoustcpping1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/continuoustcpping-01.jpg)
+  ![continuoustcpping1](../images/continuoustcpping-01.jpg)
 
 1. **Login** to the Branch1 Primary FortiGate.
     * It may be - **sdwan-USERXX-workshop-br1-fgt1** or **sdwan-USERXX-workshop-br1-fgt2**
@@ -967,15 +967,15 @@ Use the Hub FortiGate location for the VWAN location.
 
     > The second command can take several minutes to run, do not Ctrl-C to break out or stop the command. If your Cloud Shell session disconnects, reconnect and run `ps -ef` to determine if `az network vhub create...` command is still running. Once the command is no longer seen in the `ps` output the VWAN should be created. Use the command `az network vhub list` to view your VWAN hub.
 
-    ![vwan1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-01.jpg)
+    ![vwan1](../images/vwan-01.jpg)
 
 1. **Navigate** to your Resource Group and verify that you see your vWAN
 1. **Click** on your vWAN and verify that you see the virtual Hub you just deployed
 1. **Click** on the vWAN Hub and verify that the deployment and routing status complete
 
-    ![vwan2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-02.jpg)
-    ![vwan3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-03.jpg)
-    ![vwan4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-04.jpg)
+    ![vwan2](../images/vwan-02.jpg)
+    ![vwan3](../images/vwan-03.jpg)
+    ![vwan4](../images/vwan-04.jpg)
 
 ### Task 2 - Delete VNET Peerings / Delete Azure Route Server
 
@@ -985,8 +985,8 @@ Use the Hub FortiGate location for the VWAN location.
     * hub-to-spoke11
     * hub-to-spoke12
 
-    ![peeringdelete1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/peeringdelete-01.jpg)
-    ![peeringdelete2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/peeringdelete-02.jpg)
+    ![peeringdelete1](../images/peeringdelete-01.jpg)
+    ![peeringdelete2](../images/peeringdelete-02.jpg)
 
 Deleting a peering in the Azure Portal from one virtual network will delete its corresponding peering from the peered VNET. When using the Azure API to create or remove peerings, directly or via IaC tools, e.g., Terraform, each side of the peering needs to be created or deleted.
 
@@ -995,8 +995,8 @@ Delete the Azure Route Server. The Azure VWAN or the Azure Route Server can prov
 1. **Locate** Azure Route Server
 1. **Click** Delete
 
-      ![deletears1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/deletears-01.jpg)
-      ![deletears2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/deletears-02.jpg)
+      ![deletears1](../images/deletears-01.jpg)
+      ![deletears2](../images/deletears-02.jpg)
 
 Deleting the Azure Route Server will take several minutes to complete.
 
@@ -1009,8 +1009,8 @@ Create Virtual WAN Route Tables
 1. **Click** "Route Tables"
 1. **Click** "+ Create route table"
 
-    ![vwan-rt1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-rt-01.jpg)
-    ![vwan-rt2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-rt-02.jpg)
+    ![vwan-rt1](../images/vwan-rt-01.jpg)
+    ![vwan-rt2](../images/vwan-rt-02.jpg)
 
 1. **Create** two Route Tables
     * Name - `Spoke-VNETS`
@@ -1018,9 +1018,9 @@ Create Virtual WAN Route Tables
 1. **Click** "Review + create"
 1. **Click** "Create"
 
-    ![vwan-rt3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-rt-03.jpg)
-    ![vwan-rt4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-rt-04.jpg)
-    ![vwan-rt5](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-rt-05.jpg)
+    ![vwan-rt3](../images/vwan-rt-03.jpg)
+    ![vwan-rt4](../images/vwan-rt-04.jpg)
+    ![vwan-rt5](../images/vwan-rt-05.jpg)
 
 Create Virtual WAN  VNET Connections
 
@@ -1068,9 +1068,9 @@ Create Virtual WAN  VNET Connections
     * Leave other settings unchanged
 1. **Click** "Create"
 
-    ![vwanconnection1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vnetconnection-01.jpg)
-    ![vwanconnection2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vnetconnection-02.jpg)
-    ![vwanconnection3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vnetconnection-03.jpg)
+    ![vwanconnection1](../images/vnetconnection-01.jpg)
+    ![vwanconnection2](../images/vnetconnection-02.jpg)
+    ![vwanconnection3](../images/vnetconnection-03.jpg)
 
 Configure Spoke-VNETS Route Table
 
@@ -1089,19 +1089,19 @@ Configure Spoke-VNETS Route Table
 1. **Click** "Review + create"
 1. **Click** "Create"
 
-      ![vwanhubrouting1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwanhubrouting-01.jpg)
-      ![vwanhubrouting2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwanhubrouting-02.jpg)
-      ![vwanhubrouting3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwanhubrouting-03.jpg)
+      ![vwanhubrouting1](../images/vwanhubrouting-01.jpg)
+      ![vwanhubrouting2](../images/vwanhubrouting-02.jpg)
+      ![vwanhubrouting3](../images/vwanhubrouting-03.jpg)
 
 Verify that this default route has been propagated to the Spokes VNETs
 
 1. **View** Spoke11 Linux VM nic **Effective Routes**
 
-      ![vwanhubrouting4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwanhubrouting-04.jpg)
+      ![vwanhubrouting4](../images/vwanhubrouting-04.jpg)
 
 * The current state of the Architecture is shown below.
 
-    ![global4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_04.jpg)  
+    ![global4](../images/sdwan_architecture_04.jpg)  
 
 ### Task 4 - VWAN Traffic generation
 
@@ -1114,12 +1114,12 @@ Generate traffic from the Branch1 Linux VM to a Spoke Linux VM
      ping 10.11.1.4
     ```
 
-    ![branchtospokevwanping1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branch-to-spoke-vwan-ping-01.jpg)
+    ![branchtospokevwanping1](../images/branch-to-spoke-vwan-ping-01.jpg)
 
 * Does it work?
   * Azure VWAN Route Tables enable the Spoke Networks to know the route to the Hub FortiGates, however, the Branches do not know how to get to the Spoke VNETs.
 
-    ![vwan traffic flow](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-traffic1.jpg)  
+    ![vwan traffic flow](../images/vwan-traffic1.jpg)  
 
 Make the required changes for ping to work
 
@@ -1149,8 +1149,8 @@ Add Spoke12
     * Interface - "priv (port2)"
 1. **Click** "OK"
 
-    ![staticroutes1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/static-routes-01.jpg)
-    ![staticroutes2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/static-routes-02.jpg)
+    ![staticroutes1](../images/static-routes-01.jpg)
+    ![staticroutes2](../images/static-routes-02.jpg)
 
 1. **Add** Spoke11 and Spoke12 to the list of networks under BGP configuration - via CLI or UI
 
@@ -1170,26 +1170,26 @@ Add Spoke12
     end
     ```
 
-    ![spokebgp1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spokebgp-01.jpg)
-    ![spokebgp2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/spokebgp-02.jpg)
+    ![spokebgp1](../images/spokebgp-01.jpg)
+    ![spokebgp2](../images/spokebgp-02.jpg)
 
 1. Verify that Branches are now receiving Spoke11 and Spoke12 CIDRs - via CLI
     * `get router info routing-table all`
 
-    ![branch1bgproutes1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branch1bgp-01.jpg)
+    ![branch1bgproutes1](../images/branch1bgp-01.jpg)
 
     * Does it work now or not yet?
 
 1. **Sniff** packets on the Hub FortiGate, are echo-requests arriving?  
     * `diagnose sniffer packet any 'net 10.11.0.0/16' 4 0 a`
 
-    ![sniffpings1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sniffpings-01.jpg)
+    ![sniffpings1](../images/sniffpings-01.jpg)
 
     * Traffic is egressing the Hub FortiGate on port2, but no reply?... What is missing?  
 
 1. **Check** FortiGate Hub port2 **effective routes**?
 
-    ![hubeffectiveroutes1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/hub-effective-routes-01.jpg)
+    ![hubeffectiveroutes1](../images/hub-effective-routes-01.jpg)
 
     * Is the vWAN propagating spoke11 and spoke12 to the Route Table attached to the FortiGate private subnet, **sdwan-USERXX-workshop-hub1_fgt-priv_rt**?
 
@@ -1197,13 +1197,13 @@ Add Spoke12
 1. **Select** "Yes"
 1. **Click** "Save"
 
-    ![rtconfigsettings](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/rt-config-settings-01.jpg)
+    ![rtconfigsettings](../images/rt-config-settings-01.jpg)
 
-    ![hubeffectiveroutes2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/hub-effective-routes-02.jpg)
+    ![hubeffectiveroutes2](../images/hub-effective-routes-02.jpg)
 
 Traffic should now be flowing between Branch1 Linux VM and Spoke11 Linux VM.  If the pings are not working, try cancelling the ping and trying again.
 
-  ![branchtospokevwanping1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/branch-to-spoke-vwan-ping-01.jpg)
+  ![branchtospokevwanping1](../images/branch-to-spoke-vwan-ping-01.jpg)
 
 ### Chapter 8 - QUIZ
 

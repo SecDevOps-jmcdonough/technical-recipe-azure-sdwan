@@ -16,10 +16,10 @@ weight: 2
 1. **Click** "Add"
 1. **Click** "Save"
 
-  ![hub-lb-backend1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-01.jpg)
-  ![hub-lb-backend2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-02.jpg)
-  ![hub-lb-backend3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-03.jpg)
-  ![hub-lb-backend4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-04.jpg)
-  ![hub-lb-backend5](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-05.jpg)
-  ![hub-lb-backend6](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbbackend-06.jpg)
+  ![hub-lb-backend1](../images/externallbbackend-01.jpg)
+  ![hub-lb-backend2](../images/externallbbackend-02.jpg)
+  ![hub-lb-backend3](../images/externallbbackend-03.jpg)
+  ![hub-lb-backend4](../images/externallbbackend-04.jpg)
+  ![hub-lb-backend5](../images/externallbbackend-05.jpg)
+  ![hub-lb-backend6](../images/externallbbackend-06.jpg)
   

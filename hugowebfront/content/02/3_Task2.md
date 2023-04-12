@@ -27,8 +27,8 @@ weight: 3
     |Floating IP|Disabled||Disabled|
     |Outbound SNAT|Use implicit||Use implicit|
 
-    ![hub-lb-rule1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbrule-01.jpg)
-    ![hub-lb-rule2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbrule-02.jpg)
-    ![hub-lb-rule3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbrule-03.jpg)
-    ![hub-lb-rule4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbrule-04.jpg)
-    ![hub-lb-rule5](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbrule-05.jpg)
+    ![hub-lb-rule1](../images/externallbrule-01.jpg)
+    ![hub-lb-rule2](../images/externallbrule-02.jpg)
+    ![hub-lb-rule3](../images/externallbrule-03.jpg)
+    ![hub-lb-rule4](../images/externallbrule-04.jpg)
+    ![hub-lb-rule5](../images/externallbrule-05.jpg)

@@ -13,12 +13,12 @@ Check the Effective Routes for Spoke 11 Linux VM
 1. **Click** on the VM Nic **sdwan-USERXX-workshop-spoke11-subnet1-lnx-nic**
 1. **Click** on **Effective routes**
 
-    ![effectiveroutes1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/effectiveroutes-lnx-01.jpg)
-    ![effectiveroutes2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/effectiveroutes-lnx-02.jpg)
+    ![effectiveroutes1](../images/effectiveroutes-lnx-01.jpg)
+    ![effectiveroutes2](../images/effectiveroutes-lnx-02.jpg)
 
 1. **Check** that Azure Route Server has injected the Branch sites CIDRs learned from the FortiGate
 
-    ![effectiveroutes3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/effectiveroutes-lnx-03.jpg)
+    ![effectiveroutes3](../images/effectiveroutes-lnx-03.jpg)
 
 Check the Effective Routes for Hub FortiGate
 
@@ -27,8 +27,8 @@ Check the Effective Routes for Hub FortiGate
 1. **Click** on the VM Nic port1 Nic **hub1-fgt1-port1**
 1. **Click** on **Effective routes**
 
-    ![effectiveroutes4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/effectiveroutes-lnx-04.jpg)
-    ![effectiveroutes5](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/effectiveroutes-lnx-05.jpg)
+    ![effectiveroutes4](../images/effectiveroutes-lnx-04.jpg)
+    ![effectiveroutes5](../images/effectiveroutes-lnx-05.jpg)
 
 Has Azure Route Server injected the Branch sites CIDRs learned from the FortiGates?
 

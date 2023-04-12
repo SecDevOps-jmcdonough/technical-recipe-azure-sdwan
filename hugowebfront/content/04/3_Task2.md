@@ -9,8 +9,8 @@ weight: 3
 1. **Select** the Azure Route Server **USERXX-workshop-sdwan-RouteServer** contained within your Resource Group.
 1. **Click** on Peers on the left side of the menu, verify the connection to the Hub FortiGates
 
-    ![routeserver1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/routeserver-01.jpg)
-    ![routeserver2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/routeserver-02.jpg)
+    ![routeserver1](../images/routeserver-01.jpg)
+    ![routeserver2](../images/routeserver-02.jpg)
 
 1. **List** the routes learned by Azure Route Server, run the commands below from your Azure Cloud Shell
 
@@ -21,7 +21,7 @@ az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --r
 az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --routeserver ${USER}-workshop-sdwan-RouteServer --name sdwan-fgt2
 ```
 
-![routeserver3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/routeserver-03.jpg)
+![routeserver3](../images/routeserver-03.jpg)
 
 ```json
 {

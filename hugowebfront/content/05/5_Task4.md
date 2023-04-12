@@ -14,10 +14,10 @@ weight: 5
      ping 172.18.5.4
     ```
 
-    ![console3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/ssh-br-lnx-console-03.jpg)
+    ![console3](../images/ssh-br-lnx-console-03.jpg)
 
 1. **Login** to any Branch FortiGate
 1. **Check** from the CLI if an ADVPN shortcut has been created.
 1. **Run** the command `get router info routing-table bgp`
 
-    ![advpn check](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/advpn-check.jpg)
+    ![advpn check](../images/advpn-check.jpg)

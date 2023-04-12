@@ -18,9 +18,9 @@ Green, Red, and/or Yellow lines indicate FortiGate reachability.
 
 The diagram shows the load balancing rules along with the Inbound NAT Rules configured on the load balancer.
 
-![hub-lb-insights1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbinsights-01.jpg)
-![hub-lb-insights2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbinsights-02.jpg)
-![hub-lb-insights3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/externallbinsights-03.jpg)
+![hub-lb-insights1](../images/externallbinsights-01.jpg)
+![hub-lb-insights2](../images/externallbinsights-02.jpg)
+![hub-lb-insights3](../images/externallbinsights-03.jpg)
 
 **Verify** that the VPN connections from the Branches to the Hub are UP, check Branches 1, 2 and 3.
 
@@ -29,16 +29,16 @@ The diagram shows the load balancing rules along with the Inbound NAT Rules conf
 1. **Click** "Network"
 1. **Click** "Expand to full screen" in the IPsec widget
 
-    ![vpnup1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vpnup-01.jpg)
-    ![vpnup2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vpnup-02.jpg)
+    ![vpnup1](../images/vpnup-01.jpg)
+    ![vpnup2](../images/vpnup-02.jpg)
 
 **Verify** that BGP peering with the Hub is UP and that the Branch FortiGates learned the Hub and other Branches' CIDRs. Check all Branch FortiGates.
 
 1. Open a FortiGate CLI session
 1. Run the Command `get router info routing-table all`
 
-    ![vpnup3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vpnup-03.jpg)
+    ![vpnup3](../images/vpnup-03.jpg)
 
 * The current state of the Architecture is shown below.
 
-    ![global-step2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdwan_architecture_02.jpg)
+    ![global-step2](../images/sdwan_architecture_02.jpg)

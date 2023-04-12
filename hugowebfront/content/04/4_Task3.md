@@ -20,8 +20,8 @@ On the Hub FortiGate view the Azure SDN Connector
 
 On the Hub FortiGate debug the Azure SDN Connector
 
-![sdn fail1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdn-fail-01.jpg)
-![sdn fail2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdn-fail-02.jpg)
+![sdn fail1](../images/sdn-fail-01.jpg)
+![sdn fail2](../images/sdn-fail-02.jpg)
 
 1. **Open** a FortiGate CLI session
 1. **Enter** the SDN connector debug commands
@@ -33,7 +33,7 @@ On the Hub FortiGate debug the Azure SDN Connector
 
 In a few minutes the output will indicate the SDN Connector's inability to make an call to the Azure Management API.
 
-![sdn fail3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/sdn-fail-03.jpg)
+![sdn fail3](../images/sdn-fail-03.jpg)
 
 Hints:
 ***
@@ -49,9 +49,9 @@ Hints:
         * 10.10.4.4
         * 10.10.4.5
 
-    ![mgmt be pool1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/mgmt-backend-pool-01.jpg)
-    ![mgmt be pool2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/mgmt-backend-pool-02.jpg)
-    ![mgmt be pool3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/mgmt-backend-pool-03.jpg)
+    ![mgmt be pool1](../images/mgmt-backend-pool-01.jpg)
+    ![mgmt be pool2](../images/mgmt-backend-pool-02.jpg)
+    ![mgmt be pool3](../images/mgmt-backend-pool-03.jpg)
 
 1. Create a TCP Load Balancer Rule, any port will do, e.g. 13000. This rule will allow TCP response traffic back through the load balancer, when to a TCP request originated from a device in a backend pool associated to the load balancer.
 
@@ -68,7 +68,7 @@ Hints:
     * Floating IP - "Disabled"
     * Outbound source network address translation (SNAT) - "Use default outbound access"
 
-    ![tcp rule1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/tcp-rule-01.jpg)
+    ![tcp rule1](../images/tcp-rule-01.jpg)
 
 Utilize the SDN connector results in a Dynamic Address Object and Policy
 
@@ -86,7 +86,7 @@ Utilize the SDN connector results in a Dynamic Address Object and Policy
         * Vnet=**userxx**-workshop-sdwan-spoke12
     * Interface - "priv (port2)"
 
-    ![Dynamic Address Object1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/dynamic-address-object-01.jpg)
+    ![Dynamic Address Object1](../images/dynamic-address-object-01.jpg)
 
 **Use** the address object in an existing Policy to restrict traffic coming from the Branches to only VMs in the Spoke VNETs.
 
@@ -95,6 +95,6 @@ Utilize the SDN connector results in a Dynamic Address Object and Policy
 1. **Edit** the policy "Branch to Cloud"
 1. **Set** the policy destination to "Spoke_VNETs"
 
-    ![Branch to Cloud Policy1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/policy-branch-to-spoke-01.jpg)
-    ![Branch to Cloud Policy2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/policy-branch-to-spoke-02.jpg)
-    ![Branch to Cloud Policy3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/policy-branch-to-spoke-03.jpg)
+    ![Branch to Cloud Policy1](../images/policy-branch-to-spoke-01.jpg)
+    ![Branch to Cloud Policy2](../images/policy-branch-to-spoke-02.jpg)
+    ![Branch to Cloud Policy3](../images/policy-branch-to-spoke-03.jpg)

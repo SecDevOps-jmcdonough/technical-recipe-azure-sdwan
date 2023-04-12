@@ -32,12 +32,12 @@ Use the Hub FortiGate location for the VWAN location.
 
     > The second command can take several minutes to run, do not Ctrl-C to break out or stop the command. If your Cloud Shell session disconnects, reconnect and run `ps -ef` to determine if `az network vhub create...` command is still running. Once the command is no longer seen in the `ps` output the VWAN should be created. Use the command `az network vhub list` to view your VWAN hub.
 
-    ![vwan1](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-01.jpg)
+    ![vwan1](../images/vwan-01.jpg)
 
 1. **Navigate** to your Resource Group and verify that you see your vWAN
 1. **Click** on your vWAN and verify that you see the virtual Hub you just deployed
 1. **Click** on the vWAN Hub and verify that the deployment and routing status complete
 
-    ![vwan2](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-02.jpg)
-    ![vwan3](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-03.jpg)
-    ![vwan4](https://raw.githubusercontent.com/FortinetSecDevOps/technical-recipe-azure-sdwan/main/images/vwan-04.jpg)
+    ![vwan2](../images/vwan-02.jpg)
+    ![vwan3](../images/vwan-03.jpg)
+    ![vwan4](../images/vwan-04.jpg)
