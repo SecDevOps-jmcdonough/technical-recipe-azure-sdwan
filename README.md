@@ -50,38 +50,38 @@ The purpose of this TEC Recipe is to familiarize the learner with routing, data-
 * Login to Azure Cloud Portal [https://portal.azure.com/](https://portal.azure.com/) with the provided login/password
 
     ![cloudshell1](docs/content/images/cloudshell-01.jpg)
-    ![cloudshell2](docs/content/imagescloudshell-02.jpg)
+    ![cloudshell2](docs/content/images/cloudshell-02.jpg)
 
 * Click the link "Skip for now (14 days until this is required)" do not click the "Next" button
 
-    ![cloudshell3](docs/content/imagescloudshell-03.jpg)
+    ![cloudshell3](docs/content/images/cloudshell-03.jpg)
 
 * Click the "Next" button
 
-    ![cloudshell4](docs/content/imagescloudshell-04.jpg)
+    ![cloudshell4](docs/content/images/cloudshell-04.jpg)
 
 * Click on Cloud Shell icon on the Top Right side of the portal
 
-    ![cloudshell5](docs/content/imagescloudshell-05.jpg)
+    ![cloudshell5](docs/content/images/cloudshell-05.jpg)
 
 * Select **Bash**
 
-    ![cloudshell6](docs/content/imagescloudshell-06.jpg)
+    ![cloudshell6](docs/content/images/cloudshell-06.jpg)
 
 * Click on **Show advanced settings**
 
-    ![cloudshell7](docs/content/imagescloudshell-07.jpg)
+    ![cloudshell7](docs/content/images/cloudshell-07.jpg)
 * Select
   * Use existing Resource Group  - it ***should*** auto populate with USERXX-workshop-sdwan (USERXX is your Username)
   * Use existing Storage account - it ***should*** auto populate with USERXX########## (########## is a random string)
   * Use existing File Share  - type **cloudshellshare**
 * Click "Attach Storage"
 
-    ![cloudshell8](docs/content/imagescloudshell-08.jpg)
+    ![cloudshell8](docs/content/images/cloudshell-08.jpg)
 
 * You should now have access to Azure Cloud Shell console
 
-    ![cloudshell9](docs/content/imagescloudshell-09.jpg)
+    ![cloudshell9](docs/content/images/cloudshell-09.jpg)
 
 ### Task 2 - Run the Terraform Deployment
 
@@ -104,19 +104,19 @@ terraform plan -var="username=${USER}"
 terraform apply -var="username=${USER}" -auto-approve
 ```
 
-  ![terraform1](docs/content/imagesterraform-01.jpg)
-  ![terraform2](docs/content/imagesterraform-02.jpg)
-  ![terraform3](docs/content/imagesterraform-03.jpg)
+  ![terraform1](docs/content/images/terraform-01.jpg)
+  ![terraform2](docs/content/images/terraform-02.jpg)
+  ![terraform3](docs/content/images/terraform-03.jpg)
 
 * The current state of the Architecture is shown below.
 
-    ![global-step1](docs/content/imagessdwan_architecture_01.jpg)
+    ![global-step1](docs/content/images/sdwan_architecture_01.jpg)
 
 ### Task 3 - Terraform Verifications
 
   1. Using the Terraform output, verify that you have Web and SSH access to the FortiGates.
 
-      ![terraform4](docs/content/imagesterraform-04.jpg)
+      ![terraform4](docs/content/images/terraform-04.jpg)
 
       * Terraform output can be redisplayed at any point as long as you are in the `./technical-recipe-azure-sdwan/terraform/` directory, by using the command `terraform output`
 
@@ -188,12 +188,12 @@ When giving this TEC Recipe as as demo, the following questions will provide a b
 1. **Click** "Add"
 1. **Click** "Save"
 
-  ![hub-lb-backend1](docs/content/imagesexternallbbackend-01.jpg)
-  ![hub-lb-backend2](docs/content/imagesexternallbbackend-02.jpg)
-  ![hub-lb-backend3](docs/content/imagesexternallbbackend-03.jpg)
-  ![hub-lb-backend4](docs/content/imagesexternallbbackend-04.jpg)
-  ![hub-lb-backend5](docs/content/imagesexternallbbackend-05.jpg)
-  ![hub-lb-backend6](docs/content/imagesexternallbbackend-06.jpg)
+  ![hub-lb-backend1](docs/content/images/externallbbackend-01.jpg)
+  ![hub-lb-backend2](docs/content/images/externallbbackend-02.jpg)
+  ![hub-lb-backend3](docs/content/images/externallbbackend-03.jpg)
+  ![hub-lb-backend4](docs/content/images/externallbbackend-04.jpg)
+  ![hub-lb-backend5](docs/content/images/externallbbackend-05.jpg)
+  ![hub-lb-backend6](docs/content/images/externallbbackend-06.jpg)
 
 ### Task 2 - Create load balancing rules for IPSEC VPN Traffic
 
@@ -218,11 +218,11 @@ When giving this TEC Recipe as as demo, the following questions will provide a b
     |Floating IP|Disabled||Disabled|
     |Outbound SNAT|Use implicit||Use implicit|
 
-    ![hub-lb-rule1](docs/content/imagesexternallbrule-01.jpg)
-    ![hub-lb-rule2](docs/content/imagesexternallbrule-02.jpg)
-    ![hub-lb-rule3](docs/content/imagesexternallbrule-03.jpg)
-    ![hub-lb-rule4](docs/content/imagesexternallbrule-04.jpg)
-    ![hub-lb-rule5](docs/content/imagesexternallbrule-05.jpg)
+    ![hub-lb-rule1](docs/content/images/externallbrule-01.jpg)
+    ![hub-lb-rule2](docs/content/images/externallbrule-02.jpg)
+    ![hub-lb-rule3](docs/content/images/externallbrule-03.jpg)
+    ![hub-lb-rule4](docs/content/images/externallbrule-04.jpg)
+    ![hub-lb-rule5](docs/content/images/externallbrule-05.jpg)
 
 ### Task 3 - Hub and Branch VPN Connectivity Verification
 
@@ -238,9 +238,9 @@ Green, Red, and/or Yellow lines indicate FortiGate reachability.
 
 The diagram shows the load balancing rules along with the Inbound NAT Rules configured on the load balancer.
 
-  ![hub-lb-insights1](docs/content/imagesexternallbinsights-01.jpg)
-  ![hub-lb-insights2](docs/content/imagesexternallbinsights-02.jpg)
-  ![hub-lb-insights3](docs/content/imagesexternallbinsights-03.jpg)
+  ![hub-lb-insights1](docs/content/images/externallbinsights-01.jpg)
+  ![hub-lb-insights2](docs/content/images/externallbinsights-02.jpg)
+  ![hub-lb-insights3](docs/content/images/externallbinsights-03.jpg)
 
 **Verify** that the VPN connections from the Branches to the Hub are UP, check Branches 1, 2 and 3.
 
@@ -249,19 +249,19 @@ The diagram shows the load balancing rules along with the Inbound NAT Rules conf
 1. **Click** "Network"
 1. **Click** "Expand to full screen" in the IPsec widget
 
-    ![vpnup1](docs/content/imagesvpnup-01.jpg)
-    ![vpnup2](docs/content/imagesvpnup-02.jpg)
+    ![vpnup1](docs/content/images/vpnup-01.jpg)
+    ![vpnup2](docs/content/images/vpnup-02.jpg)
 
 **Verify** that BGP peering with the Hub is UP and that the Branch FortiGates learned the Hub and other Branches' CIDRs. Check all Branch FortiGates.
 
 1. Open a FortiGate CLI session
 1. Run the Command `get router info routing-table all`
 
-    ![vpnup3](docs/content/imagesvpnup-03.jpg)
+    ![vpnup3](docs/content/images/vpnup-03.jpg)
 
 * The current state of the Architecture is shown below.
 
-    ![global-step2](docs/content/imagessdwan_architecture_02.jpg)
+    ![global-step2](docs/content/images/sdwan_architecture_02.jpg)
 
 ### Chapter 2 - QUIZ
 
@@ -370,10 +370,10 @@ Create a VNET peering between the Spoke11 VNET and the Hub VNET
 
 >You will see errors until all the correct selections are made.
 
-  ![vnetpeering1](docs/content/imagesspoke11-to-Hub-peering-01.jpg)
-  ![vnetpeering2](docs/content/imagesspoke11-to-Hub-peering-02.jpg)
-  ![vnetpeering3](docs/content/imagesspoke11-to-Hub-peering-03.jpg)
-  ![vnetpeering4](docs/content/imagesspoke11-to-Hub-peering-04.jpg)
+  ![vnetpeering1](docs/content/images/spoke11-to-Hub-peering-01.jpg)
+  ![vnetpeering2](docs/content/images/spoke11-to-Hub-peering-02.jpg)
+  ![vnetpeering3](docs/content/images/spoke11-to-Hub-peering-03.jpg)
+  ![vnetpeering4](docs/content/images/spoke11-to-Hub-peering-04.jpg)
 
 **Verify** that the Branch FortiGates have learned the Spoke11 VNET and Spoke12 VNET CIDRs. Run the Command `get router info routing-table all` on all the Branch FortiGates.
 
@@ -382,8 +382,8 @@ Create a VNET peering between the Spoke11 VNET and the Hub VNET
 1. **Select** the Azure Route Server **USERXX-workshop-sdwan-RouteServer** contained within your Resource Group.
 1. **Click** on Peers on the left side of the menu, verify the connection to the Hub FortiGates
 
-    ![routeserver1](docs/content/imagesrouteserver-01.jpg)
-    ![routeserver2](docs/content/imagesrouteserver-02.jpg)
+    ![routeserver1](docs/content/images/routeserver-01.jpg)
+    ![routeserver2](docs/content/images/routeserver-02.jpg)
 
 1. **List** the routes learned by Azure Route Server, run the commands below from your Azure Cloud Shell
 
@@ -394,7 +394,7 @@ az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --r
 az network routeserver peering list-learned-routes -g ${USER}-workshop-sdwan --routeserver ${USER}-workshop-sdwan-RouteServer --name sdwan-fgt2
 ```
 
-![routeserver3](docs/content/imagesrouteserver-03.jpg)
+![routeserver3](docs/content/images/routeserver-03.jpg)
 
 ```json
 {
@@ -503,8 +503,8 @@ On the Hub FortiGate view the Azure SDN Connector
 
 On the Hub FortiGate debug the Azure SDN Connector
 
-![sdn fail1](docs/content/imagessdn-fail-01.jpg)
-![sdn fail2](docs/content/imagessdn-fail-02.jpg)
+![sdn fail1](docs/content/images/sdn-fail-01.jpg)
+![sdn fail2](docs/content/images/sdn-fail-02.jpg)
 
 1. **Open** a FortiGate CLI session
 1. **Enter** the SDN connector debug commands
@@ -516,7 +516,7 @@ On the Hub FortiGate debug the Azure SDN Connector
 
 In a few minutes the output will indicate the SDN Connector's inability to make an call to the Azure Management API.
 
-![sdn fail3](docs/content/imagessdn-fail-03.jpg)
+![sdn fail3](docs/content/images/sdn-fail-03.jpg)
 
 Hints:
 ***
@@ -532,9 +532,9 @@ Hints:
         * 10.10.4.4
         * 10.10.4.5
 
-    ![mgmt be pool1](docs/content/imagesmgmt-backend-pool-01.jpg)
-    ![mgmt be pool2](docs/content/imagesmgmt-backend-pool-02.jpg)
-    ![mgmt be pool3](docs/content/imagesmgmt-backend-pool-03.jpg)
+    ![mgmt be pool1](docs/content/images/mgmt-backend-pool-01.jpg)
+    ![mgmt be pool2](docs/content/images/mgmt-backend-pool-02.jpg)
+    ![mgmt be pool3](docs/content/images/mgmt-backend-pool-03.jpg)
 
 1. Create a TCP Load Balancer Rule, any port will do, e.g. 13000. This rule will allow TCP response traffic back through the load balancer, when to a TCP request originated from a device in a backend pool associated to the load balancer.
 
@@ -551,7 +551,7 @@ Hints:
     * Floating IP - "Disabled"
     * Outbound source network address translation (SNAT) - "Use default outbound access"
 
-    ![tcp rule1](docs/content/imagestcp-rule-01.jpg)
+    ![tcp rule1](docs/content/images/tcp-rule-01.jpg)
 
 Utilize the SDN connector results in a Dynamic Address Object and Policy
 
@@ -569,7 +569,7 @@ Utilize the SDN connector results in a Dynamic Address Object and Policy
         * USERXX-workshop-sdwan-spoke12
     * Interface - "priv (port2)"
 
-    ![Dynamic Address Object1](docs/content/imagesdynamic-address-object-01.jpg)
+    ![Dynamic Address Object1](docs/content/images/dynamic-address-object-01.jpg)
 
 **Use** the address object in an existing Policy to restrict traffic coming from the Branches to only VMs in the Spoke VNETs.
 
@@ -578,9 +578,9 @@ Utilize the SDN connector results in a Dynamic Address Object and Policy
 1. **Edit** the policy "Branch to Cloud"
 1. **Set** the policy destination to "Spoke_VNETs"
 
-    ![Branch to Cloud Policy1](docs/content/imagespolicy-branch-to-spoke-01.jpg)
-    ![Branch to Cloud Policy2](docs/content/imagespolicy-branch-to-spoke-02.jpg)
-    ![Branch to Cloud Policy3](docs/content/imagespolicy-branch-to-spoke-03.jpg)
+    ![Branch to Cloud Policy1](docs/content/images/policy-branch-to-spoke-01.jpg)
+    ![Branch to Cloud Policy2](docs/content/images/policy-branch-to-spoke-02.jpg)
+    ![Branch to Cloud Policy3](docs/content/images/policy-branch-to-spoke-03.jpg)
 
 ### Task 4 - Traffic generation
 
@@ -598,9 +598,9 @@ Generate Traffic from Branch1 Primary FortiGate:
     * `execute ping 10.11.1.4`
     * `execute ping 10.12.1.4`
 
-    ![traffic1](docs/content/imagesbranch-fgt-to-spoke-01.jpg)
+    ![traffic1](docs/content/images/branch-fgt-to-spoke-01.jpg)
 
-    ![traffic2](docs/content/imagestraffic2.jpg)
+    ![traffic2](docs/content/images/traffic2.jpg)
 
 Generate Traffic from Branch1 Linux VM:
 
@@ -611,9 +611,9 @@ Generate Traffic from Branch1 Linux VM:
     * ***Select** **Enable with managed storage account (recommended)**
     * **Click** Save
 
-        ![bootdiagnostics1](docs/content/imagesboot-diagnostics-01.jpg)
-        ![bootdiagnostics2](docs/content/imagesboot-diagnostics-02.jpg)
-        ![bootdiagnostics3](docs/content/imagesboot-diagnostics-03.jpg)
+        ![bootdiagnostics1](docs/content/images/boot-diagnostics-01.jpg)
+        ![bootdiagnostics2](docs/content/images/boot-diagnostics-02.jpg)
+        ![bootdiagnostics3](docs/content/images/boot-diagnostics-03.jpg)
 
 1. Ping from VM Serial Console
     * **Click** "Serial Console"
@@ -626,13 +626,13 @@ Generate Traffic from Branch1 Linux VM:
         ping 10.12.1.4 
         ```
 
-    ![console3](docs/content/imagesssh-br-lnx-console-01.jpg)
+    ![console3](docs/content/images/ssh-br-lnx-console-01.jpg)
 
-    ![traffic3](docs/content/imagestraffic3.jpg)
+    ![traffic3](docs/content/images/traffic3.jpg)
 
 * The current state of the Architecture is shown below.
 
-    ![global-step3](docs/content/imagessdwan_architecture_03.jpg)
+    ![global-step3](docs/content/images/sdwan_architecture_03.jpg)
 
 ### Chapter 4 - QUIZ
 
@@ -714,10 +714,10 @@ Several settings in Azure determine traffic flow review the following for Azure 
 
     * The next hop is a load balancer or a stand-alone FortiGate.
 
-    ![add udr branch1](docs/content/imagesadd-defaultroutebranch1-01.jpg)
-    ![add udr branch2](docs/content/imagesadd-defaultroutebranch1-02.jpg)
-    ![add udr branch3](docs/content/imagesadd-defaultroutebranch1-03.jpg)
-    ![add udr branch4](docs/content/imagesadd-defaultroutebranch1-04.jpg)
+    ![add udr branch1](docs/content/images/add-defaultroutebranch1-01.jpg)
+    ![add udr branch2](docs/content/images/add-defaultroutebranch1-02.jpg)
+    ![add udr branch3](docs/content/images/add-defaultroutebranch1-03.jpg)
+    ![add udr branch4](docs/content/images/add-defaultroutebranch1-04.jpg)
 
 ### Task 2 - Generate Branch traffic to the Hub
 
@@ -729,7 +729,7 @@ Several settings in Azure determine traffic flow review the following for Azure 
      ping 10.12.1.4 
     ```
 
-    ![console3](docs/content/imagesssh-br-lnx-console-01.jpg)
+    ![console3](docs/content/images/ssh-br-lnx-console-01.jpg)
 
 1. Why does it work now?
 
@@ -744,12 +744,12 @@ Check the Effective Routes for Spoke 11 Linux VM
 1. **Click** on the VM Nic **sdwan-USERXX-workshop-spoke11-subnet1-lnx-nic**
 1. **Click** on **Effective routes**
 
-    ![effectiveroutes1](docs/content/imageseffectiveroutes-lnx-01.jpg)
-    ![effectiveroutes2](docs/content/imageseffectiveroutes-lnx-02.jpg)
+    ![effectiveroutes1](docs/content/images/effectiveroutes-lnx-01.jpg)
+    ![effectiveroutes2](docs/content/images/effectiveroutes-lnx-02.jpg)
 
 1. **Check** that Azure Route Server has injected the Branch sites CIDRs learned from the FortiGate
 
-    ![effectiveroutes3](docs/content/imageseffectiveroutes-lnx-03.jpg)
+    ![effectiveroutes3](docs/content/images/effectiveroutes-lnx-03.jpg)
 
 Check the Effective Routes for Hub FortiGate
 
@@ -758,8 +758,8 @@ Check the Effective Routes for Hub FortiGate
 1. **Click** on the VM Nic port1 Nic **hub1-fgt1-port1**
 1. **Click** on **Effective routes**
 
-    ![effectiveroutes4](docs/content/imageseffectiveroutes-lnx-04.jpg)
-    ![effectiveroutes5](docs/content/imageseffectiveroutes-lnx-05.jpg)
+    ![effectiveroutes4](docs/content/images/effectiveroutes-lnx-04.jpg)
+    ![effectiveroutes5](docs/content/images/effectiveroutes-lnx-05.jpg)
 
 Has Azure Route Server injected the Branch sites CIDRs learned from the FortiGates?
 
@@ -777,13 +777,13 @@ Has Azure Route Server injected the Branch sites CIDRs learned from the FortiGat
      ping 172.18.5.4
     ```
 
-    ![console3](docs/content/imagesssh-br-lnx-console-03.jpg)
+    ![console3](docs/content/images/ssh-br-lnx-console-03.jpg)
 
 1. **Login** to any Branch FortiGate
 1. **Check** from the CLI if an ADVPN shortcut has been created.
 1. **Run** the command `get router info routing-table bgp`
 
-    ![advpn check](docs/content/imagesadvpn-check.jpg)
+    ![advpn check](docs/content/images/advpn-check.jpg)
 
 ### Chapter 5 - QUIZ
 
@@ -831,7 +831,7 @@ Through the use of IPSEC an ADVPN is established between branches, the complexit
   * `ping 10.11.1.4`
   * Let the ping run
 
-  ![branchtospokeping1](docs/content/imagesbranchtospokeping-01.jpg)
+  ![branchtospokeping1](docs/content/images/branchtospokeping-01.jpg)
 
 ### Task 2 - Initiate Failover
 
@@ -843,8 +843,8 @@ Through the use of IPSEC an ADVPN is established between branches, the complexit
   execute ha failover set 1
   ```
 
-  ![initiatefailover](docs/content/imagesinitiatefailover-01.jpg)
-  ![branchtospokeping2](docs/content/imagesbranchtospokeping-02.jpg)
+  ![initiatefailover](docs/content/images/initiatefailover-01.jpg)
+  ![branchtospokeping2](docs/content/images/branchtospokeping-02.jpg)
 
 * Monitor the number of **lost Pings** and the **failover time**
 * How long did it take?
@@ -872,7 +872,7 @@ Through the use of IPSEC an ADVPN is established between branches, the complexit
   done
   ```
 
-  ![continuoustcpping1](docs/content/imagescontinuoustcpping-01.jpg)
+  ![continuoustcpping1](docs/content/images/continuoustcpping-01.jpg)
 
 1. **Login** to the Branch1 Primary FortiGate.
     * It may be - **sdwan-USERXX-workshop-br1-fgt1** or **sdwan-USERXX-workshop-br1-fgt2**
@@ -967,15 +967,15 @@ Use the Hub FortiGate location for the VWAN location.
 
     > The second command can take several minutes to run, do not Ctrl-C to break out or stop the command. If your Cloud Shell session disconnects, reconnect and run `ps -ef` to determine if `az network vhub create...` command is still running. Once the command is no longer seen in the `ps` output the VWAN should be created. Use the command `az network vhub list` to view your VWAN hub.
 
-    ![vwan1](docs/content/imagesvwan-01.jpg)
+    ![vwan1](docs/content/images/vwan-01.jpg)
 
 1. **Navigate** to your Resource Group and verify that you see your vWAN
 1. **Click** on your vWAN and verify that you see the virtual Hub you just deployed
 1. **Click** on the vWAN Hub and verify that the deployment and routing status complete
 
-    ![vwan2](docs/content/imagesvwan-02.jpg)
-    ![vwan3](docs/content/imagesvwan-03.jpg)
-    ![vwan4](docs/content/imagesvwan-04.jpg)
+    ![vwan2](docs/content/images/vwan-02.jpg)
+    ![vwan3](docs/content/images/vwan-03.jpg)
+    ![vwan4](docs/content/images/vwan-04.jpg)
 
 ### Task 2 - Delete VNET Peerings / Delete Azure Route Server
 
@@ -985,8 +985,8 @@ Use the Hub FortiGate location for the VWAN location.
     * hub-to-spoke11
     * hub-to-spoke12
 
-    ![peeringdelete1](docs/content/imagespeeringdelete-01.jpg)
-    ![peeringdelete2](docs/content/imagespeeringdelete-02.jpg)
+    ![peeringdelete1](docs/content/images/peeringdelete-01.jpg)
+    ![peeringdelete2](docs/content/images/peeringdelete-02.jpg)
 
 Deleting a peering in the Azure Portal from one virtual network will delete its corresponding peering from the peered VNET. When using the Azure API to create or remove peerings, directly or via IaC tools, e.g., Terraform, each side of the peering needs to be created or deleted.
 
@@ -995,8 +995,8 @@ Delete the Azure Route Server. The Azure VWAN or the Azure Route Server can prov
 1. **Locate** Azure Route Server
 1. **Click** Delete
 
-      ![deletears1](docs/content/imagesdeletears-01.jpg)
-      ![deletears2](docs/content/imagesdeletears-02.jpg)
+      ![deletears1](docs/content/images/deletears-01.jpg)
+      ![deletears2](docs/content/images/deletears-02.jpg)
 
 Deleting the Azure Route Server will take several minutes to complete.
 
@@ -1009,8 +1009,8 @@ Create Virtual WAN Route Tables
 1. **Click** "Route Tables"
 1. **Click** "+ Create route table"
 
-    ![vwan-rt1](docs/content/imagesvwan-rt-01.jpg)
-    ![vwan-rt2](docs/content/imagesvwan-rt-02.jpg)
+    ![vwan-rt1](docs/content/images/vwan-rt-01.jpg)
+    ![vwan-rt2](docs/content/images/vwan-rt-02.jpg)
 
 1. **Create** two Route Tables
     * Name - `Spoke-VNETS`
@@ -1018,9 +1018,9 @@ Create Virtual WAN Route Tables
 1. **Click** "Review + create"
 1. **Click** "Create"
 
-    ![vwan-rt3](docs/content/imagesvwan-rt-03.jpg)
-    ![vwan-rt4](docs/content/imagesvwan-rt-04.jpg)
-    ![vwan-rt5](docs/content/imagesvwan-rt-05.jpg)
+    ![vwan-rt3](docs/content/images/vwan-rt-03.jpg)
+    ![vwan-rt4](docs/content/images/vwan-rt-04.jpg)
+    ![vwan-rt5](docs/content/images/vwan-rt-05.jpg)
 
 Create Virtual WAN  VNET Connections
 
@@ -1068,9 +1068,9 @@ Create Virtual WAN  VNET Connections
     * Leave other settings unchanged
 1. **Click** "Create"
 
-    ![vwanconnection1](docs/content/imagesvnetconnection-01.jpg)
-    ![vwanconnection2](docs/content/imagesvnetconnection-02.jpg)
-    ![vwanconnection3](docs/content/imagesvnetconnection-03.jpg)
+    ![vwanconnection1](docs/content/images/vnetconnection-01.jpg)
+    ![vwanconnection2](docs/content/images/vnetconnection-02.jpg)
+    ![vwanconnection3](docs/content/images/vnetconnection-03.jpg)
 
 Configure Spoke-VNETS Route Table
 
@@ -1089,19 +1089,19 @@ Configure Spoke-VNETS Route Table
 1. **Click** "Review + create"
 1. **Click** "Create"
 
-      ![vwanhubrouting1](docs/content/imagesvwanhubrouting-01.jpg)
-      ![vwanhubrouting2](docs/content/imagesvwanhubrouting-02.jpg)
-      ![vwanhubrouting3](docs/content/imagesvwanhubrouting-03.jpg)
+      ![vwanhubrouting1](docs/content/images/vwanhubrouting-01.jpg)
+      ![vwanhubrouting2](docs/content/images/vwanhubrouting-02.jpg)
+      ![vwanhubrouting3](docs/content/images/vwanhubrouting-03.jpg)
 
 Verify that this default route has been propagated to the Spokes VNETs
 
 1. **View** Spoke11 Linux VM nic **Effective Routes**
 
-      ![vwanhubrouting4](docs/content/imagesvwanhubrouting-04.jpg)
+      ![vwanhubrouting4](docs/content/images/vwanhubrouting-04.jpg)
 
 * The current state of the Architecture is shown below.
 
-    ![global4](docs/content/imagessdwan_architecture_04.jpg)  
+    ![global4](docs/content/images/sdwan_architecture_04.jpg)  
 
 ### Task 4 - VWAN Traffic generation
 
@@ -1114,12 +1114,12 @@ Generate traffic from the Branch1 Linux VM to a Spoke Linux VM
      ping 10.11.1.4
     ```
 
-    ![branchtospokevwanping1](docs/content/imagesbranch-to-spoke-vwan-ping-01.jpg)
+    ![branchtospokevwanping1](docs/content/images/branch-to-spoke-vwan-ping-01.jpg)
 
 * Does it work?
   * Azure VWAN Route Tables enable the Spoke Networks to know the route to the Hub FortiGates, however, the Branches do not know how to get to the Spoke VNETs.
 
-    ![vwan traffic flow](docs/content/imagesvwan-traffic1.jpg)  
+    ![vwan traffic flow](docs/content/images/vwan-traffic1.jpg)  
 
 Make the required changes for ping to work
 
@@ -1149,8 +1149,8 @@ Add Spoke12
     * Interface - "priv (port2)"
 1. **Click** "OK"
 
-    ![staticroutes1](docs/content/imagesstatic-routes-01.jpg)
-    ![staticroutes2](docs/content/imagesstatic-routes-02.jpg)
+    ![staticroutes1](docs/content/images/static-routes-01.jpg)
+    ![staticroutes2](docs/content/images/static-routes-02.jpg)
 
 1. **Add** Spoke11 and Spoke12 to the list of networks under BGP configuration - via CLI or UI
 
@@ -1170,26 +1170,26 @@ Add Spoke12
     end
     ```
 
-    ![spokebgp1](docs/content/imagesspokebgp-01.jpg)
-    ![spokebgp2](docs/content/imagesspokebgp-02.jpg)
+    ![spokebgp1](docs/content/images/spokebgp-01.jpg)
+    ![spokebgp2](docs/content/images/spokebgp-02.jpg)
 
 1. Verify that Branches are now receiving Spoke11 and Spoke12 CIDRs - via CLI
     * `get router info routing-table all`
 
-    ![branch1bgproutes1](docs/content/imagesbranch1bgp-01.jpg)
+    ![branch1bgproutes1](docs/content/images/branch1bgp-01.jpg)
 
     * Does it work now or not yet?
 
 1. **Sniff** packets on the Hub FortiGate, are echo-requests arriving?  
     * `diagnose sniffer packet any 'net 10.11.0.0/16' 4 0 a`
 
-    ![sniffpings1](docs/content/imagessniffpings-01.jpg)
+    ![sniffpings1](docs/content/images/sniffpings-01.jpg)
 
     * Traffic is egressing the Hub FortiGate on port2, but no reply?... What is missing?  
 
 1. **Check** FortiGate Hub port2 **effective routes**?
 
-    ![hubeffectiveroutes1](docs/content/imageshub-effective-routes-01.jpg)
+    ![hubeffectiveroutes1](docs/content/images/hub-effective-routes-01.jpg)
 
     * Is the vWAN propagating spoke11 and spoke12 to the Route Table attached to the FortiGate private subnet, **sdwan-USERXX-workshop-hub1_fgt-priv_rt**?
 
@@ -1197,13 +1197,13 @@ Add Spoke12
 1. **Select** "Yes"
 1. **Click** "Save"
 
-    ![rtconfigsettings](docs/content/imagesrt-config-settings-01.jpg)
+    ![rtconfigsettings](docs/content/images/rt-config-settings-01.jpg)
 
-    ![hubeffectiveroutes2](docs/content/imageshub-effective-routes-02.jpg)
+    ![hubeffectiveroutes2](docs/content/images/hub-effective-routes-02.jpg)
 
 Traffic should now be flowing between Branch1 Linux VM and Spoke11 Linux VM.  If the pings are not working, try cancelling the ping and trying again.
 
-  ![branchtospokevwanping1](docs/content/imagesbranch-to-spoke-vwan-ping-01.jpg)
+  ![branchtospokevwanping1](docs/content/images/branch-to-spoke-vwan-ping-01.jpg)
 
 ### Chapter 8 - QUIZ
 
