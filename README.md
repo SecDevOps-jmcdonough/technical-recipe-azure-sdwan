@@ -49,7 +49,7 @@ The purpose of this TEC Recipe is to familiarize the learner with routing, data-
 
 * Login to Azure Cloud Portal [https://portal.azure.com/](https://portal.azure.com/) with the provided login/password
 
-    ![cloudshell1](docs/content/imagescloudshell-01.jpg)
+    ![cloudshell1](../docs/content/imagescloudshell-01.jpg)
     ![cloudshell2](docs/content/imagescloudshell-02.jpg)
 
 * Click the link "Skip for now (14 days until this is required)" do not click the "Next" button
