@@ -10,7 +10,7 @@ The Azure Route Server (ASR) is used to connect NVAs to the Azure network to sim
 
 ## Key questions during your demo - Chapter 3
 
-When giving this TEC Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
+When giving this TEC Workshop as as demo, the following questions will provide a basis for next steps and future meetings:
 
 * Describe your organizations routing requirements.  
 * Does your environment require more than 8 BGP peers or more than 1000 routes

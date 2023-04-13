@@ -16,7 +16,7 @@ For more information, review the following:
 
 ### Key questions during your demo - Chapter 1
 
-When giving this TEC Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
+When giving this TEC Workshop as as demo, the following questions will provide a basis for next steps and future meetings:
 
 * Has your organization standardized on an IaC tool-set for infrastructure provisioning and iteration?
 * How are the responsibilities for infrastructure assigned?  Does cloud network fall under a DevOps, Cloud Networking, or Application Delivery team, as examples?

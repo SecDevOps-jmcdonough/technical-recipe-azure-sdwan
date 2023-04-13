@@ -12,7 +12,7 @@ Active/Passive FortiGate deployments only support vertical scalability, but only
 
 ## Key questions during your demo - Chapter 7
 
-When giving this TEC Recipe as as demo, the following questions will provide a basis for next steps and future meetings:
+When giving this TEC Workshop as as demo, the following questions will provide a basis for next steps and future meetings:
 
 * Can your applications support asymmetric traffic?
 * Do you have the need to scale horizontally?
