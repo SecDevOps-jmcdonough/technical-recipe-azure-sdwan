@@ -1,9 +1,14 @@
 <script>
   function formSubmit() {
 
+    var labdefinition = "{{ .Get `labdefinition` }}";
+
+    var customer = document.getElementById("customer").value;
+    var smartticket = document.getElementById("smartticket").value;
     var useremail = document.getElementById("useremail").value;
+
     var postdata =
-      "useremail=" + useremail + "&userop=Create&odlconfigname=sdwan-lab";
+      "customer=" + customer + "&smartticket=" +  smartticket + "&useremail=" + useremail + "&userop=Create&odlconfigname=" + labdefinition;
 
     var xhr = new XMLHttpRequest();
     xhr.open(
@@ -14,8 +19,8 @@
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        alert("ok");
-        console.log(this.responseText);
+        var json = eval("(" + this.responseText +")");
+        alert("Success. Result:" + json);
       }
     };
     xhr.onload = function () {
@@ -24,13 +29,17 @@
 
     xhr.send(postdata);
 
-    document.getElementById("useremail").setAttribute('value','Provisioning Started... An email will be sent to the provided address with status');
+    document.getElementById("useremail").getElementsByTagName("input")[0].value = 'Provisioning Started.';
     return false;
   }
 </script>
 
 <form id="provision-lab" onsubmit="return formSubmit();">
-  <label for="useremail">Please enter your email address</label>
-  <input type="email" id="useremail" name="useremail" value="" />
+  <label for="useremail">Please enter your email address (required)</label>
+  <input type="email" required id="useremail" name="useremail" value="" />
+  <label for="customer">Please enter an associated Customer/Partner Name or Event Code (if any)</label>
+  <input type="text" id="customer" name="customer" value="" />
+  <label for="smartticket">Please enter an associated SMART Ticket (if any)</label>
+  <input type="text" id="smartticket" name="smartticket" value="" />
   <input type="submit" value="Provision" />
 </form>

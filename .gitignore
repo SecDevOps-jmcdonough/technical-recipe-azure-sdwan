@@ -31,3 +31,5 @@ override.tf.json
 .vscode
 *.auto.tfvars
 .hugo_build.lock
+
+public
